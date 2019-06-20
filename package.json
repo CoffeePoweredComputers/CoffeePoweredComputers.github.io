@@ -1,32 +1,44 @@
 {
-  "name": "hamiltonthefourth.github.io",
-  "homepage": "http://hamiltonfour.github.io/hamiltonfour",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "node-sass": "^4.11.0",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-scripts": "2.1.8"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "devDependencies": {
-    "gh-pages": "^2.0.1"
-  }
+	"name": "react-boostrap",
+	"version": "0.1.0",
+	"private": true,
+	"homepage": "http://coffeepoweredcomputers.github.io/website",
+	"devDependencies": {
+		"gh-pages": "^1.2.0"
+	},
+	"dependencies": {
+		"nodemon": "^1.11.0",
+		"body-parser": "^1.18.3",
+		"cors": "^2.8.5",
+		"errorhandler": "^1.5.0",
+		"express": "^4.16.4",
+		"express-session": "^1.15.6",
+		"mongoose": "^5.4.0",
+		"morgan": "^1.9.1",
+		"path": "^0.12.7",
+		"react": "^16.6.3",
+		"react-bootstrap": "^0.32.4",
+		"react-dom": "^16.6.3",
+		"react-pdf": "^4.0.0",
+		"react-router-dom": "^4.3.1",
+		"react-scripts": "2.1.1",
+		"react-tree-menu": "^1.5.0"
+	},
+	"scripts": {
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": [
+		">0.2%",
+		"not dead",
+		"not ie <= 11",
+		"not op_mini all"
+	]
 }

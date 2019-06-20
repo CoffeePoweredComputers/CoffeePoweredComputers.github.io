@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import { Jumbotron, Container, Row, Col, Image, Button } from 'react-bootstrap';
-//import "./About.css";
+import { Jumbotron, Grid, Row, Col, Image, Button } from 'react-bootstrap';
+import "./About.css";
 
 export default class Home extends Component{
 	render(){
 		return(
-			<Container>
+			<Grid>
 				<Jumbotron>
                 <Row className="how-grid text-center">
 					<Col xs={12} sm={4} >
@@ -27,7 +27,7 @@ export default class Home extends Component{
 
                 </Row>
 				</Jumbotron>
-			</Container>
+			</Grid>
 		);
 	}
 }
