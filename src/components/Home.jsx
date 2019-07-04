@@ -3,24 +3,27 @@ import { Link } from 'react-router-dom';
 import { Jumbotron, Grid, Row, Col, Image, Button } from 'react-bootstrap';
 import "./Home.css";
 
-export default class Home extends Component{
-	render(){
-		return(
+export default class Home extends Component {
+	render() {
+		return (
 			<Grid>
 				<Jumbotron>
-					<h2>Welcome!</h2>
-					<Row>
-						<p>This website contains the various projects, musings, and intrests of me, an undergraduate computer science student at Western Washington University. Grab a cup of coffee and enjoy your stay. </p>
-					</Row>
-					<Row>
-						<Col sm={15} >
-							<h3>Column soon to contain blog posts</h3>
+					<Row className="how-grid text-center">
+						<Col xs={14} sm={5} >
+							<Image src="assets/prof.png" circle />
+							<h3>David H Smith IV</h3>
+							<p>
+								<div class="sub"> Student at Western Washington University.</div>
+								<div class="sub"> CS Education Researcher. </div>
+								<div class="sub"> Lover of Linux and Drinker of Coffee.</div></p>
 						</Col>
 						<Col>
-							<h3>Column soon to contain blog posts</h3>
+							<h3>Biography</h3>
+							<p> I am currently a student at Western Washington University completeing my undergraduate degree in Computer Science. My primary area of research is in Computer Science education, an interdiciplinary field that involves knowledge of data mining, data visualization, educational pedagogies, educational psychology and statistical analysis.</p>
+							<p> Another issue that is of great importance to me is the democratization of information, technology, and computing in general. Open source and free software, specifically with regard to Linux distributions, are entirely responsible for providing a gateway to my current interest in computing. As such, I seek to follow in the footsteps of those who inspired me and likely countless others with regard to advancing both the quality and accessibility of various software solutions. A goal of mine is to contribute to the development of my favorite linux distribution, Arch Linux.</p>
+							<p> Outside of academics my hobbies include exploring the magnificant Pacific Northwest through hiking, swimming, camping, backpacking, calligraphy and, of course, consuming copious amounts of coffee in all its wonderful forms.</p>
 						</Col>
 					</Row>
-					
 				</Jumbotron>
 			</Grid>
 		);

@@ -1,6 +1,24 @@
-nav.navbar, .navbar-default{
+nav.navbar, .navbar-default {
 	background-color: black !important;
-	height: 75px;
+	height: 150px;
+}
+
+.navbar-header{
+	float:none;
+}
+
+.navbar-nav{
+	float: none;
+}
+
+.collapse{
+	text-align: center;
+	float: none;
+}
+
+.navbar-collapse{
+	text-align: center;
+	float: none;
 }
 
 .navbar-default{
@@ -10,15 +28,17 @@ nav.navbar, .navbar-default{
 }
 
 .navbar-default .navbar-nav{
+	float: none;
 	background-color: black;
+	display: inline-block;
 }
 
 .navbar-default .navbar-nav > li > a{
-	color: #6F4E37;
+	color: #404040;
 	transition: border-bottom-left-radius 0.5s, border-top-right-radius 0.5s;
-	background-color: grey;
-	margin-top: 25px;
-	margin-bottom: 5px;
+	background-color: #C0C0C0;
+	margin-top: 0px;
+	margin-bottom: 0px;
 	margin-right: 1px;
 	margin-left: 1px;
 	padding: 5px;
@@ -27,45 +47,21 @@ nav.navbar, .navbar-default{
 	font-weight: 800;
 	font-size: 15px;	
 	border-radius: 25px;
-	width: 90px;
+	width: 150px;
 	text-align: center;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.32);
 	outline: 0;
 }
 
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
-	color: #6F4E37;
 	border-bottom-left-radius: 2px;
 	border-top-right-radius: 2px;
-	background-color: grey;
+	background-color: #C0C0C0;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.32);
 }
 
-@media screen and (max-width: 1023px) {
-	.navbar-content:before {
-		content: "Coffee Powered Computers";
-		position: absolute;
-		text-align: center;
-		padding: 10px;
-	}
-
-	.navbar-brand-style:before{
-		font-size: 25px;
-	}
-
-	.coffee-mug{
-		display: none;
-	}
-  }
-  
-  @media screen and (min-width: 1024px) {
-	.navbar-content:before {
-	  content: "offeePoweredComputers"
-	}
-  }
-
 .navbar-default .navbar-toggle{
-	border-color: #6F4E37;
+	border-color: #C0C0C0;
 }
 
 .navbar-toggle{
@@ -73,30 +69,32 @@ nav.navbar, .navbar-default{
 }
 
 .navbar-default .navbar-toggle .icon-bar{
-	background-color: #6F4E37;
+	background-color: #C0C0C0;
 }
 
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
-	background-color: grey;
+	background-color: #D3D3D3;
 }
 
 .navbar-default .navbar-toggle:active, .navbar-default .navbar-toggle:active{
-	color: #6F4E37;
-	background-color: grey;
+	color: #C0C0C0;
+	background-color: #D3D3D3;
 }
 
 .navbar-default .navbar-brand-style {
-	color: #6F4E37;
+	color: #C0C0C0;
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; 
 	font-size: 35px;
 	font-style: normal;
 	font-variant: small-caps;
 	font-weight: 700;
-	float: left; /* add this */
 	margin-top: 15px;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.32);
-	border-color: #6F4E37;
-	display: inline;
+	border-color: #C0C0C0;
+	text-align: center;
+	width: 100%;
+	padding: 10px;
+	display: inline-block;
 }
 
 /* positional information to align photo with image */
@@ -107,69 +105,36 @@ nav.navbar, .navbar-default{
 	overflow: hidden; /* add this to contain floated children */
 }
 
-/* the following was taken and modified from http://thecodeplayer.com/walkthrough/leaky-coffee-mug*/
-/* the coffee mug and the coffee will be created mostly using box shadows */
-.coffee-mug{
-	background: #3F2616;
-	position: relative;
-	float: left;
-	margin-top: 30px;
-	margin-bottom: 20px;
-	margin-left: 5px;
-	margin-right: 20px;
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	/* the following box-shadow values are going to create the coffee mug, a coffee ring, and some coffee splatters (our mug is a little leaky) */
-	box-shadow: 0 0 0 15px #442918,
-							 0 0 0 10px #3C2415,
-							 0 0 0 20px #E4E6B2,
-							 0 0 0 20px #EFF0D1;
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.navbar-brand>img {
+  padding: 7px 14px;
 }
 
-/* cool right? except the mug needs a handle */
-.coffee-mug::before{
-	content: '';
-	position: absolute;
-	background: #EFF0D1;
-	height:15px;
-	width: 10px;
-	top: 10px;
-	padding: 3%;
-	right: 29px;
-	border-radius: 2px;
-	box-shadow: inset 0px 2px 0 0px #EFF0D1;
-	/* transform lets us rotate the handle on an angle */
-	transform: rotate(65deg);
-}
 
-/* that coffee could look a little more realistic. let's add a simple ripple effect */
-.coffee-mug::after{
-	content: '';
-    width: 2px;
-    height: 2px;
-	border-radius: 50%;
-	border: 3px solid #77665C;
-    border-right: 0;
-	position: absolute;
-	left: 0;
-	right: 0;
-	margin-left: auto;
-	margin-right: auto;
-	top: 0;
-	bottom: 0;
-	padding: 3%;
-	margin-top: auto;
-	margin-bottom: auto;
-	opacity: 0.7;
-	animation: rings 3s ease-out infinite;
-}
+/* adjustments made to the navbar orientation upon change of screen size */
+@media screen and (max-width: 767px) {
+	.navbar-content:before {
+		content: "David H Smith IV";
+	}
 
-@keyframes rings{
-	to{
-		width: 35px;
-		height: 35px;
-		left: -10px;
-		opacity: 0;
+	.navbar-brand-style:before{
+		font-size: 30px;
+		width: 50%;
+		float: left;
+	}
+	nav.navbar, .navbar-default {
+		background-color: black !important;
+		height: 100px;
+	}
+
+}
+  
+@media screen and (min-width: 767px) {
+	.navbar-content:before {
+		content: "David H Smith IV";
+		font-size: 50px;
 	}
 }

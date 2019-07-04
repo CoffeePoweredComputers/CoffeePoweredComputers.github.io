@@ -5,3 +5,7 @@ p{
 .sub{
     text-align: center;
 }
+
+.jumbotron{
+    background-color:#ebebeb;
+  }

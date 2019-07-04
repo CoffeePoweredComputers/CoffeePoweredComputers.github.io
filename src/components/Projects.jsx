@@ -9,13 +9,6 @@ export default class Projects extends Component {
 			<Grid>
 				<Jumbotron>
 					<Row>
-						<h2>Publications</h2>
-					</Row>
-
-					<Row>
-					</Row>
-
-					<Row>
 						<h2>Projects</h2>
 						<p>Below are my current ongoing projects. All these, and more, can be accessed at my personal GitHub <a href="https://github.com/CoffeePoweredComputers" target="_blank">here</a>. Project's individual GitHub pages can be accessed by clicking each projects icon.</p>
 					</Row>
@@ -26,7 +19,7 @@ export default class Projects extends Component {
 				</h3>
 						<Col sm={6} md={3} >
 
-							<a href="https://github.com/CoffeePoweredComputers/website" target="_blank"><Image src="assets/react-bootstrap.png" responsive thumbnail className="profile-pic" /></a>
+							<a href="https://github.com/CoffeePoweredComputers/" target="_blank"><Image src="assets/react-bootstrap.png" responsive thumbnail className="profile-pic" /></a>
 
 						</Col>
 						<Col md={15}>
