@@ -15,9 +15,9 @@ export default class NavBar extends Component {
 				<Navbar.Collapse>
 					<Nav>
 						<NavItem eventKey={1} componentClass={Link} href="/" to='/'> Home </NavItem>
-						<NavItem eventKey={3} componentClass={Link} href="/publications" to='/publications'> publications </NavItem>
+						<NavItem eventKey={3} componentClass={Link} href="/publications" to='/publications'> Publications </NavItem>
 						<NavItem eventKey={2} componentClass={Link} href="/projects" to='/projects'> Projects </NavItem>
-						<NavItem eventKey={3} componentClass={Link} href="/cv" to='/cv'> Curiculum Vita </NavItem>
+						<NavItem eventKey={3} componentClass={Link} href="/cv" to='/cv'> Curriculum Vitae </NavItem>
 					</Nav>
 				</Navbar.Collapse>
 			</Navbar >

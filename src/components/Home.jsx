@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { Jumbotron, Grid, Row, Col, Image, Button } from 'react-bootstrap';
+import { SocialIcon }  from 'react-social-icons';
 import "./Home.css";
 
 export default class Home extends Component {
@@ -11,11 +12,17 @@ export default class Home extends Component {
 					<Row className="how-grid text-center">
 						<Col xs={14} sm={5} >
 							<Image src="assets/prof.png" circle />
-							<h3>David H Smith IV</h3>
+							<h3>
+								David H Smith IV
+							</h3>
 							<p>
 								<div class="sub"> Student at Western Washington University.</div>
 								<div class="sub"> CS Education Researcher. </div>
-								<div class="sub"> Lover of Linux and Drinker of Coffee.</div></p>
+								<div class="sub"> Lover of Linux and Drinker of Coffee.</div>
+								<SocialIcon url="https://www.linkedin.com/in/david-smith-1b9499102/" style={{height: 25, width: 25}} bgColor='#000000' fgColor='#c0c0c0'/>
+								<SocialIcon url="https://github.com/CoffeePoweredComputers" style={{height: 25, width: 25}} bgColor='#000000' fgColor='#c0c0c0'/>
+							</p>
+								
 						</Col>
 						<Col>
 							<h3>Biography</h3>
