@@ -9,7 +9,7 @@ export default class CV extends Component {
     return (
       < Grid >
         <Jumbotron>
-          <Image src="assets/cv.png" rounded />
+          <img class="cv-img" src="assets/cv.png" rounded />
         </Jumbotron>
       </Grid >
     );

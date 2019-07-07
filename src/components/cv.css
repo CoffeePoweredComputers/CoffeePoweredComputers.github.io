@@ -2,6 +2,7 @@
   text-align: center;
 }
 
-.jumbotron img{
+.cv-img{
   display: inline-block;
+  width: 100%;
 }

@@ -9,10 +9,10 @@ export default class Projects extends Component {
 			<Grid>
 				<Jumbotron>
 					<Row>
-					<h2>Projects</h2>
+						<h2>Projects</h2>
 					</Row>
 					<Row>
-						
+
 						<p>Below are my current ongoing projects. All these, and more, can be accessed at my personal GitHub <a href="https://github.com/CoffeePoweredComputers" target="_blank">here</a>. Project's individual GitHub pages can be accessed by clicking each projects icon.</p>
 					</Row>
 
@@ -27,7 +27,7 @@ export default class Projects extends Component {
 						</Col>
 						<Col className="text-left" md={15}>
 							<p>
-								This website is an ongoing project of mine being implemented in <a href="https://react-bootstrap.github.io/" target="_blank">react-boostrap</a>. This platform provides a more cohesive coupling of the React framework with the well established front end framework Bootstrap. Currently this environment only supports Bootstrap v3 with Boostrap v4 support currently under development. This website is currently implemented using a single page the contents of which is controled via navbar buttons conecting to a React router. This is done to enable easy hosting on GitHub pages.
+								This website is an ongoing project of mine being primarily implemented using <a href="https://react-bootstrap.github.io/" target="_blank">react-boostrap</a>. Currently this package only supports Bootstrap v3 with Boostrap v4 support currently under development.
 							</p>
 						</Col>
 					</Row>
