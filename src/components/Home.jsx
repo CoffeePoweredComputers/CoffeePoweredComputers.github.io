@@ -9,8 +9,8 @@ export default class Home extends Component {
 		return (
 			<Grid>
 				<Jumbotron>
-					<Row className="how-grid text-center">
-						<Col xs={14} sm={5} >
+					<Row>
+						<Col className="how-grid text-center" xs={14} sm={5} >
 							<Image src="assets/prof.png" circle />
 							<h3>
 								David H Smith IV
@@ -25,10 +25,15 @@ export default class Home extends Component {
 								
 						</Col>
 						<Col>
-							<h3>Biography</h3>
-							<p> I am currently a student at Western Washington University completeing my undergraduate degree in Computer Science. My primary area of research is in Computer Science education, an interdiciplinary field that involves knowledge of data mining, data visualization, educational pedagogies, educational psychology and statistical analysis.</p>
-							<p> Another issue that is of great importance to me is the democratization of information, technology, and computing in general. Open source and free software, specifically with regard to Linux distributions, are entirely responsible for providing a gateway to my current interest in computing. As such, I seek to follow in the footsteps of those who inspired me and likely countless others with regard to advancing both the quality and accessibility of various software solutions. A goal of mine is to contribute to the development of my favorite linux distribution, Arch Linux.</p>
-							<p> Outside of academics my hobbies include exploring the magnificant Pacific Northwest through hiking, swimming, camping, backpacking, calligraphy and, of course, consuming copious amounts of coffee in all its wonderful forms.</p>
+						<h3>Biography</h3>
+						</Col>
+						<Col className="text-left">
+							
+							<p> I am currently a student at Western Washington University completing my undergraduate degree in Computer Science. My primary area of research is in Computer Science education, an interdisciplinary field that involves knowledge of data mining, data visualization, pedagogies, educational psychology, and statistical analysis. </p>
+
+							<p> My research has been primarily focused on factors related to student performance in CS1 and CS2 classes.  These include investigating social networks that form in online Q&A communities, formative feedback systems,  instructor-peer interactions, and the effectiveness of metrics evaluating student performance potential. In addition to this, I have also been involved in projects seeking to evaluate the overall state of Computing Education Research (CER) as it exists within the context of major conferences and journals. </p>
+
+							<p> Outside of academics my hobbies include exploring the Pacific Northwest through hiking, swimming, camping, backpacking, calligraphy, and coffee. </p>
 						</Col>
 					</Row>
 				</Jumbotron>
