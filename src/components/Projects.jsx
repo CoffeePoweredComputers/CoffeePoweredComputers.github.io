@@ -4,6 +4,11 @@ import { Jumbotron, Grid, Row, Col, Image, Button } from 'react-bootstrap';
 import "./Home.css";
 
 export default class Projects extends Component {
+
+	componentDidMount() {
+		document.title = "David H Smith IV | Projects";
+	}
+
 	render() {
 		return (
 			<Grid>

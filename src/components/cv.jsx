@@ -5,6 +5,11 @@ import "./cv.css";
 
 
 export default class CV extends Component {
+
+  componentDidMount() {
+    document.title = "David H Smith IV | CV";
+  }
+
   render() {
     return (
       < Grid >

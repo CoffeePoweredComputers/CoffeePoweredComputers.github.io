@@ -5,6 +5,11 @@ import { SocialIcon } from 'react-social-icons';
 import "./Home.css";
 
 export default class Home extends Component {
+
+	componentDidMount() {
+		document.title = "David H Smith IV | Home";
+	}
+
 	render() {
 		return (
 			<Grid>

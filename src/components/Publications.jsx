@@ -5,6 +5,11 @@ import "./Publications.css";
 
 
 export default class Publications extends Component {
+
+  componentDidMount() {
+    document.title = "David H Smith IV | Publications";
+  }
+
   render() {
     return (
       < Grid >
