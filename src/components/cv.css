@@ -7,7 +7,76 @@
   width: 100%;
 }
 
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
 .p{
   margin-left: 15px;
   margin-right: 15px;
+}
+
+ul{
+  text-align: left;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+small{
+  font-size: 15px;
+  color: black;
+  font-weight: 300;
+}
+
+.cv{
+  text-align: left;
+}
+
+.cv-title{
+  text-align: center;
+}
+
+.cv-position{
+  margin-top: 5px;
+  text-align: left;
+}
+
+.cv-header{
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  font-size: 20px;
+  font-variant: small-caps;
+  border-bottom: 1px solid black;
+}
+
+.cv-year{
+  float:right;
+  font-family: 'Poiret One', cursive;
+}
+
+hr{ 
+  width:100%; 
+  height:6px; 
+  background-color:#cce1ec; 
+  border:none;
 }

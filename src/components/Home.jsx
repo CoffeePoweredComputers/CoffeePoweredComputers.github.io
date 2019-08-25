@@ -21,9 +21,9 @@ export default class Home extends Component {
 								David H Smith IV
 							</h3>
 							<p>
-								<div class="sub"> Student at Western Washington University.</div>
-								<div class="sub"> CS Education Researcher. </div>
-								<div class="sub"> Lover of Linux and Drinker of Coffee.</div>
+								<div className="sub"> Student at Western Washington University</div>
+								<div className="sub"> CS Education Researcher</div>
+								<div className="sub"> Linux & Coffee Enthusiast</div>
 								<SocialIcon url="https://www.linkedin.com/in/david-smith-1b9499102/" style={{ height: 25, width: 25 }} bgColor='#000000' fgColor='#c0c0c0' />
 								<SocialIcon url="https://github.com/CoffeePoweredComputers" style={{ height: 25, width: 25 }} bgColor='#000000' fgColor='#c0c0c0' />
 							</p>
@@ -38,7 +38,7 @@ export default class Home extends Component {
 
 							<p> My research has been primarily focused on factors related to student performance in CS1 and CS2 classes.  These include investigating social networks that form in online Q&A communities, formative feedback systems,  instructor-peer interactions, and the effectiveness of metrics evaluating student performance potential. In addition to this, I have also been involved in projects seeking to evaluate the overall state of Computing Education Research (CER) as it exists within the context of major conferences and journals. </p>
 
-							<p> Outside of academics my hobbies include exploring the Pacific Northwest through hiking, swimming, camping, backpacking, calligraphy, and coffee. </p>
+							<p> Outside of academics my hobbies include exploring the Pacific Northwest through hiking, swimming, camping, backpacking, and coffee. </p>
 						</Col>
 					</Row>
 				</Jumbotron>
