@@ -30,7 +30,6 @@ export default class CV extends Component {
             <i>A.S. Computer Science</i>
             <br />
             <i>A.S Physics/Engineering</i>
-            <br />
 
 
             <div className="cv-header"><b>Experience</b></div>
