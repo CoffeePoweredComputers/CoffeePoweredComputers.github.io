@@ -30,6 +30,11 @@ nav.navbar, .navbar-default {
 	border-radius: 0;
 }
 
+.nav > li{
+	margin-top:2px;
+	margin-bottom: 2px;
+}
+
 .navbar-default .navbar-nav{
 	float: none;
 	background-color: black;
