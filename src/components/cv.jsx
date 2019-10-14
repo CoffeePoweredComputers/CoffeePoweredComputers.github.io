@@ -38,8 +38,10 @@ export default class CV extends Component {
             <i>Undergraduate Research Assistant</i>
             <ul>
               <li>Worked in a team environment, both locally and remotely, to design and implement a web scraper and PDF processor for data collection purposes.</li>
-              <li>Performed Social Network Analysis (SNA) on student interactions within the Piazza Q&A site.</li>
+              <li>Performed Social Network Analysis (SNA) on student interactions within the Piazza Q&A site in an effort to quantify the impacts of instructor-student interactions.</li>
               <li>Analyzed the effects of formative feedback systems, specifically one developed using Travis-CI, Git, GitHub, Gradel, and GitHub Classroom, and its effects on student performance and behavioral patterns.</li>
+              <li>Worked on a metareview project that sought to investigate the state of performance prediction research in STEM</li>
+              <li>Analyzed the impact of factors such as prior experience, validated test results, and self-efficacy on students' abilities to succed in introductory computer science courses.</li>
             </ul>
 
             <div className="cv-position"><b>Western Washington University</b></div>
@@ -50,20 +52,21 @@ export default class CV extends Component {
 
             <div className="cv-header"><b>Projects</b></div>
             <ul>
-              <li>Currently involved in the development of a data visualization dashboard for high performance computing clusters (HPC) at Lawrence Livermore National Laboratory.</li>
+              <li>Currently involved in the development of a data visualization dashboard, implemented using Technology: Python, SQLlite, Typescript, Vue, ThreeJS, D3, for high performance computing clusters for Lawrence Livermore National Laboratory.</li>
             </ul>
 
             <div className="cv-header"><b>Publications</b></div>
             <ul>
               <li>D. H. Smith IV, Q. Hao, F. Jagodzinski,  V. Gupta, Y. Liu,  <a href="http://qhao.info/downloads/comped-2019.pdf"><b>Quantification of the Effects of Prior Knowledge in Entry-Level Programming Courses.</b></a> CompEd 2019</li>
               <li>Hao, Q., Wilson, J., Ottaway, C., Iriumi, N., Arakawa, K., Smith, D. (In Press). <a href="https://arxiv.org/abs/1906.08937"><b>Investigating the Essential of Meaningful Automated Formative Feedback for Programming Assignments</b></a>. In Proceedings of 2019 IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC). Memphis, TN.</li>
-              <li> Q. Hao, D. H. Smith IV, N. Iriumi, M. Tsikerdekis, A. J. Ko <a href="https://dl.acm.org/citation.cfm?id=3345328"><b>A Systematic Investigation of Replications in Computing Education Research</b></a> ACM Transactions on Computing Education (TOCE).</li>
+              <li> Q. Hao, D. H. Smith IV, N. Iriumi, M. Tsikerdekis, Amy. J. Ko <a href="https://dl.acm.org/citation.cfm?id=3345328"><b>A Systematic Investigation of Replications in Computing Education Research</b></a> ACM Transactions on Computing Education (TOCE).</li>
+              <li> D. H. S. IV, C. Ottaway, J. P. Wilson, K. Arakawa, N. Iriumi, and Q. Hao, "What Are the Essential Elements of MEaningful Automated Formative Feedback for Programming Assingments?", <a href="https://chi2020.acm.org/"><b>Conference on Human Factors in Computing Systems</b></a>, 2020 (Submitted, Under Review) </li>
             </ul>
 
             <div className="cv-header"><b>Academic Achievements</b></div>
             <ul>
-              <li><i>Faithlife Corp. Scholarship</i> - One of eighteen students awarded a departmental scholarship for computer science at Western Washington Univeristy for $2000</li>
-              <li><i>Departmental Scholarship</i> - Awarded a departmental scholarship for $1000.</li>
+              <li><i><b>Faithlife Corp. Scholarship</b></i> - One of eighteen students awarded a departmental scholarship for computer science at Western Washington Univeristy for $2000</li>
+              <li><i><b>Departmental Scholarship</b></i> - One of a select number of students to be awarded a $1000 dollar scholarship for academic merit within the computer science major.</li>
             </ul>
           </div>
 
