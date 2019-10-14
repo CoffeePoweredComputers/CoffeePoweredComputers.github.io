@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "hamiltonfour.tech/precache-manifest.c48b145af6db12cb07767f772c530f93.js"
+  "hamiltonfour.tech/precache-manifest.0f5dff2e45872773c0c69a68c72ba99a.js"
 );
 
 workbox.clientsClaim();
