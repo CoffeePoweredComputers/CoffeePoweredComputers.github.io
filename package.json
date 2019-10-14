@@ -2,7 +2,7 @@
 	"name": "react-boostrap",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "http://coffeepoweredcomputers.github.io/",
+	"homepage": "hamiltonfour.tech/",
 	"devDependencies": {
 		"gh-pages": "^1.2.0"
 	},
