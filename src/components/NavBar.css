@@ -91,7 +91,7 @@ nav.navbar, .navbar-default {
 
 .navbar-default .navbar-brand-style {
 	color: #C0C0C0;
-	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; 
+	font-family: "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; 
 	font-size: 35px;
 	font-style: normal;
 	font-variant: small-caps;
