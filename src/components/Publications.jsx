@@ -12,7 +12,7 @@ export default class Publications extends Component {
 
   render() {
     return (
-      < Grid >
+      <Grid>
         <Jumbotron>
 
           <Row>

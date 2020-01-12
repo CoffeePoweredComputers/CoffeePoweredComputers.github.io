@@ -3,6 +3,33 @@
 }
 
 p{
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+
+/* adjustments made to the page orientation upon change of screen size */
+@media screen and (max-width: 767px) {
+
+  .profile-photo-subtitle{
+    content: "";
+  }
+
+  .bio-alignment{
+    text-align: center;
+  }
+
+
+}
+
+@media screen and (min-width: 767px) {
+
+  .profile-photo-subtitle{
+    content: "David H Smith IV";
+  }
+
+  .bio-alignment{
+    text-align: left;
+  }
+
 }

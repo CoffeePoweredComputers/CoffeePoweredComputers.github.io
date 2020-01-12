@@ -17,8 +17,7 @@ export default class Home extends Component {
 					<Row>
 						<Col className="how-grid text-center" xs={14} sm={5} >
 							<Image src="assets/prof.png" circle />
-							<h3>
-								David H Smith IV
+							<h3 className="profile-photo-subtitle">
 							</h3>
 							<p>
 								<div className="sub"> Student at Western Washington University</div>
@@ -32,7 +31,7 @@ export default class Home extends Component {
 						<Col>
 							<h3>Biography</h3>
 						</Col>
-						<Col className="text-left">
+						<Col className="bio-alignment">
 
 							<p> I am currently a student at Western Washington University completing my undergraduate degree in Computer Science. My primary area of research is in Computer Science education, an interdisciplinary field that involves knowledge of data mining, data visualization, pedagogies, educational psychology, and statistical analysis. </p>
 
