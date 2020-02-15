@@ -9,7 +9,7 @@ export default class NavBar extends Component {
 
 			<Navbar default collapseOnSelect>
 				<Navbar.Header>
-					<div class="navbar-brand-style navbar-content"></div>
+					<div className="navbar-brand-style navbar-content"></div>
 					<Navbar.Toggle />
 				</Navbar.Header>
 				<Navbar.Collapse>

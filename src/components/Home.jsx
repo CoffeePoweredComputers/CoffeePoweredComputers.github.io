@@ -6,42 +6,58 @@ import "./Home.css";
 
 export default class Home extends Component {
 
-	componentDidMount() {
-		document.title = "David H Smith IV | Home";
-	}
+  componentDidMount() {
+    document.title = "David H Smith IV | Home";
+  }
 
-	render() {
-		return (
-			<Grid>
-				<Jumbotron>
-					<Row>
-						<Col className="how-grid text-center" xs={14} sm={5} >
-							<Image src="assets/prof.png" circle />
-							<h3 className="profile-photo-subtitle">
-							</h3>
-							<p>
-								<div className="sub"> Student at Western Washington University</div>
-								<div className="sub"> CS Education Researcher</div>
-								<div className="sub"> Linux & Coffee Enthusiast</div>
-								<SocialIcon url="https://www.linkedin.com/in/david-smith-1b9499102/" style={{ height: 25, width: 25 }} bgColor='#000000' fgColor='#c0c0c0' />
-								<SocialIcon url="https://github.com/CoffeePoweredComputers" style={{ height: 25, width: 25 }} bgColor='#000000' fgColor='#c0c0c0' />
-							</p>
+  render() {
 
-						</Col>
-						<Col>
-							<h3>Biography</h3>
-						</Col>
-						<Col className="bio-alignment">
+    return (
+      <Grid>
+        <Jumbotron>
+          <Row>
 
-							<p> I am currently a student at Western Washington University completing my undergraduate degree in Computer Science. My primary area of research is in Computer Science education, an interdisciplinary field that involves knowledge of data mining, data visualization, pedagogies, educational psychology, and statistical analysis. </p>
+            <Col className="how-grid text-center" xs={14} sm={5} >
 
-							<p> My research has been primarily focused on factors related to student performance in CS1 and CS2 classes.  These include investigating social networks that form in online Q&A communities, formative feedback systems,  instructor-peer interactions, and the effectiveness of metrics evaluating student performance potential. In addition to this, I have also been involved in projects seeking to evaluate the overall state of Computing Education Research (CER) as it exists within the context of major conferences and journals. </p>
+              <Image src="assets/prof.png" circle />
+              <h3 className="profile-photo-subtitle"> </h3>
 
-							<p> Outside of academics my hobbies include exploring the Pacific Northwest through hiking, swimming, camping, backpacking, and coffee. </p>
-						</Col>
-					</Row>
-				</Jumbotron>
-			</Grid>
-		);
-	}
+              <p>
+                <div className="sub"> CS Education Researcher</div>
+                <div className="sub"> Linux & Coffee Enthusiast</div>
+
+                <SocialIcon url="https://www.linkedin.com/in/david-smith-1b9499102/" 
+                style={{ height: 25, width: 25 }} 
+                bgColor='#000000' 
+                fgColor='#c0c0c0' />
+
+                <SocialIcon url="https://github.com/CoffeePoweredComputers" 
+                style={{ height: 25, width: 25 }} 
+                bgColor='#000000' 
+                fgColor='#c0c0c0' />
+
+              </p>
+
+            </Col>
+
+            <Col>
+              <h3> </h3>
+            </Col>
+
+            <Col className="bio-alignment">
+
+              <p> 
+                <b>I am currently seeking to enter the Computer Science doctoral program in pursuit of my ultimate goal of becoming a professor and researcher. </b>  
+                My main areas of research experience and interest lay at the intersection of data science and Human-Computer Interaction (HCI) specifically within the realm of Computing Education Research (CER). 
+                The core of my knowledge and interests in these subjects have been developed through my role as an undergraduate research assistant in which my time has been largely devoted to the analysis of student learning patterns, performance, and tool evaluation. 
+                Going forward, it is my goal to extend and refine my current skills as well as continue investigating the intersection between HCI and CER through the development and evaluation of tools aimed towards usage in educational environments. 
+              </p>
+
+            </Col>
+          </Row>
+        </Jumbotron>
+      </Grid>
+      );
+
+  }
 }

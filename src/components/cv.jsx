@@ -11,7 +11,9 @@ export default class CV extends Component {
   }
 
   render() {
+
     return (
+
       <Grid>
         <Jumbotron>
 
@@ -52,17 +54,33 @@ export default class CV extends Component {
 
             <div className="cv-header"><b>Projects</b></div>
 
-              <div className="cv-position"><b>High Performance Computing Time-Series Visualization Dashboard</b></div>
-                <i>Clients - Dr. Tanzima Islam, Lawrence Livermore National Laboratory, Western Washington University</i>
-            <ul>
-              <li>Involved in the development of a data visualization dashboard, implemented using Technology: Python, SQLlite, Typescript, Vue, ThreeJS, D3, for high performance computing clusters for Lawrence Livermore National Laboratory.</li>
-              <li>Adapted and designed visualizations for the representation of large quantities of time series data.</li>
-              <li>Designed and implemented the backend data processing pipeline</li>
-            </ul>
+            <div className="cv-position"><b>High Performance Computing Time-Series Visualization Dashboard</b></div>
+            <i>Clients - Dr. Tanzima Islam, Lawrence Livermore National Laboratory, Western Washington University</i>
+
+            <Row>
+
+              <Col sm={5}>
+                <Image src='assets/full_dash.png' thumbnail rounded />
+              </Col>
+
+              <Col sm={7}>
+                <ul>
+                  <li>Project targeted the analysis of large quantities of multidimensional time series data</li>
+                  <li>Involved in the development of a data visualization dashboard, implemented using the following:</li>
+                  <ul>
+                    <li> <b>Server</b> - Implemented with the Bottle package for Python and SQLite3 </li>
+                    <li> <b>Dashboard</b> - Implemented with Vue.js</li>
+                    <li> <b>Visualizations</b> - The helix visualization was implemented with ThreeJS and the bar/line graph was implemented with D3.js</li>
+                  </ul>
+                </ul>
+              </Col>
+
+            </Row>
+
 
             <div className="cv-header"><b>Publications</b></div>
             <ul>
-              <li>D. H. Smith IV, Q. Hao, F. Jagodzinski,  V. Gupta, Y. Liu,  <a href="http://qhao.info/downloads/comped-2019.pdf"><b>Quantification of the Effects of Prior Knowledge in Entry-Level Programming Courses.</b></a> CompEd 2019</li>
+              <li>D. H. Smith IV, Q. Hao, F. Jagodzinski,  V. Gupta, Y. Liu,  <a href="http://qhao.info/downloads/comped-2019.pdf"><b>Quantifying the Effects of Prior Knowledge in Entry-Level Programming Courses.</b></a> CompEd 2019</li>
               <li>Hao, Q., Wilson, J., Ottaway, C., Iriumi, N., Arakawa, K., Smith, D. (In Press). <a href="https://arxiv.org/abs/1906.08937"><b>Investigating the Essential of Meaningful Automated Formative Feedback for Programming Assignments</b></a>. In Proceedings of 2019 IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC). Memphis, TN.</li>
               <li> Q. Hao, D. H. Smith IV, N. Iriumi, M. Tsikerdekis, Amy. J. Ko <a href="https://dl.acm.org/citation.cfm?id=3345328"><b>A Systematic Investigation of Replications in Computing Education Research</b></a> ACM Transactions on Computing Education (TOCE).</li>
             </ul>
@@ -76,6 +94,6 @@ export default class CV extends Component {
 
         </Jumbotron >
       </Grid >
-    );
+      );
   }
 }
