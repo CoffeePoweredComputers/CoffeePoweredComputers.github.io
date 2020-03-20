@@ -36,12 +36,10 @@ export default class Publications extends Component {
                 <Card.Body>
               <Row>
                 <Col xs={6} sm={3}>
-                  <a href={publication.link} target="_blank"><Image src={publication.image_path} responsive thumbnail className="profile-pic" /></a>
+                  <a href={publication.link} target="_blank"><Image src={publication.image_path} responsive thumbnail rounded className="profile-pic" /></a>
                 </Col>
-                <Col className="text-left">
-                  <div className="abstract">
-                    <i> Abstract:  </i> {publication.abstract} 
-                  </div>
+                <Col className="text-left abstract">
+                  <i> Abstract:  </i> {publication.abstract} 
                 </Col>
               </Row>
             </Card.Body>

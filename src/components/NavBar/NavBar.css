@@ -1,6 +1,6 @@
 nav.navbar {
+  width: 100%;
 	background-color: black !important;
-  height: 100px;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -58,3 +58,23 @@ nav.navbar {
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.32);
 }
 
+
+.navbar-light .navbar-toggler {
+    background-color: #C0C0C0; 
+    color: #404040;
+}
+
+
+/* adjustments made to the page orientation upon change of screen size */
+@media screen and (max-width: 422) {
+  .navbar-light .navbar-brand, .navbar-light .navbar-brand:hover{
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 993px) {
+  .navbar-nav > a{
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}

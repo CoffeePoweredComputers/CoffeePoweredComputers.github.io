@@ -6,7 +6,7 @@ import "./NavBar.css"
 export default class NavBar extends Component {
   render() {
     return (
-      <Navbar bg='dark' expand="md"> 
+      <Navbar bg='dark' expand="lg"> 
         <Navbar.Brand>
           David H Smith IV
         </Navbar.Brand>
