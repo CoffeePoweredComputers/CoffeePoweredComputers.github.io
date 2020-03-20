@@ -1,0 +1,91 @@
+{
+
+  "education": [
+    {
+      "school": "Western Washington University",
+      "years": "2017-2019",
+      "degrees": [ "Bachelors of Science - Computer Science" ]
+    },  
+    {
+      "school": "Skagit Valley College",
+      "years": "2015-2017",
+      "degrees": [ 
+        "Associates of Science - Computer Science",
+        "Associates of Science - Physics/Engineering"
+      ]
+    }
+  ],
+
+  "experience" : [
+    {
+      "employer": "Western Washington University",
+      "position":  "Undergraduate Research Assistant",
+      "accomplishments": [
+        "Worked in a team environment, both locally and remotely, to design and implement a web scraper and PDF processor for data collection purposes.",
+        "Performed Social Network Analysis (SNA) on student interactions within the Piazza Q&A site in an effort to quantify the impacts of instructor-student interactions.",
+        "Analyzed the effects of formative feedback systems, specifically one developed using Travis-CI, Git, GitHub, Gradle, and GitHub Classroom, and its effects on student performance and behavior.",
+        "Worked on a meta review project that sought to investigate the state of performance prediction research in STEM",
+        "Adapted data collection scripts for a system aimed at the early detection of academically at-risk students.",
+        "Analyzed the impact of factors such as prior experience, validated test results, and self-efficacy on students' abilities to succeed in introductory computer science courses."
+      ]
+    },
+    {
+      "employer": "Western Washington University",
+      "position":  "ACM Peer Mentor",
+      "accomplishments": [
+        "Volunteered to tutor computer science pre-majors on the subject including discrete math, language theory, computer systems, data structures, algorithms, as well as fundamentals or programming."      
+      ]
+    }
+  ],
+
+  "projects" : [
+
+    {
+      "title": "High Performance Computing Time-Series Visualization Dashboard" ,
+      "client": "Dr. Tanzima Islam, Lawrence Livermore National Laboratory, Western Washington University",
+      "image_path": "assets/full_dash.png",
+      "work": [
+              "Project targeted the analysis of large quantities of multidimensional time series data",
+              "Involved in the development of a data visualization dashboard, implemented using the following:",
+              "Server - Implemented with the Bottle package for Python and SQLite3 ",
+              "Dashboard - Implemented with Vue.js",
+              "Visualizations - The helix visualization was implemented with ThreeJS and the bar/line graph was implemented with D3.js"
+      ]
+    }
+
+  ],
+
+  "publications": [
+
+    {
+      "authors": "D. H. Smith IV, Q. Hao, F. Jagodzinski,  V. Gupta, Y. Liu, ",  
+      "link": "http://qhao.info/downloads/comped-2019.pdf",
+      "title": "Quantifying the Effects of Prior Knowledge in Entry-Level Programming Courses. ",
+      "venue": "CompEd 2019"
+    },
+    {
+      "authors": "Hao, Q., Wilson, J., Ottaway, C., Iriumi, N., Arakawa, K., Smith, D. , ",
+      "link": "https://arxiv.org/abs/1906.08937",
+      "title": "Investigating the Essential of Meaningful Automated Formative Feedback for Programming Assignments ",
+      "venue": "In Proceedings of 2019 IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC). Memphis, TN. "
+    },
+    {
+      "authors": "Q. Hao, D. H. Smith IV, N. Iriumi, M. Tsikerdekis, Amy. J. Ko,  ",
+      "link": "https://dl.acm.org/citation.cfm?id=3345328",
+      "title": "A Systematic Investigation of Replications in Computing Education Research ",
+      "venue": "ACM Transactions on Computing Education (TOCE). "
+    }
+  ],
+
+  "merits": [
+    {
+      "title":"Faithlife Corp. Scholarship",
+      "description":"One of eighteen students awarded a departmental scholarship for computer science at Western Washington University for $2000."
+    },
+    {
+      "title":"Western Washington University Departmental Scholarship",
+      "description":"One of a select number of students to be awarded a $1000 dollar scholarship for academic merit within the computer science major."
+    }
+  ]
+
+}

@@ -1,8 +1,16 @@
 .jumbotron{
   background-color:#ebebeb;
+  margin: 15px;
 }
 
-p{
+.sub{
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.bio{
+  font-size: 18px;
+  font-weight: 200;
   margin-left: 25px;
   margin-right: 25px;
 }

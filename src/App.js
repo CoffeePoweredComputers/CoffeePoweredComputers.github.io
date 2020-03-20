@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
-import { HashRouter  as Router, Route } from 'react-router-dom';
-import Navbar from './components/NavBar';
-import Home from './components/Home';
-import Publications from './components/Publications';
-import CV from './components/cv';
+import { HashRouter, Route } from 'react-router-dom';
+import Navbar from './components/NavBar/NavBar.jsx';
+import Home from './components/Home/Home.jsx';
+import Publications from './components/Publications/Publications.jsx';
+import CV from './components/CV/cv.jsx';
+import Blog from './components/Blog/Blog.jsx';
 
 class App extends Component {
   render() {
     return (
-      <Router>
+      <HashRouter>
         <div>
           <Navbar />
           <Route exact path="/" component={Home} />
           <Route path="/cv" component={CV} />
           <Route path="/publications" component={Publications} />
+          <Route path="/blog" component={Blog} />
         </div>
-      </Router>
+      </HashRouter>
     );
   }
 }

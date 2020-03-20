@@ -1,5 +1,10 @@
+body{
+  font-size: 14px;
+}
+
 .jumbotron{
   text-align: center;
+  padding: 25px; 
 }
 
 .cv-img{
@@ -29,11 +34,6 @@ a:active {
   color: black;
   background-color: transparent;
   text-decoration: underline;
-}
-
-.p{
-  margin-left: 15px;
-  margin-right: 15px;
 }
 
 ul{
@@ -67,6 +67,7 @@ small{
   font-size: 20px;
   font-variant: small-caps;
   border-bottom: 1px solid black;
+  margin-top: 15px;
 }
 
 .cv-year{
@@ -74,9 +75,3 @@ small{
   font-family: 'Montserrat', serif;
 }
 
-hr{ 
-  width:100%; 
-  height:6px; 
-  background-color:#cce1ec; 
-  border:none;
-}
