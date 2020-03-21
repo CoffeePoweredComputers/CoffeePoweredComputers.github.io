@@ -6,6 +6,10 @@
   margin-top: 15px;
 }
 
+.body{
+  max-height: 250px;
+}
+
 .pub-header{
   margin-left: 10px;
   margin-right: 10px;

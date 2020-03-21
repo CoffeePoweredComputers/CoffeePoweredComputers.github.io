@@ -2,6 +2,11 @@
 
   "education": [
     {
+      "school": "University of Illinois: Urbana-Champaign",
+      "years": "2020-",
+      "degrees": [ "Doctorate in Computer Science" ]
+    },
+    {
       "school": "Western Washington University",
       "years": "2017-2019",
       "degrees": [ "Bachelors of Science - Computer Science" ]

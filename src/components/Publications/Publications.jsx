@@ -33,15 +33,15 @@ export default class Publications extends Component {
                 </Accordion.Toggle>
               </Card.Header>
               <Accordion.Collapse eventKey={id}>
-                <Card.Body>
-              <Row>
-                <Col xs={6} sm={3}>
-                  <a href={publication.link} target="_blank"><Image src={publication.image_path} responsive thumbnail rounded className="profile-pic" /></a>
-                </Col>
-                <Col className="text-left abstract">
-                  <i> Abstract:  </i> {publication.abstract} 
-                </Col>
-              </Row>
+              <Card.Body>
+                <Row>
+                  <Col md={2}>
+                    <a href={publication.link} target="_blank"><Image src={publication.image_path} responsive thumbnail className="profile-pic" /></a>
+                  </Col>
+                  <Col className="text-left abstract">
+                    <i> Abstract:  </i> {publication.abstract} 
+                  </Col>
+                </Row>
             </Card.Body>
           </Accordion.Collapse>
             </React.Fragment>
