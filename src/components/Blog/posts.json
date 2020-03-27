@@ -1,2 +1,12 @@
 [
+ {
+  "title": "Installing Arch Linux\u200a\u2014\u200aA Beginners Guide (Part 1)",
+  "link": "https://medium.com/@davidhsmith4/installing-arch-linux-a-beginners-guide-part-1-b1c2f399d5ee?source=rss-d4d6e1e0a7de------2",
+  "date": "Fri, 27 Mar 2020 03:12:30 GMT",
+  "keywords": [
+   "guides-and-tutorials",
+   "arch-linux"
+  ],
+  "body": "When I first began venturing away from Ubuntu I was struck by the steepness of the learning curve present when attempting to install Arch for the first time. This was only worsened by the lack of \u201cbeginner-friendly\u201d material available. Most guides provided a purely procedural installation without explaining any of the intricacies of the actions being undertaken. Though this is effective in getting users from point A to point B, it does little to help them when things inevitably go off course. Though the Arch Linux wiki is a prolific source of wisdom, it is also potentially overwhelming to a user who barely knows where to begin in the first place. Furthermore, the archlinux.org\u2019s installation guide is adequate but lacks visual guides and omits many details necessary for a user to understand the whys and wherefores of their actions. This guide seeks to fill this gap by providing beginners to the distro with a visual installation guide that follows the same structure as the installation guide present on archlinux.org. This is done with the intention of being supplementary to the official wiki such that, in the event a user becomes stuck, they may smoothly transition between the two guides while attempting to solve their\u00a0issue."
+ }
 ]

@@ -61,6 +61,10 @@ p{
   display: block;
 }
 
+.post-body{
+  text-align: left;
+}
+
 
 /* adjustments made to the page orientation upon change of screen size */
 @media screen and (max-width: 767px) {

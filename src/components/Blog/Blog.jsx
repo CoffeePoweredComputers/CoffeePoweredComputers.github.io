@@ -63,7 +63,8 @@ export default class Blog extends Component {
                 </div>
               </Row>
               <Row className='post-body'>
-                <ReactMarkdown source={field.body} />
+                {field.body}
+                <b><a href={field.link}> Continue reading on Medium... </a></b>
               </Row>
             </Col>
           </Jumbotron>
