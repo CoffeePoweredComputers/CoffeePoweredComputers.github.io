@@ -11,28 +11,21 @@ export default class Publications extends Component {
   }
 
   render() {
-    
+
     /* Reads through the list of current publications and renders them according to the template */
-    const publications = Pubs.map( (yearsPubs, id) => {
 
+    const years = Pubs.map( (year, id) => {
 
-      return(
-        <React.Fragment>
-          <Row>
-            <div className="year-header"> {yearsPubs.year}</div>
-          </Row>
+     const publications = year.publications.map( (publication, id) => {
 
-          <Accordion defaultActivityKey="0">
-          { yearsPubs.publications.map( (publication, id) =>  {
-           
-          return(
-            <React.Fragment>
-              <Card.Header>
-                <Accordion.Toggle as={Card.Header} className="title-header" variant='link' eventKey={id}>
-                  {publication.title}
-                </Accordion.Toggle>
-              </Card.Header>
-              <Accordion.Collapse eventKey={id}>
+       return(
+         <React.Fragment>
+            <Card.Header>
+              <Accordion.Toggle as={Card.Header} className="title-header" variant='link' eventKey={id}>
+                {publication.title}
+              </Accordion.Toggle>
+            </Card.Header>
+            <Accordion.Collapse eventKey={id}>
               <Card.Body>
                 <Row>
                   <Col md={2}>
@@ -42,17 +35,27 @@ export default class Publications extends Component {
                     <i> Abstract:  </i> {publication.abstract} 
                   </Col>
                 </Row>
-            </Card.Body>
-          </Accordion.Collapse>
-            </React.Fragment>
-            );
-          })
-            }
-          </Accordion>
+              </Card.Body>
+            </Accordion.Collapse>
+          </React.Fragment>
+          );
+      });
 
+
+      return(
+        <React.Fragment>
+          <Row>
+            <div className="year-header"> {year.year} </div>
+          </Row>
+          <Accordion defaultActivityKey="0">
+          {publications}
+          </Accordion>
         </React.Fragment>
-      )}
-    );
+      )
+
+
+    } );
+
 
     return (
       <Container fluid>
@@ -64,10 +67,10 @@ export default class Publications extends Component {
             </div>
           </Row>
 
-          {publications}
+          {years}
 
         </Jumbotron >
       </Container >
-    );
-  }
+      );
+}
 }
