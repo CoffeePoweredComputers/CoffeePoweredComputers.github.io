@@ -12,7 +12,10 @@ def parse_post(post_data):
 
     title = post_data['title']
     link = post_data['link']
-    keywords = [ tag['term'].strip() for tag in post_data['tags'] ]
+    try:
+        keywords = [ tag['term'].strip() for tag in post_data['tags']]
+    except:
+        keywords = []
     date = post_data['published']
 
     #Extract the first paragraph
