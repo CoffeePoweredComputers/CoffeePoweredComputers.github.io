@@ -64,6 +64,8 @@ export default class Blog extends Component {
               </Row>
               <Row className='post-body'>
                 {field.body}
+              </Row>
+              <Row>
                 <b><a href={field.link}> Continue reading on Medium... </a></b>
               </Row>
             </Col>
