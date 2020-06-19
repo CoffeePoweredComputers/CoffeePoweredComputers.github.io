@@ -27,15 +27,24 @@ export default class Home extends Component {
                 <div className="sub"> Linux & Coffee Enthusiast</div>
 
                 <SocialIcon url="https://www.linkedin.com/in/david-smith-1b9499102/" 
-                style={{ height: 25, width: 25 }} 
+                style={{ height: 25, width: 25, margin: 2 }} 
                 bgColor='#000000' 
                 fgColor='#c0c0c0' />
 
                 <SocialIcon url="https://github.com/CoffeePoweredComputers" 
-                style={{ height: 25, width: 25 }} 
+                style={{ height: 25, width: 25, margin: 2 }} 
                 bgColor='#000000' 
                 fgColor='#c0c0c0' />
 
+                <SocialIcon url="https://twitter.com/DavidHSmithIV" 
+                style={{ height: 25, width: 25, margin: 2 }} 
+                bgColor='#000000' 
+                fgColor='#c0c0c0' />
+
+                <SocialIcon url="https://medium.com/@davidhsmith4" 
+                style={{ height: 25, width: 25, margin: 2 }} 
+                bgColor='#000000' 
+                fgColor='#c0c0c0' />
               </div>
 
             </Col>
