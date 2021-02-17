@@ -1,5 +1,22 @@
 [
   {
+    "year" : "2021",
+    "publications": [
+      {
+        "title": "Towards Modeling Student Engagement with Interactive Computing Textbooks: An Empirical Study",
+        "image_path" : "assets/textbook.png",
+        "link":"",
+        "abstract": "Interactive textbooks have great potential to increase student engagement with the course content which is critical to effective learning in computing education. Prior research on digital textbooks and interactive visualizations contribute to our understanding of student interactions with visualizations and modeling textbook knowledge concepts. However, research investigating student usage of interactive computing textbooks is still lacking. This study seeks to fill this gap by modeling student engagement with a Jupyter-notebook-based interactive textbook. Our findings suggest that students' active interactions with the presented interactive textbook, including changing, adding, and executing code in addition to manipulating visualizations, are significantly stronger in predicting student performance than conventional reading metrics. Our findings contribute to a deeper understanding of student interactions with interactive textbooks and provide guidance on the effective usage of said textbooks in computing education."
+      },
+      {
+        "title": "Towards understanding the effective design of automated formative feedback for programming assignments",
+        "image_path" : "assets/feedback2.png",
+        "link":"https://www.tandfonline.com/doi/abs/10.1080/08993408.2020.1860408?journalCode=ncse20",
+        "abstract": "Background and Context: automated feedback for programming assignments has great potential in promoting just-in-time learning, but there has been little work investigating the design of feedback in this context. Objective: to investigate the impacts of different designs of automated feedback on student learning at a fine-grained level, and how students interacted with and perceived the feedback. Method: a controlled quasi-experiment of 76 CS students, where students of each group received a different combination of three types of automated feedback for their programming assignments. Findings: feedback addressing the gap between expected and actual outputs is critical to effective learning; feedback lacking enough details may lead to system gaming behaviors. Implications: the design of feedback has substantial impacts on the efficacy of automated feedback for programming assignments; more research is needed to extend what is known about effective feedback design in this context."
+      }
+    ]
+  },
+  {
     "year": "2020",
     "publications":[
       {

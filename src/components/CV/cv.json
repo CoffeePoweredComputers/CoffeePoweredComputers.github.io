@@ -4,8 +4,8 @@
     {
       "school": "University of Illinois: Urbana-Champaign",
       "years": "2020-",
-      "advisor": "",
-      "degrees": [ "Doctorate in Computer Science" ]
+      "advisor": "Craig Zilles",
+      "degrees": [ "Doctorate of Computer Science" ]
     },
     {
       "school": "Western Washington University",
@@ -25,6 +25,12 @@
   ],
 
   "experience" : [
+    {
+      "employer": "University of Illinois at Urbana-Champaign",
+      "position":  "Teaching Assistant - CS 105",
+      "accomplishments": [
+      ]
+    },
     {
       "employer": "Western Washington University",
       "position":  "Undergraduate Research Assistant",
@@ -66,6 +72,18 @@
   "publications": [
 
     {
+      "authors" : "Qiang Hao, David H. Smith IV, Lu Ding, Amy Ko, Camille Ottaway, Jack Wilson, Kai H. Arakawa, Alistair Turcan, Timothy Poehlman, and Tyler Greer",
+      "link": "https://www.tandfonline.com/doi/abs/10.1080/08993408.2020.1860408?journalCode=ncse20",
+      "title": "Towards Understanding the Effective Design of Automated Formative feedback for Programming Assignments",
+      "venue": "Computer Science Education" 
+    },
+    {
+      "authors" : "David H. Smith IV, Qiang Hao, Christopher D. Hundhausen, Filip Jagodzinski, Josh Myers-Dean, and Kira Jaeger",
+      "link": "",
+      "title": "Towards Modeling Student Engagement with Interactive Computing Textbooks: An Empirical Study",
+      "venue": "SIGCSE 2021" 
+    },
+    {
       "authors" : "David Smith, Qiang Hao, Ph.D., Vanessa Dennen, Michail Tsikerdekis, Bradley Barnes, Lilu Martin, Nathan Tresham, ",
       "link": "https://educationaltechnologyjournal.springeropen.com/articles/10.1186/s41239-020-00200-7",
       "title": "Towards Understanding Student Online Question & Answer Interactions in Large-Scale Classes in STEM Education ",
@@ -93,8 +111,8 @@
 
   "merits": [
     {
-      "title":"University of Illinois Urbana-Champaign Computer Science Excellence Fellowship",
-      "description":"An $8000 departmental fellowship funded thanks to the Graduate College Block Grant Program and gifts from generous donors. The Computer Science Excellence Fellowships are awarded to recruit and support promising incoming graduate students."
+      "title":"Ray Ozzie Computer Science Fellowship",
+      "description":"An $8000 scholarship avaliable to graduate students in the Department of Computer Science at UIUC."
     },
     {
       "title":"Faithlife Corp. Scholarship",
