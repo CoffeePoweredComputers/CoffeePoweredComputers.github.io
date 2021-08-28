@@ -1,132 +1,146 @@
 {
 
-  "education": [
-    {
-      "school": "University of Illinois: Urbana-Champaign",
-      "years": "2020-",
-      "advisor": "Craig Zilles",
-      "degrees": [ "Doctorate of Computer Science" ]
-    },
-    {
-      "school": "Western Washington University",
-      "years": "2017-2019",
-      "advisor": "Qiang Hao",
-      "degrees": [ "Bachelors of Science - Computer Science" ]
-    },  
-    {
-      "school": "Skagit Valley College",
-      "years": "2015-2017",
-      "advisor": "",
-      "degrees": [ 
-        "Associates of Science - Computer Science",
-        "Associates of Science - Physics/Engineering"
-      ]
-    }
-  ],
+    "education": [
+        {
+            "school": "University of Illinois: Urbana-Champaign",
+            "years": "2020-",
+            "advisor": "Craig Zilles",
+            "degrees": [ "Doctorate of Computer Science" ]
+        },
+        {
+            "school": "Western Washington University",
+            "years": "2017-2019",
+            "advisor": "Qiang Hao",
+            "degrees": [ "Bachelors of Science - Computer Science" ]
+        },  
+        {
+            "school": "Skagit Valley College",
+            "years": "2015-2017",
+            "advisor": "",
+            "degrees": [ 
+                "Associates of Science - Computer Science",
+                "Associates of Science - Physics/Engineering"
+            ]
+        }
+    ],
 
-  "experience" : [
-    {
-      "employer": "University of Illinois at Urbana-Champaign",
-      "position":  "Primary Instructor - CS 105 Summer '21'",
-      "accomplishments": [
-      ]
-    {
-      "employer": "University of Illinois at Urbana-Champaign",
-      "position":  "Teaching Assistant - CS 105",
-      "accomplishments": [
-      ]
-    },
-    {
-      "employer": "Western Washington University",
-      "position":  "Undergraduate Research Assistant",
-      "accomplishments": [
-        "Worked in a team environment, both locally and remotely, to design and implement a web scraper and PDF processor for data collection purposes.",
-        "Performed Social Network Analysis (SNA) on student interactions within the Piazza Q&A site in an effort to quantify the impacts of instructor-student interactions.",
-        "Analyzed the effects of formative feedback systems, specifically one developed using Travis-CI, Git, GitHub, Gradle, and GitHub Classroom, and its effects on student performance and behavior.",
-        "Worked on a meta review project that sought to investigate the state of performance prediction research in STEM",
-        "Adapted data collection scripts for a system aimed at the early detection of academically at-risk students.",
-        "Analyzed the impact of factors such as prior experience, validated test results, and self-efficacy on students' abilities to succeed in introductory computer science courses."
-      ]
-    },
-    {
-      "employer": "Western Washington University",
-      "position":  "ACM Peer Mentor",
-      "accomplishments": [
-        "Volunteered to tutor computer science pre-majors on the subject including discrete math, language theory, computer systems, data structures, algorithms, as well as fundamentals or programming."      
-      ]
-    }
-  ],
+    "experience" : [
+        {
+            "employer": "University Laboratory High School",
+            "position":  "Instructor - Intro to Computer Programming ",
+            "duration": "Fall 2021",
+            "accomplishments": [
+            ]
+        },
+        {
+            "employer": "University of Illinois at Urbana-Champaign",
+            "position":  "Instructor - CS 105 Summer '21'",
+            "duration": "Summer 2021",
+            "accomplishments": [
+            ]
+        },
+        {
+            "employer": "University of Illinois at Urbana-Champaign",
+            "position":  "Teaching Assistant - CS 105",
+            "duration": "Fall 2020 - ",
+            "accomplishments": [
+                "Listed among \"Instructors Ranked as Excellent\" for the Spring 2021 semester",
+                "Developed a Discord bot and environment for facillitating lecture discussions and labs during the COVID-19 pandemic"
+            ]
+        },
+        {
+            "employer": "Western Washington University",
+            "position":  "Undergraduate Research Assistant",
+            "duration": "2017-2019",
+            "accomplishments": [
+                "Worked in a team environment, both locally and remotely, to design and implement a web scraper and PDF processor for data collection purposes.",
+                "Performed Social Network Analysis (SNA) on student interactions within the Piazza Q&A site in an effort to quantify the impacts of instructor-student interactions.",
+                "Analyzed the effects of formative feedback systems, specifically one developed using Travis-CI, Git, GitHub, Gradle, and GitHub Classroom, and its effects on student performance and behavior.",
+                "Worked on a meta review project that sought to investigate the state of performance prediction research in STEM",
+                "Adapted data collection scripts for a system aimed at the early detection of academically at-risk students.",
+                "Analyzed the impact of factors such as prior experience, validated test results, and self-efficacy on students' abilities to succeed in introductory computer science courses."
+            ]
+        },
+        {
+            "employer": "Western Washington University",
+            "position":  "ACM Peer Mentor",
+            "duration": "2018-2019",
+            "accomplishments": [
+                "Volunteered to tutor computer science pre-majors on the subject including discrete math, language theory, computer systems, data structures, algorithms, as well as fundamentals or programming."      
+            ]
+        }
+    ],
 
-  "projects" : [
+    "projects" : [
 
-    {
-      "title": "High Performance Computing Time-Series Visualization Dashboard" ,
-      "client": "Dr. Tanzima Islam, Lawrence Livermore National Laboratory, Western Washington University",
-      "image_path": "assets/full_dash.png",
-      "work": [
-              "Project targeted the analysis of large quantities of multidimensional time series data",
-              "Involved in the development of a data visualization dashboard, implemented using the following:",
-              "Server - Implemented with the Bottle package for Python and SQLite3 ",
-              "Dashboard - Implemented with Vue.js",
-              "Visualizations - The helix visualization was implemented with ThreeJS and the bar/line graph was implemented with D3.js"
-      ]
-    }
+        {
+            "title": "High Performance Computing Time-Series Visualization Dashboard" ,
+            "client": "Dr. Tanzima Islam, Lawrence Livermore National Laboratory, Western Washington University",
+            "image_path": "assets/full_dash.png",
+            "work": [
+                "Project targeted the analysis of large quantities of multidimensional time series data",
+                "Involved in the development of a data visualization dashboard, implemented using the following:",
+                "Server - Implemented with the Bottle package for Python and SQLite3 ",
+                "Dashboard - Implemented with Vue.js",
+                "Visualizations - The helix visualization was implemented with ThreeJS and the bar/line graph was implemented with D3.js"
+            ]
+        }
 
-  ],
+    ],
 
-  "publications": [
+    "publications": [
 
-    {
-      "authors" : "Qiang Hao, David H. Smith IV, Lu Ding, Amy Ko, Camille Ottaway, Jack Wilson, Kai H. Arakawa, Alistair Turcan, Timothy Poehlman, and Tyler Greer",
-      "link": "https://www.tandfonline.com/doi/abs/10.1080/08993408.2020.1860408?journalCode=ncse20",
-      "title": "Towards Understanding the Effective Design of Automated Formative feedback for Programming Assignments",
-      "venue": "Computer Science Education" 
-    },
-    {
-      "authors" : "David H. Smith IV, Qiang Hao, Christopher D. Hundhausen, Filip Jagodzinski, Josh Myers-Dean, and Kira Jaeger",
-      "link": "",
-      "title": "Towards Modeling Student Engagement with Interactive Computing Textbooks: An Empirical Study",
-      "venue": "SIGCSE 2021" 
-    },
-    {
-      "authors" : "David Smith, Qiang Hao, Ph.D., Vanessa Dennen, Michail Tsikerdekis, Bradley Barnes, Lilu Martin, Nathan Tresham, ",
-      "link": "https://educationaltechnologyjournal.springeropen.com/articles/10.1186/s41239-020-00200-7",
-      "title": "Towards Understanding Student Online Question & Answer Interactions in Large-Scale Classes in STEM Education ",
-      "venue": "International Journal of Educational Technology in Higher Education" 
-    },
-    {
-      "authors": "D. H. Smith IV, Q. Hao, F. Jagodzinski,  V. Gupta, Y. Liu, ",  
-      "link": "http://qhao.info/downloads/comped-2019.pdf",
-      "title": "Quantifying the Effects of Prior Knowledge in Entry-Level Programming Courses. ",
-      "venue": "CompEd 2019"
-    },
-    {
-      "authors": "Hao, Q., Wilson, J., Ottaway, C., Iriumi, N., Arakawa, K., Smith, D. , ",
-      "link": "https://arxiv.org/abs/1906.08937",
-      "title": "Investigating the Essential of Meaningful Automated Formative Feedback for Programming Assignments ",
-      "venue": "In Proceedings of 2019 IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC). Memphis, TN. "
-    },
-    {
-      "authors": "Q. Hao, D. H. Smith IV, N. Iriumi, M. Tsikerdekis, Amy. J. Ko,  ",
-      "link": "https://dl.acm.org/citation.cfm?id=3345328",
-      "title": "A Systematic Investigation of Replications in Computing Education Research ",
-      "venue": "ACM Transactions on Computing Education (TOCE). "
-    }
-  ],
+        {
+            "authors" : "Qiang Hao, David H. Smith IV, Lu Ding, Amy Ko, Camille Ottaway, Jack Wilson, Kai H. Arakawa, Alistair Turcan, Timothy Poehlman, and Tyler Greer",
+            "link": "https://www.tandfonline.com/doi/abs/10.1080/08993408.2020.1860408?journalCode=ncse20",
+            "title": "Towards Understanding the Effective Design of Automated Formative feedback for Programming Assignments",
+            "venue": "Computer Science Education" 
+        },
+        {
+            "authors" : "David H. Smith IV, Qiang Hao, Christopher D. Hundhausen, Filip Jagodzinski, Josh Myers-Dean, and Kira Jaeger",
+            "link": "",
+            "title": "Towards Modeling Student Engagement with Interactive Computing Textbooks: An Empirical Study",
+            "venue": "SIGCSE 2021" 
+        },
+        {
+            "authors" : "David Smith, Qiang Hao, Ph.D., Vanessa Dennen, Michail Tsikerdekis, Bradley Barnes, Lilu Martin, Nathan Tresham, ",
+            "link": "https://educationaltechnologyjournal.springeropen.com/articles/10.1186/s41239-020-00200-7",
+            "title": "Towards Understanding Student Online Question & Answer Interactions in Large-Scale Classes in STEM Education ",
+            "venue": "International Journal of Educational Technology in Higher Education" 
+        },
+        {
+            "authors": "D. H. Smith IV, Q. Hao, F. Jagodzinski,  V. Gupta, Y. Liu, ",  
+            "link": "http://qhao.info/downloads/comped-2019.pdf",
+            "title": "Quantifying the Effects of Prior Knowledge in Entry-Level Programming Courses. ",
+            "venue": "CompEd 2019"
+        },
+        {
+            "authors": "Hao, Q., Wilson, J., Ottaway, C., Iriumi, N., Arakawa, K., Smith, D. , ",
+            "link": "https://arxiv.org/abs/1906.08937",
+            "title": "Investigating the Essential of Meaningful Automated Formative Feedback for Programming Assignments ",
+            "venue": "In Proceedings of 2019 IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC). Memphis, TN. "
+        },
+        {
+            "authors": "Q. Hao, D. H. Smith IV, N. Iriumi, M. Tsikerdekis, Amy. J. Ko,  ",
+            "link": "https://dl.acm.org/citation.cfm?id=3345328",
+            "title": "A Systematic Investigation of Replications in Computing Education Research ",
+            "venue": "ACM Transactions on Computing Education (TOCE). "
+        }
+    ],
 
-  "merits": [
-    {
-      "title":"Ray Ozzie Computer Science Fellowship",
-      "description":"An $8000 scholarship avaliable to graduate students in the Department of Computer Science at UIUC."
-    },
-    {
-      "title":"Faithlife Corp. Scholarship",
-      "description":"One of eighteen students awarded a departmental scholarship for computer science at Western Washington University for $2000."
-    },
-    {
-      "title":"Western Washington University Departmental Scholarship",
-      "description":"One of a select number of students to be awarded a $1000 dollar scholarship for academic merit within the computer science major."
-    }
-  ]
+    "merits": [
+        {
+            "title":"Ray Ozzie Computer Science Fellowship",
+            "description":"An $8000 scholarship avaliable to graduate students in the Department of Computer Science at UIUC."
+        },
+        {
+            "title":"Faithlife Corp. Scholarship",
+            "description":"One of eighteen students awarded a departmental scholarship for computer science at Western Washington University for $2000."
+        },
+        {
+            "title":"Western Washington University Departmental Scholarship",
+            "description":"One of a select number of students to be awarded a $1000 dollar scholarship for academic merit within the computer science major."
+        }
+    ]
 
 }

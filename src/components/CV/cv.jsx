@@ -19,7 +19,7 @@ export default class CV extends Component {
           <div className="cv-position"><b>{fields.school}</b></div>
           <div className="cv-year">{fields.years}</div>
           {fields.degrees.map( (degree, id) => { return <React.Fragment> <i> {degree} </i> <br/> </React.Fragment>})}
-          {fields.advisor != "" ? (<i> <b> Advisor: </b> {fields.advisor}</i>) : (<div></div>) }
+          {fields.advisor !== "" ? (<i> <b> Advisor: </b> {fields.advisor}</i>) : (<div></div>) }
         </React.Fragment> 
       );
     });
@@ -29,6 +29,7 @@ export default class CV extends Component {
       return(
         <React.Fragment>
           <div className="cv-position"><b>{experience.employer}</b></div>
+          <div className="cv-year">{experience.duration}</div>
           <i>{experience.position}</i>
           <ul>
             { experience.accomplishments.map( (accomplishment, id) => { return <li> {accomplishment} </li> } )}
