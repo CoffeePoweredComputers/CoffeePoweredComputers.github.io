@@ -91,6 +91,12 @@
     "publications": [
 
         {
+            "authors" : "Max Fowler, David H. Smith IV, Chinny Emeka, Matthew West, Craig Zilles",
+            "link": "https://www.tandfonline.com/doi/abs/10.1080/08993408.2020.1860408?journalCode=ncse20",
+            "title": "Are We Fair? Quantifying Score Impacts of Computer Science Exams with Randomized Question Pools",
+            "venue": "SIGCSE 2022 (Accepted)" 
+        },
+        {
             "authors" : "Qiang Hao, David H. Smith IV, Lu Ding, Amy Ko, Camille Ottaway, Jack Wilson, Kai H. Arakawa, Alistair Turcan, Timothy Poehlman, and Tyler Greer",
             "link": "https://www.tandfonline.com/doi/abs/10.1080/08993408.2020.1860408?journalCode=ncse20",
             "title": "Towards Understanding the Effective Design of Automated Formative feedback for Programming Assignments",
