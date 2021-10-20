@@ -67,11 +67,11 @@ export default class CV extends Component {
       return(
         <React.Fragment>
           <li>
-            {pub.authors} 
+            {pub.authors},&nbsp;
             <a href={pub.link}>
               <b>{pub.title}</b>
             </a> 
-            {pub.venue}
+            ,&nbsp;{pub.venue}
           </li>
         </React.Fragment>
         );
