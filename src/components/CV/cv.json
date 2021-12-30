@@ -26,6 +26,13 @@
 
     "experience" : [
         {
+            "employer": "University of Illinois at Urbana-Champaign",
+            "position":  "Co-Instructor",
+            "duration": "Spring 2022",
+            "accomplishments": [
+            ]
+        },
+        {
             "employer": "University Laboratory High School",
             "position":  "Instructor - Intro to Computer Programming ",
             "duration": "Fall 2021",
@@ -34,7 +41,7 @@
         },
         {
             "employer": "University of Illinois at Urbana-Champaign",
-            "position":  "Instructor - CS 105 Summer '21'",
+            "position":  "Instructor",
             "duration": "Summer 2021",
             "accomplishments": [
             ]
@@ -42,7 +49,7 @@
         {
             "employer": "University of Illinois at Urbana-Champaign",
             "position":  "Teaching Assistant - CS 105",
-            "duration": "Fall 2020 - ",
+            "duration": "Fall 2020 - Fall 2021",
             "accomplishments": [
                 "Listed among \"Instructors Ranked as Excellent\" for the Spring 2021 semester",
                 "Developed a Discord bot and environment for facillitating lecture discussions and labs during the COVID-19 pandemic"
@@ -73,6 +80,14 @@
 
     "projects" : [
 
+        {
+            "title": "Teaching Endorsement in Computer Science" ,
+            "client": "University of Illinois @ Urbana-Champaign - Department of Curriculum and Instructor",
+            "image_path": "assets/uiuc_ed.png",
+            "work": [
+                "Currently working to develop CI 487 - Data Structures for CS Teachers"
+            ]
+        },
         {
             "title": "High Performance Computing Time-Series Visualization Dashboard" ,
             "client": "Dr. Tanzima Islam, Lawrence Livermore National Laboratory, Western Washington University",
