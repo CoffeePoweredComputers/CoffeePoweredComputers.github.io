@@ -50,38 +50,40 @@ export default class Home extends Component {
             </Col>
             <Col className='bio bio-alignment'>
 
-              <b> I am a second PhD student at the University of Illinois
-              Urbana-Champaign in the Department of Computer Science. </b> My
-              current research focus in the development and administration of
-              randomized exams as well as introductory computer science
-              education. 
+            <p>
+              <strong> I am a second PhD student at the University of Illinois
+              Urbana-Champaign in the Department of Computer Science. </strong>
+              My current research focus in the development and administration of
+              randomized, computer-based exams as well as introductory computer
+              science education. 
+            </p>
 
-              To meet the demands of enrollment,  an online assessment platform
-              developed at UIUC called "PrairieLearn" is commonly used to
-              administer exams and students are tested asynchronously through
-              the Computer-Based Testing Facility located in the Engineering
-              Library. To help maintain exam security, PrairieLearn enables
-              instructors to build their exam forms with pools of questions.
-              When a student begins an exam, the platform then randomly selects
-              one or more questions from each of these pools to generate an
-              exam form. Currently, instructors attempt the fairness of
-              randomly created forms by ensuring that the items in each pool
-              are roughly equivalent in terms of their difficulty. I am
-              interested both in evaluating the fairness of these randomized
-              exams in courses currently using the platform at UIUC and in ways
-              of integrating equating methods into the platform to ensure that
-              students are graded in accordance with the difficulty of the exam
-              form they receive.
+            <p>
+                <b><i> Assessment: </i></b> To maintain exam security for large
+                scale asynchronous assessments, many courses at UIUC use the
+                PrairieLearn platform to develop and a deliver their exams.
+                When a student begins an exam, an exam generator created by the
+                instructor randomly selects questions from predefined pools and
+                generates a unique exam form for that student. I am interested
+                both in evaluating the fairness of these randomized exams in
+                courses currently using the PrairieLearn platform at UIUC and
+                in ways of integrating equating methods into the platform to
+                ensure that students are graded in accordance with the
+                difficulty of the exam form they receive.
+            </p>
 
-              I am also interested in developing tools for teaching introductory
-              Python. I am currently developing a tool that allows for the automatic
-              generation of distractors for Parson's problems. The distractors it 
-              generates for each line of code in a given program are based on
-              student made errors in expression and statement writing questions.
-              The purpose of this tool will be to: (1) evaluate which distractors
-              students select the most and (2) develop best practices for the 
-              creation of distractors for Parson's problems in the context of 
-              introductory Python.
+            <p>
+                <b><i> Intro CS: </i></b> I am also interested in developing
+                tools for teaching introductory Python. I am currently
+                developing a tool that allows for the automatic generation of
+                distractors for Parson's problems. The distractors it generates
+                for each line of code in a given program are based on student
+                made errors in expression and statement writing questions.  The
+                purpose of this tool will be to: (1) evaluate which distractors
+                students select the most and (2) develop best practices for the
+                creation of distractors for Parson's problems in the context of
+                introductory Python.
+            </p>
 
             </Col>
           </Row>

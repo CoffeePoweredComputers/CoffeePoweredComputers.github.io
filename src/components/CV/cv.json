@@ -37,6 +37,7 @@
             "position":  "Instructor - Intro to Computer Programming ",
             "duration": "Fall 2021",
             "accomplishments": [
+                "Course Website: <a href=\"https://hamiltonfour.tech/uni-high-fall-21/\">https://hamiltonfour.tech/uni-high-fall-21/</a> "
             ]
         },
         {
@@ -148,7 +149,16 @@
             "venue": "ACM Transactions on Computing Education (TOCE). "
         }
     ],
-
+    "course_websites":[
+        {
+            "name": "Uni-High Fa21",
+            "link": "https://hamiltonfour.tech/uni-high-fall-21/"
+        },
+        {
+            "name": "CS 105 Su20",
+            "link": "https://hamiltonfour.tech/cs-105-summer-21/"
+        }
+    ],
     "merits": [
         {
             "title":"Ray Ozzie Computer Science Fellowship",
