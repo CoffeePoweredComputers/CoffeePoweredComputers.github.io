@@ -106,8 +106,14 @@
     "publications": [
 
         {
+            "authors" : "Max Fowler, David H. Smith IV, Mohammad Hassan, Seth Poulson, Matthew West, Craig Zilles",
+            "link": "",
+            "title": "Reevaluating the Relationship between Explaining, Tracing, and Writing Skills in CS1",
+            "venue": "Computers & Education (Accepted)" 
+        },
+        {
             "authors" : "Max Fowler, David H. Smith IV, Chinny Emeka, Matthew West, Craig Zilles",
-            "link": "https://www.tandfonline.com/doi/abs/10.1080/08993408.2020.1860408?journalCode=ncse20",
+            "link": "",
             "title": "Are We Fair? Quantifying Score Impacts of Computer Science Exams with Randomized Question Pools",
             "venue": "SIGCSE 2022 (Accepted)" 
         },
@@ -119,7 +125,7 @@
         },
         {
             "authors" : "David H. Smith IV, Qiang Hao, Christopher D. Hundhausen, Filip Jagodzinski, Josh Myers-Dean, and Kira Jaeger",
-            "link": "",
+            "link": "https://dl.acm.org/doi/abs/10.1145/3408877.3432361",
             "title": "Towards Modeling Student Engagement with Interactive Computing Textbooks: An Empirical Study",
             "venue": "SIGCSE 2021" 
         },
