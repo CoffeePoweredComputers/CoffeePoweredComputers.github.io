@@ -77,6 +77,18 @@ export default class CV extends Component {
                 );
         });
 
+        const invitedTalk = CVData.talks.map ( (pub, id) => {
+            return(
+                <React.Fragment>
+                    <li>
+                        <b>{pub.title}</b>
+                        ,&nbsp;{pub.venue}
+                    </li>
+                </React.Fragment>
+                );
+        });
+
+
         const merits = CVData.merits.map( (merit, id) => {
             return(
                 <React.Fragment>
@@ -118,6 +130,11 @@ export default class CV extends Component {
                         <div className="cv-header"><b>Publications</b></div>
                         <ul>
                             {publications}
+                        </ul>
+
+                        <div className="cv-header"><b>Invited Talks</b></div>
+                        <ul>
+                            {invitedTalk}
                         </ul>
 
                         <div className="cv-header"><b>Course Websites</b></div>

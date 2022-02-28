@@ -154,6 +154,12 @@
             "venue": "ACM Transactions on Computing Education (TOCE). "
         }
     ],
+    "talks": [
+        {
+            "title": "Student Engagment and Interactive Textbooks",
+            "venue": "CRED @ University of California - Davis"
+        }
+    ],
     "course_websites":[
         {
             "name": "Uni-High Fa21",
