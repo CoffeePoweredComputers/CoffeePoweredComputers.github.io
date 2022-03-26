@@ -79,7 +79,14 @@
     ],
 
     "projects" : [
-
+        {
+            "title": "Parsons" ,
+            "client": "",
+            "image_path": "assets/parsons-autogen.gif",
+            "work": [
+                "A tool currently under development that automatically generates distractors based on common programming errors from an introductory Python course."
+            ]
+        },
         {
             "title": "Teaching Endorsement in Computer Science" ,
             "client": "University of Illinois @ Urbana-Champaign - Department of Curriculum and Instructor",
