@@ -80,7 +80,7 @@
 
     "projects" : [
         {
-            "title": "Parsons" ,
+            "title": "Automatic Distractor Generation for Parson's Problems in CS0 and CS1" ,
             "client": "",
             "image_path": "assets/parsons-autogen.gif",
             "work": [
