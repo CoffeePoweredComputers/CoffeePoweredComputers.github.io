@@ -1,7 +1,20 @@
 [
  {
+  "title": "Python Tutor + Jupyter Notebooks",
+  "link": "https://davidhsmith4.medium.com/python-tutor-jupyter-notebooks-3dfd263132a6?source=rss-d4d6e1e0a7de------2",
+  "date": "Mon, 18 Apr 2022 03:16:00 GMT",
+  "keywords": [
+   "cs-education",
+   "python-tutor",
+   "teaching-tools",
+   "python",
+   "jupyter-notebook"
+  ],
+  "body": "Over the last two years of doing Zoom lectures for hundreds of introductory Python students, one of the things I\u2019m always looking to do is reduce platforms. We used to use repl.it for simple scripting tutorials, Python Tutor for in-depth code tracing discussions, and occasionally Jupyter when going over file reading and HTML. However, recently the platform used to host homework and exams for the course (PrairieLearn) has integrated support for Jupyter Hub and the students now use that platform exclusively for their labs and as the IDE they are given for exams and quizzes. As such, I\u2019ve largely abandoned repl.it is for lectures in favor of Jupyter. The reasons for this are twofold: 1) I imagine it\u2019s distracting for students to have to watch me switch tabs and 2) I don\u2019t like switching tabs. It\u2019s much easier for me to have the simple scripting process in an environment the students are already familiar with and have all visualizations present in that same environment. As such, I came up with this little function to take the source from a cell that just ran in Jupyter and get an iFrame which can be embedded and run in a Jupyter notebook\u00a0itself."
+ },
+ {
   "title": "Bolt Modding an IBM Model M122 \u201cBattlecruiser\u201d",
-  "link": "https://medium.com/@davidhsmith4/bolt-modding-a-ibm-model-m122-battle-cruiser-d8b026e456b7?source=rss-d4d6e1e0a7de------2",
+  "link": "https://davidhsmith4.medium.com/bolt-modding-a-ibm-model-m122-battle-cruiser-d8b026e456b7?source=rss-d4d6e1e0a7de------2",
   "date": "Thu, 09 Apr 2020 04:26:43 GMT",
   "keywords": [
    "keyboard"
@@ -10,7 +23,7 @@
  },
  {
   "title": "Installing Arch Linux\u200a\u2014\u200aA Beginners Guide (Part 2)",
-  "link": "https://medium.com/@davidhsmith4/installing-arch-linux-a-beginners-guide-part-2-e1300ff2c73b?source=rss-d4d6e1e0a7de------2",
+  "link": "https://davidhsmith4.medium.com/installing-arch-linux-a-beginners-guide-part-2-e1300ff2c73b?source=rss-d4d6e1e0a7de------2",
   "date": "Tue, 07 Apr 2020 01:00:54 GMT",
   "keywords": [
    "guides-and-tutorials",
@@ -20,7 +33,7 @@
  },
  {
   "title": "Installing Arch Linux\u200a\u2014\u200aA Beginners Guide (Part 1)",
-  "link": "https://medium.com/@davidhsmith4/installing-arch-linux-a-beginners-guide-part-1-b1c2f399d5ee?source=rss-d4d6e1e0a7de------2",
+  "link": "https://davidhsmith4.medium.com/installing-arch-linux-a-beginners-guide-part-1-b1c2f399d5ee?source=rss-d4d6e1e0a7de------2",
   "date": "Fri, 27 Mar 2020 03:12:30 GMT",
   "keywords": [
    "guides-and-tutorials",

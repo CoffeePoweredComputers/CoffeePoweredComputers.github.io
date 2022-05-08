@@ -27,7 +27,7 @@
     "experience" : [
         {
             "employer": "University of Illinois at Urbana-Champaign",
-            "position":  "Co-Instructor",
+            "position":  "Co-Instructor/Lead TA",
             "duration": "Spring 2022",
             "accomplishments": [
             ]
@@ -89,10 +89,11 @@
         },
         {
             "title": "Teaching Endorsement in Computer Science" ,
-            "client": "University of Illinois @ Urbana-Champaign - Department of Curriculum and Instructor",
+            "client": "University of Illinois @ Urbana-Champaign - College of Education",
             "image_path": "assets/uiuc_ed.png",
             "work": [
-                "Currently working to develop CI 487 - Data Structures for CS Teachers"
+                "Currently working to develop CI 487 - Data Structures for CS Teachers",
+                "Developing a set of interactive Jupyter Notebook based worksheets: https://github.com/CoffeePoweredComputers/487-data-structures-worksheets"
             ]
         },
         {
@@ -175,6 +176,10 @@
         {
             "name": "CS 105 Su20",
             "link": "https://hamiltonfour.tech/cs-105-summer-21/"
+        },
+        {
+            "name": "CI 487 (Under Development)",
+            "link": "https://hamiltonfour.tech/487-data-structures//"
         }
     ],
     "merits": [

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Jumbotron, Container, Row, Col, Image} from 'react-bootstrap';
+import { Jumbotron, Container, Row, Col, Image, Button} from 'react-bootstrap';
 import "./cv.css";
 import CVData from './cv.json';
+
 
 
 export default class CV extends Component {
@@ -9,6 +10,7 @@ export default class CV extends Component {
     componentDidMount() {
         document.title = "David H Smith IV | CV";
     }
+
 
     render() {
 
@@ -114,7 +116,7 @@ export default class CV extends Component {
             <Container>
                 <Jumbotron>
 
-                    <div className="cv">
+                    <div className="cv" id="cv" ref="cv">
 
                         <div className="cv-header"><b>Education</b></div>
                         {education}

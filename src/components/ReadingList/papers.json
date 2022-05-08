@@ -1,0 +1,25 @@
+[
+    {
+        "title": "Notional Machines",
+        "papers": [
+            "This is  notion machien",
+            "asdf",
+            "adsf"
+        ],
+        "books": [
+            "asdfasdf",
+            "asdfasdf",
+            "asdfdf"
+        ]
+    },
+    {
+        "title": "Python Education",
+        "papers": [],
+        "books": []
+    },
+    {
+        "title": "Psychometrics",
+        "papers": [],
+        "books": []
+    }
+]
