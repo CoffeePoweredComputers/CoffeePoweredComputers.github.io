@@ -2,14 +2,24 @@
     {
         "title": "Notional Machines",
         "papers": [
-            "This is  notion machien",
-            "asdf",
-            "adsf"
+            {
+                "title": "Some Difficulties of Learning to Program",
+                "link": "https://doi.org/10.2190/3LFX-9RRF-67T8-UVK9"
+            },
+            {
+                "title": "The black box inside the glass box: presenting computing concepts to novices",
+                "link": "https://doi.org/10.1016/S0020-7373(81)80056-9"
+            },
+            {
+                "title": "Notional Machines in Computing Education: The Education of Attention",
+                "link": "https://doi.org/10.1145/3437800.3439202"
+            },
+            {
+                "title": "Capturing and Characterising Notional Machines",
+                "link": "https://doi.org/10.1145/3341525.3394988"
+            }
         ],
         "books": [
-            "asdfasdf",
-            "asdfasdf",
-            "asdfdf"
         ]
     },
     {
@@ -21,5 +31,45 @@
         "title": "Psychometrics",
         "papers": [],
         "books": []
+    },
+    {
+        "title": "Cognitive Science",
+        "papers": [],
+        "books": []
+    },
+    {
+        "title": "Constructivism and Constructionism",
+        "papers": [
+            {
+                "title": "Using Bridging Analogies and Anchoring Intuitions to Deal with Students’ Preconceptions in Physics",
+                "link": "https://doi.org/10.1002/tea.3660301007"
+            },
+            {
+                "title": "Studying Cognition in Flux: A Historical  Treatment of Fu in the Shifting Structure of  Oksapmin Mathematics",
+                "link": "https://doi.org/10.1080/10749039.2005.9677810"
+            },
+            {
+                "title": "The Role of Discourse in Group Knowledge Construction:  A Case Study of Engineering Students",
+                "link": "https://doi.org/10.1002/tea.20003"
+            },
+            {
+                "title": "Promoting socio-political identification with  computer science: How high school youth restory  their identities through electronic textile quilts",
+                "link": "https://doi.org/10.1109/RESPECT51740.2021.9620625"
+            },
+            {
+                "title": "“Estoy Explorando Science”: Emergent bilingual  students problematizing electrical phenomena  through translanguaging",
+                "link": " https://doi.org/10.1002/sce.21588 "
+            },
+            {
+                "title": "Overview  of  Problem-based  Learning:  Definitions and Distinctions",
+                "link": "https://doi.org/10.7771/1541-5015.1002"
+            }
+        ],
+        "books": [
+            {
+                "title": "Mindstorms: Children, Computers, And Powerful Ideas ",
+                "link": "https://www.amazon.com/Mindstorms-Children-Computers-Powerful-Ideas/dp/0465046746"
+            }
+        ]
     }
 ]

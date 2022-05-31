@@ -16,15 +16,15 @@ export default class ReadingList extends Component {
 
         const topics  = papers.map( (topic, id) => {
 
-            const papers = topic.papers.map( (paper, id) => { 
+            const papers = topic.papers.map( (paperInfo, id) => { 
                 return(
-                    <li>{paper}</li>
+                    <li><b><a href={paperInfo.link}>{paperInfo.title}</a>:</b> {paperInfo.summary}</li>
                     );
             })
 
-            const books = topic.books.map( (book, id) => {
+            const books = topic.books.map( (bookInfo, id) => { 
                 return(
-                    <li>{book}</li>
+                    <li><b><a href={bookInfo.link}>{bookInfo.title}</a>:</b> {bookInfo.summary}</li>
                     );
             })
 
@@ -42,13 +42,13 @@ export default class ReadingList extends Component {
                                     <div className="year-header"> Books </div>
                                 </Row>
                                 <ul>
-                                    {papers}
+                                    {books}
                                 </ul>
                                 <Row>
                                     <div className="year-header"> Papers </div>
                                 </Row>
                                 <ul>
-                                    {books}
+                                    {papers}
                                 </ul>
                             </Card.Body>
                         </Accordion.Collapse>
