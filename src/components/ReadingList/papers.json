@@ -34,8 +34,38 @@
     },
     {
         "title": "Cognitive Science",
-        "papers": [],
-        "books": []
+        "books": [
+            {
+                "title": "Computation and Cognition: Towards a Foundation for Cognitive Science",
+                "link": "https://mitpress.mit.edu/books/computation-and-cognition"
+            }
+        ],
+        "papers": [
+            {
+                "title": "Mental models in cognitive science.",
+                "link": ""
+            },
+            {
+                "title": "Categorization and representation of physics problems by experts and novices",
+                "link": ""
+            },
+            {
+                "title": "Structure-mapping: A theoretical framework for analogy.",
+                "link": ""
+            },
+            {
+                "title": "Feature discovery by competitive learning.",
+                "link": ""
+            },
+            {
+                "title": "Finding structure in time.",
+                "link": ""
+            },
+            {
+                "title": "Principles of object perception",
+                "link": ""
+            }
+        ]
     },
     {
         "title": "Constructivism and Constructionism",
@@ -70,6 +100,21 @@
                 "title": "Mindstorms: Children, Computers, And Powerful Ideas ",
                 "link": "https://www.amazon.com/Mindstorms-Children-Computers-Powerful-Ideas/dp/0465046746"
             }
+        ]
+    },
+    {
+        "title": "",
+        "papers":[
+            {
+                "title": "Reinforcement-test sequences in paired-associate learning",
+                "link": "https://doi.org/10.2466/pr0.1966.18.3.879"
+            },
+            {
+                "title": "The critical role of retrieval practice in long-term retention",
+                "link": "https://doi.org/10.1016/j.tics.2010.09.003"
+            }
+        ],
+        "books":[
         ]
     }
 ]
