@@ -103,7 +103,7 @@
         ]
     },
     {
-        "title": "",
+        "title": "Testing Frequency & Testing Effect",
         "papers":[
             {
                 "title": "Reinforcement-test sequences in paired-associate learning",
@@ -112,9 +112,22 @@
             {
                 "title": "The critical role of retrieval practice in long-term retention",
                 "link": "https://doi.org/10.1016/j.tics.2010.09.003"
+            },
+            {
+                "title": "Not new, but nearly forgotten: The testing effect decreases or even disappears as the complexity of learning materials increases",
+                "link": "https://doi.org/10.1007/s10648-015-9310-x"
+            },
+            {
+                "title": "Über Einprägung durch Lesen und durch Rezitieren [On imprinting by reading and reciting]",
+                "link": "https://books.google.com/books/about/%C3%9Cber_Einpr%C3%A4gung_durch_Lesen_und_durch.html?id=2FkVAQAAIAAJ"
             }
         ],
         "books":[
+            {
+                "title": "Recitation as a factor in memorizing",
+                "link": "https://openlibrary.org/books/OL6604271M/Recitation_as_a_factor_in_memorizing"
+            }
+
         ]
     }
 ]
