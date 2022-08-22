@@ -162,6 +162,15 @@
             "venue": "ACM Transactions on Computing Education (TOCE). "
         }
     ],
+    "workshops": [
+        {
+            "authors": "Max Folwer*, David Smith*, Chinny Emeka, and Craig Zilles",
+            "title": "Smaller, frequent tests boost student performance: directly comparing the imapct of frequent testing vs. the traditional midterm/final split",
+            "venue": "iCSTW22: The 2022 Illinois Computer Science Teaching Workshop",
+            "slides": "",
+            "paper": ""
+        }
+    ],
     "talks": [
         {
             "title": "Student Engagment and Interactive Textbooks",

@@ -51,7 +51,7 @@ export default class Home extends Component {
             <Col className='bio bio-alignment'>
 
             <p>
-              <strong> I am a second year PhD student at the University of Illinois
+              <strong> I am a third year PhD student at the University of Illinois
               Urbana-Champaign in the Department of Computer Science. </strong>
               My current research focus in the development and administration of
               randomized, computer-based exams as well as introductory computer
