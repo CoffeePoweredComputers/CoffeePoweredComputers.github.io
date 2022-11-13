@@ -114,16 +114,28 @@
     "publications": [
 
         {
-            "authors" : "Max Fowler, David H. Smith IV, Mohammad Hassan, Seth Poulson, Matthew West, Craig Zilles",
+            "authors" : "David H. Smith IV, Chinny Emeka, Max Fowler, Matthew West, Craig Zilles",
             "link": "",
+            "title": "Investigating the Impact of Testing Frequency on Performance, Perceptions, and Behavior in CS1",
+            "venue": "SIGCSE 2023 (Accepted)" 
+        },
+        {
+            "authors" : "David H. Smith IV & Craig Zilles",
+            "link": "",
+            "title": "Discovering, Autogenerating, and Evaluating Distractors for Python Parsons Problems in CS1",
+            "venue": "SIGCSE 2023 (Accepted)" 
+        },
+        {
+            "authors" : "Max Fowler, David H. Smith IV, Mohammad Hassan, Seth Poulson, Matthew West, Craig Zilles",
+            "link": "https://doi.org/10.1080/08993408.2022.2079866",
             "title": "Reevaluating the Relationship between Explaining, Tracing, and Writing Skills in CS1",
-            "venue": "Computers & Education (Accepted)" 
+            "venue": "Computers Science Education" 
         },
         {
             "authors" : "Max Fowler, David H. Smith IV, Chinny Emeka, Matthew West, Craig Zilles",
             "link": "",
             "title": "Are We Fair? Quantifying Score Impacts of Computer Science Exams with Randomized Question Pools",
-            "venue": "SIGCSE 2022 (Accepted)" 
+            "venue": "SIGCSE 2022" 
         },
         {
             "authors" : "Qiang Hao, David H. Smith IV, Lu Ding, Amy Ko, Camille Ottaway, Jack Wilson, Kai H. Arakawa, Alistair Turcan, Timothy Poehlman, and Tyler Greer",
