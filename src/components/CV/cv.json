@@ -80,11 +80,12 @@
 
     "projects" : [
         {
-            "title": "Automatic Distractor Generation for Parson's Problems in CS0 and CS1" ,
+            "title": "Automatic Distractor Generation for Python Parson's Problems" ,
             "client": "",
             "image_path": "assets/parsons-autogen.gif",
             "work": [
-                "A tool currently under development that automatically generates distractors based on common programming errors from an introductory Python course."
+                "A tool currently under development that automatically generates distractors based on common programming errors from an introductory Python course.",
+                "The tool can be accessed here: https://github.com/CoffeePoweredComputers/DistractingParsonsGen"
             ]
         },
         {
@@ -112,18 +113,23 @@
     ],
 
     "publications": [
-
+        {
+            "authors" : "David H. Smith IV, Max Fowler, Craig Zilles",
+            "link": "",
+            "title": "Investigating the Role and Impact of Distractors on Parsons Problems in CS1 Assessments",
+            "venue": "ITiCSE 2023" 
+        },
         {
             "authors" : "David H. Smith IV, Chinny Emeka, Max Fowler, Matthew West, Craig Zilles",
-            "link": "",
+            "link": "https://zilles.cs.illinois.edu/papers/frequent_testing_sigcse23.pdf",
             "title": "Investigating the Impact of Testing Frequency on Performance, Perceptions, and Behavior in CS1",
-            "venue": "SIGCSE 2023 (Accepted)" 
+            "venue": "SIGCSE 2023" 
         },
         {
             "authors" : "David H. Smith IV & Craig Zilles",
-            "link": "",
+            "link": "https://zilles.cs.illinois.edu/papers/smith_parsons_sigcse23.pdf",
             "title": "Discovering, Autogenerating, and Evaluating Distractors for Python Parsons Problems in CS1",
-            "venue": "SIGCSE 2023 (Accepted)" 
+            "venue": "SIGCSE 2023" 
         },
         {
             "authors" : "Max Fowler, David H. Smith IV, Mohammad Hassan, Seth Poulson, Matthew West, Craig Zilles",
