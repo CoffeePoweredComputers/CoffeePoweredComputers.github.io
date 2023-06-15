@@ -147,6 +147,7 @@ export default class CV extends Component {
                         <ul>
                             {publications}
                         </ul>
+                        <span> <i> Note: the * indicates equal contribution </i> </span>
 
                         <div className="cv-header"><b>Workshops</b></div>
                         <ul>
