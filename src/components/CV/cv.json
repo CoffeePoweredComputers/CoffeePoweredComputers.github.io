@@ -114,6 +114,30 @@
 
     "publications": [
         {
+            "authors" : "Max Fowler*, David H. Smith IV*, Binglin Chen, and Craig Zilles",
+            "link": "",
+            "title": "'I Don’t Gamble To Make My Livelihood': Understanding the Incentives For, Needs Of, and Motivations Surrounding Open Educational Resources in Computing",
+            "venue": "ICER 2023" 
+        },
+        {
+            "authors" : "David H. Smith IV",
+            "link": "",
+            "title": "Useful Distractions? Evaluating the Utility of Distractors in Parsons Problems",
+            "venue": "ICER 2023 - Doctoral Consortium" 
+        },
+        {
+            "authors" : "David H. Smith IV, Ujjal K. Bhowmik, and Yuting Chen",
+            "link": "",
+            "title": "Understanding the impacts of extra credit modules on students’ learning experience in a 100-level electrical and computer engineering course",
+            "venue": "ASEE 2023" 
+        },
+        {
+            "authors" : "Chinedu Emeka, David H. Smith IV, Craig Zilles, Matthew West, Geoffrey L. Herman, and Timothy Bretl",
+            "link": "",
+            "title": "Determining the Best Policies for Second-Change Tests for STEM Students",
+            "venue": "ASEE 2023" 
+        },
+        {
             "authors" : "David H. Smith IV, Max Fowler, Craig Zilles",
             "link": "",
             "title": "Investigating the Role and Impact of Distractors on Parsons Problems in CS1 Assessments",
