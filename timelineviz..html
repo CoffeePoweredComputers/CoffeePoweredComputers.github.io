@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <title>Simple Bar chart</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+body {
+  font-family: "Arial", sans-serif;
+}
+                .grid line{
+                  stroke: lightgrey;
+                  stroke-opacity: 0.75;
+                  shape-rendering: geometricPrecision;
+                }
+
+                .grid path{
+                  stroke: lightgrey;
+                  stroke-opacity: 0.5;
+                  shape-rendering: crispEdges;
+                }
+
+                .axis {
+                  font-size: 13px;
+                }
+
+                .axis path,
+                .axis line {
+                  fill: none;
+                  display: none;
+                }
+
+                .label {
+                  font-size: 13px;
+                }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id="graphic"></div>
+
+    <script>
+      const data = {
+              "intervals" : [
+                              {"value": 10, "question" :"Q1", "start": "2020-08-09 21:06:19", "stop": "2020-08-09 21:16:10", "duration": "00:10:09"},
+                              {"value": 10, "question" :"Q2", "start": "2020-08-09 21:16:19", "stop": "2020-08-09 21:17:10", "duration": "00:01:09"},
+                              {"value": 10, "question" :"Q3", "start": "2020-08-09 21:17:10", "stop": "2020-08-09 21:19:19", "duration": "00:02:09"},
+                              {"value": 10, "question" :"Q2", "start": "2020-08-09 21:19:19", "stop": "2020-08-09 21:20:10", "duration": "00:01:09"}
+                    ],
+              "events" : [
+                              {"question" :"Q1", "time": "2020-08-09 21:06:19", "color": "black"},
+                              {"question" :"Q1", "time": "2020-08-09 21:09:07", "color": "orange"},
+                              {"question" :"Q1", "time": "2020-08-09 21:12:07", "color": "orange"},
+                              {"question" :"Q1", "time": "2020-08-09 21:15:07", "color": "orange"},
+                              {"question" :"Q1", "time": "2020-08-09 21:16:10", "color": "green"},
+
+                              {"question" :"Q2", "time": "2020-08-09 21:16:19", "color": "black"},
+                              {"question" :"Q2", "time": "2020-08-09 21:16:20", "color": "orange"},
+                              {"question" :"Q2", "time": "2020-08-09 21:16:30", "color": "orange"},
+                              {"question" :"Q2", "time": "2020-08-09 21:16:40", "color": "orange"},
+                              {"question" :"Q2", "time": "2020-08-09 21:17:10", "color": "lightgrey"},
+
+                              {"question" :"Q3", "time": "2020-08-09 21:17:10", "color": "black"},
+                              {"question" :"Q3", "time": "2020-08-09 21:17:20", "color": "orange"},
+                              {"question" :"Q3", "time": "2020-08-09 21:17:30", "color": "orange"},
+                              {"question" :"Q3", "time": "2020-08-09 21:17:40", "color": "orange"},
+                              {"question" :"Q3", "time": "2020-08-09 21:18:10", "color": "orange"},
+                              {"question" :"Q3", "time": "2020-08-09 21:18:35", "color": "orange"},
+                              {"question" :"Q3", "time": "2020-08-09 21:19:19", "color": "green"},
+
+                              {"question" :"Q2", "time": "2020-08-09 21:19:19", "color": "white"},
+                              {"question" :"Q2", "time": "2020-08-09 21:19:20", "color": "orange"},
+                              {"question" :"Q2", "time": "2020-08-09 21:19:30", "color": "orange"},
+                              {"question" :"Q2", "time": "2020-08-09 21:19:40", "color": "orange"},
+                              {"question" :"Q2", "time": "2020-08-09 21:20:10", "color": "green"}
+                    ]
+            };
+
+      // Get the time properties
+      const parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S")
+      //var parseDuration = d3.timeParse("%H:%M:%S")
+
+
+      //set up svg using margin conventions - we'll need plenty of room on the left for labels
+      const margin = {
+              top: 15,
+              right: 25,
+              bottom: 25,
+              left: 25
+            };
+
+      const width = 960 - margin.left - margin.right;
+      const height = 500 - margin.top - margin.bottom;
+
+      const svg = d3.select("#graphic").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .call(d3.zoom().on("zoom", zoom))
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+      //get the axis scales
+      const x = d3.scaleTime()
+        .domain([
+                parseDate(d3.min(data.intervals, (d) => { return d.start })),
+                parseDate(d3.max(data.intervals, (d) => { return d.stop }))
+              ])
+        .rangeRound([0, width]);
+
+      const y = d3.scalePoint()
+        .range([height, 0])
+        .padding(0.2)
+        .domain(data.intervals.map((d) => {
+                return d.question;
+              }));
+
+      //get the axis objects
+      const yAxis = d3.axisLeft(y);
+      const xAxis = d3.axisBottom(x);
+
+
+      //make y axis to show bar names
+      const yLabels = svg.append("g")
+        .call(yAxis);
+
+      //make the x axis show datesa
+      const xLabels = svg.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
+
+
+      // add the X grid lines
+      const xGrid = svg.append("g")
+        .attr("class", "grid")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x).ticks(10)
+                .tickSize(-height)
+                .tickFormat("")
+              );
+
+      // add the Y gridlines
+      const yGrid = svg.append("g")
+        .attr("class", "grid")
+        .call(d3.axisLeft(y).ticks(10)
+                .tickSize(-width)
+                .tickFormat("")
+              );
+
+      // Clipping so the lines stay inside the bounds of the plot
+      const clip = svg.append("svg:clipPath")
+        .attr("id", "clip")
+        .append("svg:rect")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("width", width)
+        .attr("height", height);
+
+      const chartBody = svg.append("g")
+        .attr("clip-path", "url(#clip)")
+
+
+      //append intervals
+      const intervals = chartBody.append("g")
+        .attr("id", "intervals")
+        .selectAll("intervals")
+        .data(data.intervals)
+        .enter()
+        .append("line")
+        .style("stroke", "black")
+        .style("stroke-width", "3px")
+        .attr("x1", (d) => { return x(parseDate(d.start)) })
+        .attr('x2', (d) => { return x(parseDate(d.stop)) })
+        .attr("y1", (d) => { return y(d.question)})
+        .attr('y2', (d) => { return y(d.question)});
+
+      //Append the events
+      const events = chartBody.append("g")
+        .attr("id", "events")
+        .selectAll("events")
+        .data(data.events)
+        .enter()
+        .append("line")
+        .style("stroke", (d) => {return d.color})
+        .style("stroke-width", "2px")
+        .attr("x1", (d) => { return x(parseDate(d.time)) })
+        .attr('x2', (d) => { return x(parseDate(d.time)) })
+        .attr("y1", (d) => { return y(d.question) - 10})
+        .attr('y2', (d) => { return y(d.question) + 10});
+
+
+      // la zoom
+      function zoom(event){
+
+              const updatedX = event.transform.rescaleX(x);
+
+              xLabels.transition()
+                .duration(20)
+                .call(xAxis.scale(updatedX));
+
+
+              intervals.attr("x1", (d) => { return updatedX(parseDate(d.start))});
+              intervals.attr("x2", (d) => { return updatedX(parseDate(d.stop))});
+
+              events.attr("x1", (d) => { return updatedX(parseDate(d.time)) });
+              events.attr("x2", (d) => { return updatedX(parseDate(d.time)) });
+
+              xGrid.call(
+                      d3.axisBottom(x)
+                        .scale(event.transform.rescaleX(x))
+                        .ticks(5)
+                        .tickSize(-height)
+                        .tickFormat("")
+                    );
+
+      }
+
+    </script>
+
+  </body>
+
+</html>
