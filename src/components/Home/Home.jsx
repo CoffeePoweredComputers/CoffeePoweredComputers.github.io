@@ -6,90 +6,74 @@ import "./Home.css";
 
 export default class Home extends Component {
 
-  componentDidMount() {
-    document.title = "David H Smith IV | Home";
-  }
+    componentDidMount() {
+        document.title = "David H Smith IV | Home";
+    }
 
-  render() {
+    render() {
 
-    return (
-      <Container>
-        <Jumbotron>
-          <Row>
+        return (
+            <Container>
+                <Jumbotron>
+                    <Row>
 
-            <Col className="how-grid text-center" xs={14} sm={5} >
+                        <Col className="how-grid text-center" xs={14} sm={5} >
 
-              <Image src="assets/prof.png" roundedCircle/>
-              <h3 className="profile-photo-subtitle"> </h3>
+                            <Image src="assets/prof.png" roundedCircle/>
+                            <h3 className="profile-photo-subtitle"> </h3>
 
-              <div>
-                <div className="sub"> Computer Science Education Researcher</div>
-                <div className="sub"> Linux & Coffee Enthusiast</div>
+                            <div>
+                                <div className="sub"> Computer Science Education Researcher</div>
+                                <div className="sub"> Linux & Coffee Enthusiast</div>
 
-                <SocialIcon url="https://www.linkedin.com/in/david-smith-1b9499102/" 
-                style={{ height: 25, width: 25, margin: 2 }} 
-                bgColor='#000000' 
-                fgColor='#c0c0c0' />
+                                <SocialIcon url="https://www.linkedin.com/in/david-smith-1b9499102/" 
+                                style={{ height: 25, width: 25, margin: 2 }} 
+                                bgColor='#000000' 
+                                fgColor='#c0c0c0' />
 
-                <SocialIcon url="https://github.com/CoffeePoweredComputers" 
-                style={{ height: 25, width: 25, margin: 2 }} 
-                bgColor='#000000' 
-                fgColor='#c0c0c0' />
+                                <SocialIcon url="https://github.com/CoffeePoweredComputers" 
+                                style={{ height: 25, width: 25, margin: 2 }} 
+                                bgColor='#000000' 
+                                fgColor='#c0c0c0' />
 
-                <SocialIcon url="https://twitter.com/DavidHSmithIV" 
-                style={{ height: 25, width: 25, margin: 2 }} 
-                bgColor='#000000' 
-                fgColor='#c0c0c0' />
+                                <SocialIcon url="https://twitter.com/DavidHSmithIV" 
+                                style={{ height: 25, width: 25, margin: 2 }} 
+                                bgColor='#000000' 
+                                fgColor='#c0c0c0' />
 
-                <SocialIcon url="https://medium.com/@davidhsmith4" 
-                style={{ height: 25, width: 25, margin: 2 }} 
-                bgColor='#000000' 
-                fgColor='#c0c0c0' />
-              </div>
+                                <SocialIcon url="https://medium.com/@davidhsmith4" 
+                                style={{ height: 25, width: 25, margin: 2 }} 
+                                bgColor='#000000' 
+                                fgColor='#c0c0c0' />
+                            </div>
 
-            </Col>
-            <Col className='bio bio-alignment'>
+                        </Col>
+                        <Col className='bio bio-alignment'>
 
-            <p>
-              <strong> I am a third year PhD student at the University of Illinois
-              Urbana-Champaign in the Department of Computer Science. </strong>
-              My current research focus in the development and administration of
-              randomized, computer-based exams as well as introductory computer
-              science education. 
-            </p>
+                            <p>
+                                <strong> 
+                                    I am a fourth year PhD student at the University of Illinois
+                                Urbana-Champaign in the Department of Computer Science. </strong>
+                            My Current research interests take on three main areas: 
+                            <ul>
+                                <li> 
+                                    <b>Parsons Problems for Intro Python:</b> I investigate the design of Parsons Problems for teaching and exams in introductory Python. I have been involved in supporting the <a href="https://prairielearn.readthedocs.io/en/latest/elements/#pl-order-blocks-element"><u>order-blocks</u></a> element on the <a href="https://us.prairielearn.com/"><u>PrairieLearn</u></a> assessment platform and and involved in development of the Parsons Problems element on <a href="https://www.codespec.org/"><u>CodeSpec</u></a>.
+                                </li>
+                                <br/>
+                                <li> 
+                                    <b>Generative AI in Intro CS:</b> I investigate the intersection of prompting generative AI and Explain in Plain English questions and how that intersection can be used to support introductory studens developing code comprehension skills. I introduced <a href="https://arxiv.org/pdf/2311.14903.pdf"><u>"Code Generation Based Grading"</u></a> for EiPE questions which were recently used in an introductory programming course at UC San Diego which places a heavy emphasis on effectively coding with the use of Generative AI.
+                                </li>
+                                <br/>
+                                <li> 
+                                    <b>Large Scale Computer Based Assessment: </b> I am broadly interested in supporting at scale computer based testing as they support frequent and second chance testing, immediate feedback, and reduce burden on instructors and course staff. I have investigated second chance testing policies, fairness of randomized exams, and the impact of frequent exams on students performance.
+                                </li>
+                            </ul>
+                        </p>
+                    </Col>
+                </Row>
+            </Jumbotron>
+        </Container>
+        );
 
-            <p>
-                <b><i> Assessment: </i></b> To maintain exam security for large
-                scale asynchronous assessments, many courses at UIUC use the
-                PrairieLearn platform to develop and a deliver their exams.
-                When a student begins an exam, an exam generator created by the
-                instructor randomly selects questions from predefined pools and
-                generates a unique exam form for that student. I am interested
-                both in evaluating the fairness of these randomized exams in
-                courses currently using the PrairieLearn platform at UIUC and
-                in ways of integrating equating methods into the platform to
-                ensure that students are graded in accordance with the
-                difficulty of the exam form they receive.
-            </p>
-
-            <p>
-                <b><i> Intro CS: </i></b> I am also interested in developing
-                tools for teaching introductory Python. I am currently
-                developing a tool that allows for the automatic generation of
-                distractors for Parson's problems. The distractors it generates
-                for each line of code in a given program are based on student
-                made errors in expression and statement writing questions.  The
-                purpose of this tool will be to: (1) evaluate which distractors
-                students select the most and (2) develop best practices for the
-                creation of distractors for Parson's problems in the context of
-                introductory Python.
-            </p>
-
-            </Col>
-          </Row>
-        </Jumbotron>
-      </Container>
-      );
-
-  }
+    }
 }
