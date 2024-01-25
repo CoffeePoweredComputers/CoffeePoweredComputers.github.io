@@ -27,9 +27,10 @@
     "experience" : [
         {
             "employer": "University of Illinois at Urbana-Champaign",
-            "position":  "Co-Instructor/Lead TA",
-            "duration": "Spring 2022",
+            "position":  "Instructor and Course Designer - CI 487",
+            "duration": "Fall 2022",
             "accomplishments": [
+                "Developed and taught the first iteration of CI 487 - Data Structures for CS Teachers for the College of Education"
             ]
         },
         {
@@ -41,18 +42,12 @@
         },
         {
             "employer": "University of Illinois at Urbana-Champaign",
-            "position":  "Instructor",
-            "duration": "Summer 2021",
-            "accomplishments": [
-            ]
-        },
-        {
-            "employer": "University of Illinois at Urbana-Champaign",
-            "position":  "Teaching Assistant - CS 105",
-            "duration": "Fall 2020 - Fall 2021",
+            "position":  "Instructor/Co-Instructor/Teaching Assistant - CS 105",
+            "duration": "Fall 2020 - Spring 2022",
             "accomplishments": [
                 "Listed among \"Instructors Ranked as Excellent\" for the Spring 2021 semester",
-                "Developed a Discord bot and environment for facillitating lecture discussions and labs during the COVID-19 pandemic"
+                "Instructor of record for the Summer 2021 semester",
+                "Co-instructor for the Spring 2022 semester"
             ]
         },
         {
@@ -79,6 +74,15 @@
     ],
 
     "projects" : [
+        {
+            "title": "CodeSpec" ,
+            "client": "",
+            "image_path": "assets/codespec-logo.png",
+            "work": [
+                "Integrating automatic distractor generation and feedback generation into the platform's existing Parsons problems generation system",
+                "Working on Knowledge Component (KC) modeling and automatic KC tagging"
+            ]
+        },
         {
             "title": "Automatic Distractor Generation for Python Parson's Problems" ,
             "client": "",
@@ -114,32 +118,50 @@
 
     "publications": [
         {
+            "authors" : "James Prather, Paul Denny, Juho Leinonen, David H Smith IV, Brent N Reeves, Stephen MacNeil, Brett A Becker, Andrew Luxton-Reilly, Thezyrie Amarouche, Bailey Kimmel",
+            "link": "https://arxiv.org/pdf/2401.10759.pdf",
+            "title": "Interactions with Prompt Problems: A New Way to Teach Programming with Large Language Models",
+            "venue": "CHI 2024 (Accepted 🏆︎)" 
+        },
+        {
+            "authors" : "David H Smith IV, Seth Poulsen, Max Fowler, Craig Zilles",
+            "link": "https://dl.acm.org/doi/abs/10.1145/3576882.3617927",
+            "title": "Comparing the Impacts of Visually Grouped and Jumbled Distractors on Parsons Problems in CS1 Assessments",
+            "venue": "CompEd 2023" 
+        },
+        {
+            "authors" : "Andrew Tran, Kenneth Angelikas, Egi Rama, Chiku Okechukwu, David H Smith IV, Stephen MacNeil",
+            "link": "https://www.researchgate.net/profile/Stephen-Macneil/publication/373894953_Generating_Multiple_Choice_Questions_for_Computing_Courses_using_Large_Language_Models/links/6501cd048d6da36cc877c8ae/Generating-Multiple-Choice-Questions-for-Computing-Courses-Using-Large-Language-Models.pdf",
+            "title": "Generating Multiple Choice Questions for Computing Courses using Large Language Models",
+            "venue": "FIE 2023" 
+        },
+        {
+            "authors" : "Barbara Ericson, Janice Pearce, Susan Rodger, Andrew Csizmadia, Rita Garcia, Francisco Gutierrez, Konstantinos Liaskos, Aadarsh Padiyath, Michael Scott, David Smith, Jayakrishnan Warriem, Angela Bernuy",
+            "link": "https://dl.acm.org/doi/abs/10.1145/3623762.3633498",
+            "title": "Multi-Institutional Multi-National Studies of Parsons Problems",
+            "venue": "ITiCSE 2023 - Working Group Report" 
+        },
+        {
             "authors" : "Max Fowler*, David H. Smith IV*, Binglin Chen, and Craig Zilles",
-            "link": "",
+            "link": "https://dl.acm.org/doi/abs/10.1145/3568813.3600136",
             "title": "'I Don’t Gamble To Make My Livelihood': Understanding the Incentives For, Needs Of, and Motivations Surrounding Open Educational Resources in Computing",
             "venue": "ICER 2023" 
         },
         {
-            "authors" : "David H. Smith IV",
-            "link": "",
-            "title": "Useful Distractions? Evaluating the Utility of Distractors in Parsons Problems",
-            "venue": "ICER 2023 - Doctoral Consortium" 
-        },
-        {
             "authors" : "David H. Smith IV, Ujjal K. Bhowmik, and Yuting Chen",
-            "link": "",
+            "link": "https://peer.asee.org/understanding-the-impacts-of-extra-credit-modules-on-students-learning-experience-in-a-100-level-electrical-and-computer-engineering-course",
             "title": "Understanding the impacts of extra credit modules on students’ learning experience in a 100-level electrical and computer engineering course",
             "venue": "ASEE 2023" 
         },
         {
             "authors" : "Chinedu Emeka, David H. Smith IV, Craig Zilles, Matthew West, Geoffrey L. Herman, and Timothy Bretl",
-            "link": "",
-            "title": "Determining the Best Policies for Second-Change Tests for STEM Students",
+            "link": "https://peer.asee.org/determining-the-best-policies-for-second-chance-tests-for-stem-students",
+            "title": "Determining the Best Policies for Second-Chance Tests for STEM Students",
             "venue": "ASEE 2023" 
         },
         {
             "authors" : "David H. Smith IV, Max Fowler, Craig Zilles",
-            "link": "",
+            "link": "https://dl.acm.org/doi/abs/10.1145/3587102.3588819",
             "title": "Investigating the Role and Impact of Distractors on Parsons Problems in CS1 Assessments",
             "venue": "ITiCSE 2023" 
         },
@@ -147,13 +169,13 @@
             "authors" : "David H. Smith IV, Chinny Emeka, Max Fowler, Matthew West, Craig Zilles",
             "link": "https://zilles.cs.illinois.edu/papers/frequent_testing_sigcse23.pdf",
             "title": "Investigating the Impact of Testing Frequency on Performance, Perceptions, and Behavior in CS1",
-            "venue": "SIGCSE 2023" 
+            "venue": "SIGCSE TS 2023" 
         },
         {
-            "authors" : "David H. Smith IV & Craig Zilles",
+            "authors" : "David H. Smith IV, Craig Zilles",
             "link": "https://zilles.cs.illinois.edu/papers/smith_parsons_sigcse23.pdf",
             "title": "Discovering, Autogenerating, and Evaluating Distractors for Python Parsons Problems in CS1",
-            "venue": "SIGCSE 2023" 
+            "venue": "SIGCSE TS 2023" 
         },
         {
             "authors" : "Max Fowler, David H. Smith IV, Mohammad Hassan, Seth Poulson, Matthew West, Craig Zilles",
@@ -163,9 +185,9 @@
         },
         {
             "authors" : "Max Fowler, David H. Smith IV, Chinny Emeka, Matthew West, Craig Zilles",
-            "link": "",
+            "link": "https://dl.acm.org/doi/abs/10.1145/3478431.3499388",
             "title": "Are We Fair? Quantifying Score Impacts of Computer Science Exams with Randomized Question Pools",
-            "venue": "SIGCSE 2022" 
+            "venue": "SIGCSE TS 2022" 
         },
         {
             "authors" : "Qiang Hao, David H. Smith IV, Lu Ding, Amy Ko, Camille Ottaway, Jack Wilson, Kai H. Arakawa, Alistair Turcan, Timothy Poehlman, and Tyler Greer",
@@ -177,7 +199,7 @@
             "authors" : "David H. Smith IV, Qiang Hao, Christopher D. Hundhausen, Filip Jagodzinski, Josh Myers-Dean, and Kira Jaeger",
             "link": "https://dl.acm.org/doi/abs/10.1145/3408877.3432361",
             "title": "Towards Modeling Student Engagement with Interactive Computing Textbooks: An Empirical Study",
-            "venue": "SIGCSE 2021" 
+            "venue": "SIGCSE TS 2021" 
         },
         {
             "authors" : "David Smith, Qiang Hao, Ph.D., Vanessa Dennen, Michail Tsikerdekis, Bradley Barnes, Lilu Martin, Nathan Tresham, ",
@@ -186,7 +208,7 @@
             "venue": "International Journal of Educational Technology in Higher Education" 
         },
         {
-            "authors": "D. H. Smith IV, Q. Hao, F. Jagodzinski,  V. Gupta, Y. Liu, ",  
+            "authors": "David H. Smith IV, Q. Hao, F. Jagodzinski,  V. Gupta, Y. Liu, ",  
             "link": "http://qhao.info/downloads/comped-2019.pdf",
             "title": "Quantifying the Effects of Prior Knowledge in Entry-Level Programming Courses. ",
             "venue": "CompEd 2019"
@@ -198,7 +220,7 @@
             "venue": "In Proceedings of 2019 IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC). Memphis, TN. "
         },
         {
-            "authors": "Q. Hao, D. H. Smith IV, N. Iriumi, M. Tsikerdekis, Amy. J. Ko,  ",
+            "authors": "Qiang Hao, David H. Smith IV, N. Iriumi, M. Tsikerdekis, Amy. J. Ko,  ",
             "link": "https://dl.acm.org/citation.cfm?id=3345328",
             "title": "A Systematic Investigation of Replications in Computing Education Research ",
             "venue": "ACM Transactions on Computing Education (TOCE). "
@@ -209,6 +231,26 @@
             "authors": "Max Folwer*, David Smith*, Chinny Emeka, and Craig Zilles",
             "title": "Smaller, frequent tests boost student performance: directly comparing the imapct of frequent testing vs. the traditional midterm/final split",
             "venue": "iCSTW22: The 2022 Illinois Computer Science Teaching Workshop",
+            "slides": "",
+            "paper": ""
+        },
+        {
+            "authors" : "David H. Smith IV",
+            "link": "https://dl.acm.org/doi/abs/10.1145/3568812.3603463",
+            "title": "Useful Distractions? Evaluating the Utility of Distractors in Parsons Problems",
+            "venue": "ICER 2023 - Doctoral Consortium" 
+        },
+        {
+            "authors": "David Smith and Craig Zilles",
+            "title": "Evaluating Large Language Model Code Generation as an Autograding Mechanism for Explain in Plain English Questions",
+            "venue": "SIGCSE TS 2023 (Accepted)",
+            "slides": "",
+            "paper": ""
+        },
+        {
+            "author": "Barbara J Ericson, Janice L Pearce, Susan H Rodger, Andrew Csizmadia, Rita Garcia, Francisco J Gutierrez, Konstantinos Liaskos, Aadarsh Padiyath, Michael James Scott, David H Smith IV, Jayakrishnan Warriem, Angela Zavaleta Bernuy",
+            "title": "Conducting multi-institutional studies of Parsons problems",
+            "venue": "ITiCSE 2023 - Working Group",
             "slides": "",
             "paper": ""
         }

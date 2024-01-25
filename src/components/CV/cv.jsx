@@ -11,6 +11,21 @@ export default class CV extends Component {
         document.title = "David H Smith IV | CV";
     }
 
+    markMe(str) {
+        var authors = str.split(",");
+        var marked = "";
+        for (var i = 0; i < authors.length; i++) {
+            var author = authors[i].trim();
+            if (author.startsWith("David")) {
+                marked += "<u>David H. Smith IV" + (author.includes("*") ? "*" : "") + "</u>, ";
+
+            } else {
+                marked += author + ", ";
+            }
+        }
+        return marked.substring(0, marked.length - 2);
+    }
+
 
     render() {
 
@@ -61,6 +76,7 @@ export default class CV extends Component {
                         </Col>
 
                     </Row>
+                    <br/>
                 </React.Fragment>
                 );
         });
@@ -69,11 +85,10 @@ export default class CV extends Component {
             return(
                 <React.Fragment>
                     <li>
-                        {pub.authors},&nbsp;
+                        <i><span dangerouslySetInnerHTML={{__html: this.markMe(pub.authors)}}></span></i>&nbsp;-&nbsp;
                         <a href={pub.link}>
                             <b>{pub.title}</b>
-                        </a> 
-                        ,&nbsp;{pub.venue}
+                        </a>&nbsp;-&nbsp;{pub.venue}
                     </li>
                 </React.Fragment>
                 );
@@ -149,14 +164,9 @@ export default class CV extends Component {
                         </ul>
                         <span> <i> Note: the * indicates equal contribution </i> </span>
 
-                        <div className="cv-header"><b>Workshops</b></div>
+                        <div className="cv-header"><b>Posters, Workshops, and Long Abstracts</b></div>
                         <ul>
                             {workshops}
-                        </ul>
-
-                        <div className="cv-header"><b>Invited Talks</b></div>
-                        <ul>
-                            {invitedTalk}
                         </ul>
 
                         <div className="cv-header"><b>Course Websites</b></div>
