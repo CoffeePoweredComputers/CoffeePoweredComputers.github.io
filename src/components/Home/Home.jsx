@@ -19,7 +19,7 @@ export default class Home extends Component {
 
                         <Col className="how-grid text-center" xs={14} sm={5} >
 
-                            <Image src="assets/prof.png" roundedCircle/>
+                            <Image src="assets/david.jpg" roundedCircle/>
                             <h3 className="profile-photo-subtitle"> </h3>
 
                             <div>
@@ -52,16 +52,16 @@ export default class Home extends Component {
 
                             <p>
                                 <strong> 
-                                    I am a fourth year PhD student at the University of Illinois
+                                    I am a fifth year PhD student at the University of Illinois
                                 Urbana-Champaign in the Department of Computer Science. </strong>
                             My Current research interests take on three main areas: 
                             <ul>
                                 <li> 
-                                    <b>Parsons Problems for Intro Python:</b> I investigate the design of Parsons Problems for teaching and exams in introductory Python. I have been involved in supporting the <a href="https://prairielearn.readthedocs.io/en/latest/elements/#pl-order-blocks-element"><u>order-blocks</u></a> element on the <a href="https://us.prairielearn.com/"><u>PrairieLearn</u></a> assessment platform and and involved in development of the Parsons Problems element on <a href="https://www.codespec.org/"><u>CodeSpec</u></a>.
+                                    <b>Parsons Problems for Intro Python:</b> I investigate the design of Parsons Problems for teaching and exams in introductory Python. I have been involved in supporting the <a href="https://prairielearn.readthedocs.io/en/latest/elements/#pl-order-blocks-element"><u>order-blocks</u></a> element on the <a href="https://us.prairielearn.com/"><u>PrairieLearn</u></a> assessment platform and involved in development of the Parsons Problems element on <a href="https://www.codespec.org/"><u>CodeSpec</u></a>.
                                 </li>
                                 <br/>
                                 <li> 
-                                    <b>Generative AI in Intro CS:</b> I investigate the intersection of prompting generative AI and Explain in Plain English questions and how that intersection can be used to support introductory studens developing code comprehension skills. I introduced <a href="https://arxiv.org/pdf/2311.14903.pdf"><u>"Code Generation Based Grading"</u></a> for EiPE questions which were recently used in an introductory programming course at UC San Diego which places a heavy emphasis on effectively coding with the use of Generative AI.
+                                    <b>Generative AI in Intro CS:</b> I investigate the intersection of prompting generative AI and Explain in Plain English questions and how that intersection can be used to support introductory programming students in developing code comprehension skills. I introduced <a href="https://arxiv.org/pdf/2311.14903.pdf"><u>"Code Generation Based Grading"</u></a> for EiPE questions which were recently used in an introductory programming course at UC San Diego which places a heavy emphasis on effectively coding with the use of Generative AI.
                                 </li>
                                 <br/>
                                 <li> 

@@ -3,8 +3,6 @@ import { Jumbotron, Container, Row, Col, Image, Button} from 'react-bootstrap';
 import "./cv.css";
 import CVData from './cv.json';
 
-
-
 export default class CV extends Component {
 
     componentDidMount() {
@@ -12,7 +10,12 @@ export default class CV extends Component {
     }
 
     markMe(str) {
-        var authors = str.split(",");
+        var authors = ""
+        if (str.includes("and")) {
+            authors = str.split("and");
+        } else {
+            authors = str.split(",");
+        }
         var marked = "";
         for (var i = 0; i < authors.length; i++) {
             var author = authors[i].trim();
@@ -98,7 +101,7 @@ export default class CV extends Component {
             return(
                 <React.Fragment>
                     <li>
-                        {work.authors},&nbsp;
+                        <i><span dangerouslySetInnerHTML={{__html: this.markMe(work.authors)}}></span></i>&nbsp;-&nbsp;
                         <a href={work.slides}>
                             <b>{work.title}</b>
                         </a> 
@@ -159,13 +162,13 @@ export default class CV extends Component {
 
 
                         <div className="cv-header"><b>Publications</b></div>
-                        <ul>
+                        <ol className="cv-publist">
                             {publications}
-                        </ul>
-                        <span> <i> Note: the * indicates equal contribution </i> </span>
+                        </ol>
+                        <span> <i> Note: the * indicates equal contribution. 🥈 indicates best paper nomination and 🏆 indicates best paper award. </i> </span>
 
                         <div className="cv-header"><b>Posters, Workshops, and Long Abstracts</b></div>
-                        <ul>
+                        <ul className="cv-publist">
                             {workshops}
                         </ul>
 
