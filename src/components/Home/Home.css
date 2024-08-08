@@ -15,6 +15,10 @@
   margin-right: 25px;
 }
 
+b {
+  font-weight: bold;
+}
+
 
 /* adjustments made to the page orientation upon change of screen size */
 @media screen and (max-width: 767px) {
