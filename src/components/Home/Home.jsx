@@ -18,7 +18,7 @@ export default class Home extends Component {
 
                         <Col className="how-grid text-center" xs={14} sm={5} >
 
-                            <Image src="assets/david.jpg" roundedCircle/>
+                            <Image src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=hpe-z9YAAAAJ&citpid=3" roundedCircle/>
                             <h3 className="profile-photo-subtitle"> </h3>
 
                             <div>
