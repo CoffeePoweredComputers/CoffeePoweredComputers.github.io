@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
-import { Jumbotron, Container, Row, Col, Image, Button } from 'react-bootstrap';
+import { Jumbotron, Container, Row, Col, Image } from 'react-bootstrap';
 import { SocialIcon } from 'react-social-icons';
 import "./Home.css";
 

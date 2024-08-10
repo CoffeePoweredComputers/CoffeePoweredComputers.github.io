@@ -7,6 +7,7 @@ import Publications from './components/Publications/Publications.jsx';
 import CV from './components/CV/cv.jsx';
 import Blog from './components/Blog/Blog.jsx';
 import ReadingList from './components/ReadingList/ReadingList.jsx';
+import Travel from './components/Travel/Travel.jsx';
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
           <Route path="/readinglist" component={ReadingList} />
           <Route path="/publications" component={Publications} />
           <Route path="/blog" component={Blog} />
+          <Route path="/travel" component={Travel} />
         </div>
       </HashRouter>
     );
