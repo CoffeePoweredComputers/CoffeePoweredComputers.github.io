@@ -21,7 +21,7 @@ export default class Travel extends Component {
         const directories = [
             {
                 id: '1',
-              coverPhoto: 'assets/cover.heic',
+              coverPhoto: 'assets/travel/comped2023/cover.heic',
                 title: 'India - CompEd 2023',
                 description: 'Visit to Hyderabad, Delhi, Agra, and Leh',
             },
@@ -29,7 +29,7 @@ export default class Travel extends Component {
                 id: '2',
                 coverPhoto: 'https://example.com/dir2/cover.jpg',
                 title: 'Italy - ITiCSE 2024',
-                description: 'Photos from my trip to New York.',
+                description: 'Rome and Milan',
             },
             {
                 id: '3',
