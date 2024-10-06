@@ -8,6 +8,10 @@ import CV from './components/CV/cv.jsx';
 import Blog from './components/Blog/Blog.jsx';
 import ReadingList from './components/ReadingList/ReadingList.jsx';
 import Travel from './components/Travel/Travel.jsx';
+import Research from './components/Research/research.jsx';
+import Teaching from './components/Teaching/teaching.jsx';
+//<Route path="/readinglist" component={ReadingList} />
+//<Route path="/travel" component={Travel} />
 
 class App extends Component {
   render() {
@@ -17,10 +21,10 @@ class App extends Component {
           <Navbar />
           <Route exact path="/" component={Home} />
           <Route path="/cv" component={CV} />
-          <Route path="/readinglist" component={ReadingList} />
+          <Route path="/research" component={Research} />
+          <Route path="/teaching" component={Teaching} />
           <Route path="/publications" component={Publications} />
           <Route path="/blog" component={Blog} />
-          <Route path="/travel" component={Travel} />
         </div>
       </HashRouter>
     );

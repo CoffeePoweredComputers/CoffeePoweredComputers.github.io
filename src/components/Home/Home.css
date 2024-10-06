@@ -1,18 +1,58 @@
+.news-li::before {
+  content: attr(date-data);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.news-li-border:not(:last-child) {
+    margin-bottom: 10px; /* Adjust the space as needed */
+    border-bottom: 1px solid #ccc; /* Adds a thin line between list items */
+    padding-bottom: 5px; /* Adds padding before the border */
+}
+
+.news-list{
+  list-style-type: none;
+  font-size: 15px;
+  padding-left: 0;
+}
+
+.research-areas{
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
 .jumbotron{
   background-color:#ebebeb;
-  margin: 15px;
+  margin-top: 15px;
 }
 
 .sub{
   font-size: 18px;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .bio{
   font-size: 18px;
-  font-weight: 200;
+  font-weight: 300;
   margin-left: 25px;
   margin-right: 25px;
+}
+
+.block{
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: left;
+  border-left: 3px solid black;
+  padding-left: 10px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.block-scroller{
+  overflow-y: scroll;
+  height: 300px;
 }
 
 b {
@@ -20,7 +60,6 @@ b {
 }
 
 
-/* adjustments made to the page orientation upon change of screen size */
 @media screen and (max-width: 767px) {
 
   .profile-photo-subtitle{
