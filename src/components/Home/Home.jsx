@@ -22,7 +22,7 @@ export default class Home extends Component {
               <h3 className="profile-photo-subtitle"> </h3>
 
               <div>
-                <div className="sub"> Computer Science Education Researcher </div>
+                <div className="sub"> Computing Education Researcher </div>
                 <div className="sub"> Linux & Coffee Enthusiast </div>
 
                 <SocialIcon url="https://www.linkedin.com/in/david-smith-1b9499102/" 
@@ -81,8 +81,8 @@ export default class Home extends Component {
                 Education Research (CER)</u></a> and Human-Computer Interaction
                 (HCI) to draw on theories of learning to create effective and
                 scaleable approaches for educating the next generation of
-                computing professionals. My three current areas of work 
-                include:
+                computing professionals. My work has included a wide range of 
+                topics within CER, and my current areas of focus are as follows.
                 <div className="research-areas">
                   <Row className="mb-4 block align-items-center">
                     <Col xs={2}>
@@ -91,8 +91,25 @@ export default class Home extends Component {
                     <Col xs={9}>
                       <h5>Scaffolding Learning to Write Code with Parsons Problems</h5>
                       <p>
-                        I investigate the design of Parsons Problems for teaching and exams in introductory Python. 
-                        I have been involved in supporting the <a href="https://prairielearn.readthedocs.io/en/latest/elements/#pl-order-blocks-element"><u>order-blocks</u></a> element on the <a href="https://us.prairielearn.com/"><u>PrairieLearn</u></a> assessment platform and involved in development of the Parsons Problems element on <a href="https://www.codespec.org/"><u>CodeSpec</u></a>.
+                        I investigate the design of Parsons Problems for
+                        teaching and exams in introductory Python. My work in
+                        this area so far has included investigations on the
+                        impact of including distractor blocks (i.e., incorrect
+                        blocks of code) in the problem on its <a href="https://zilles.cs.illinois.edu/papers/smith_parsons_grouped_COMPED_2023.pdf"><u>
+                        psychometric properties</u></a> and the <a
+                        href="https://dl.acm.org/doi/pdf/10.1145/3632620.3671114"><u>impact
+                        of distractors on learning</u></a>. I have also been
+                        involved in a variety of collaborative endevors
+                        including an <a
+                        href="https://arxiv.org/pdf/2405.19460"><u>evaluation of
+                        micro-parsons problems</u></a> as exam items and a <a
+                        href="https://repository.falmouth.ac.uk/5216/1/ITiCSE_2023_WorkingGroup_Parsons_Report.pdf"><u>multi-institutional
+                        study</u></a> of the impact of Parsons Problems on student learning. I
+                        have been involved in supporting the <a
+                        href="https://prairielearn.readthedocs.io/en/latest/elements/#pl-order-blocks-element"><u>order-blocks</u></a>
+                        element on the <a href="https://us.prairielearn.com/"><u>PrairieLearn</u></a> assessment
+                        platform and involved in development of the Parsons Problems element on <a
+                        href="https://www.codespec.org/"><u>CodeSpec</u></a>.
                       </p>
                     </Col>
                   </Row>
@@ -104,7 +121,22 @@ export default class Home extends Component {
                     <Col xs={9}>
                       <h5>Instructing Novice Programmers in Human-GenAI Collaborative Coding</h5>
                       <p>
-                        I investigate the intersection of prompting generative AI and Explain in Plain English questions and how that intersection can be used to support introductory programming students in developing code comprehension skills. I introduced <a href="https://arxiv.org/pdf/2311.14903.pdf"><u>"Code Generation Based Grading"</u></a> for EiPE questions which were recently used in an introductory programming course at UC San Diego which places a heavy emphasis on effectively coding with the use of Generative AI.
+                        My research in this area focuses on developing tools
+                        that support students in learning the skills they need
+                        to successfully engage in Human-GenAI collaborative
+                        coding. I introduced an autograding system, <a
+                        href="https://arxiv.org/pdf/2311.14903.pdf"><u>"Code
+                        Generation Based Grading"</u></a> for Explain in Plain
+                        English (EiPE) which aims to develop students ability
+                        in prompting generative AI to generate code and code
+                        comprehension skills which helps novices evaluate its
+                        results. I maintain a Python package, <a
+                        href="https://github.com/CoffeePoweredComputers/eiplgrader"><u><code>eiplgrader</code></u></a>,
+                        which supports the use of this autograder. My most
+                        recent investigations in this area have focused on
+                        evaluating the efficacy of this approach in
+                        linguistically diverse contexts, such as <a
+                        href="https://arxiv.org/abs/2409.20297"><u>India</u></a>.
                       </p>
                     </Col>
                   </Row>
@@ -116,7 +148,16 @@ export default class Home extends Component {
                     <Col xs={9}>
                       <h5>Scaling Assessment through Computer Based Testing</h5>
                       <p>
-                        I am broadly interested in supporting at scale computer-based testing as they support frequent and second chance testing, immediate feedback, and reduce burden on instructors and course staff. I have investigated second chance testing policies, fairness of randomized exams, and the impact of frequent exams on students' performance.
+                        I am broadly interested in supporting at scale computer-based 
+                        testing as they support frequent and second chance testing, 
+                        immediate feedback, and reduce burden on instructors and course 
+                        staff. I have investigated <a
+                        href="https://par.nsf.gov/servlets/purl/10434207">
+                        <u>second chance testing policies</u></a>, <a
+                        href="https://dl.acm.org/doi/pdf/10.1145/3478431.3499388"><u>fairness of
+                        randomized exams</u></a>, and the <a
+                        href="https://par.nsf.gov/servlets/purl/10434191"><u>impact of frequent
+                        exams on students' performance</u></a>.
                       </p>
                     </Col>
                   </Row>
