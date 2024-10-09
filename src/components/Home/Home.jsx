@@ -74,10 +74,9 @@ export default class Home extends Component {
             </Col>
             <Col className='bio bio-alignment'>
               <p>
-                <b>I develop interactive and engaging tools that support novice
-                programmers.</b> My goal as a researcher working at the
-                intersection of <a
-                href="https://faculty.washington.edu/ajko/cer"><u>Computing
+                <b>I develop and evaluate interactive and engaging tools that
+                support novice programmers.</b> My goal as a researcher working
+                at the intersection of <a href="https://faculty.washington.edu/ajko/cer"><u>Computing
                 Education Research (CER)</u></a> and Human-Computer Interaction
                 (HCI) to draw on theories of learning to create effective and
                 scaleable approaches for educating the next generation of
