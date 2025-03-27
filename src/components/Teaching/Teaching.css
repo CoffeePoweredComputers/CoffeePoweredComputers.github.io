@@ -15,6 +15,20 @@
   padding-bottom: 0.5rem;
 }
 
+/* University Headers */
+.university-header {
+  font-family: var(--font-family-serif);
+  font-variant: small-caps;
+  font-weight: 600;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-md);
+  font-size: var(--font-size-lg);
+  color: var(--primary-text);
+  display: inline-block;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--accent-color);
+}
+
 /* Text Styling */
 .teaching-text {
   font-size: var(--font-size-md);
@@ -38,6 +52,20 @@
   color: var(--secondary-text);
 }
 
+/* Coming Soon Badge */
+.coming-soon-badge {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  padding: 4px 8px;
+  background-color: #fd7e14;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: var(--border-radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 /* Section Containers */
 .teaching-intro, .teaching-experience, .teaching-philosophy {
   padding: var(--space-md);
@@ -50,6 +78,7 @@
 /* Courses Container */
 .courses-container {
   margin-top: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 /* Course Cards - Styled like research cards */
@@ -106,6 +135,11 @@
     font-size: var(--font-size-lg);
   }
   
+  .university-header {
+    font-size: 1.1rem;
+    margin-top: var(--space-md);
+  }
+  
   .teaching-text, .blockquote-text {
     font-size: var(--font-size-sm);
   }
@@ -131,6 +165,10 @@
 @media (min-width: 768px) and (max-width: 991.98px) {
   .teaching-content {
     padding: 0 var(--space-md);
+  }
+  
+  .university-header {
+    font-size: 1.2rem;
   }
 }
 

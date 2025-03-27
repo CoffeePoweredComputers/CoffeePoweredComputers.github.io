@@ -58,8 +58,34 @@ export default function Teaching() {
                 designing, implementing, and teaching them.
               </p>
 
+              <h5 className="university-header">Virginia Tech (Starting Fall 2025)</h5>
               <div className="courses-container">
-                {/* Course 1 */}
+                {/* VTech Course 1 */}
+                <Card className="mb-4 course-card">
+                  <Card.Body>
+                    <Row className="align-items-center">
+                      <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
+                        <Image src="assets/uiuc_ed.png" alt="CER Seminar" className="course-icon" />
+                      </Col>
+                      <Col xs={12} sm={9} md={9} lg={10}>
+                        <h5 className="course-title">Computing Education Research Seminar</h5>
+                        <p className="course-description">
+                          A graduate seminar exploring current research in computing education. 
+                          Students will engage with recent literature, research methodologies, and emerging trends 
+                          in the field of computing education. The course will emphasize critical analysis of 
+                          research papers, development of research questions, and understanding of theoretical frameworks.
+                          <span className="coming-soon-badge">Coming Fall 2025</span>
+                        </p>
+                      </Col>
+                    </Row>
+                  </Card.Body>
+                </Card>
+
+              </div>
+
+              <h5 className="university-header">University of Illinois Urbana-Champaign</h5>
+              <div className="courses-container">
+                {/* UIUC Course 1 */}
                 <Card className="mb-4 course-card">
                   <Card.Body>
                     <Row className="align-items-center">
@@ -82,7 +108,7 @@ export default function Teaching() {
                   </Card.Body>
                 </Card>
 
-                {/* Course 2 */}
+                {/* UIUC Course 2 */}
                 <Card className="mb-4 course-card">
                   <Card.Body>
                     <Row className="align-items-center">
@@ -105,7 +131,7 @@ export default function Teaching() {
                   </Card.Body>
                 </Card>
 
-                {/* Course 3 */}
+                {/* UIUC Course 3 */}
                 <Card className="mb-4 course-card">
                   <Card.Body>
                     <Row className="align-items-center">
@@ -128,42 +154,7 @@ export default function Teaching() {
                   </Card.Body>
                 </Card>
               </div>
-            </div>
-            
-            <div className="teaching-philosophy mb-4">
-              <h4 className="section-title">Teaching Philosophy</h4>
-              <p className="teaching-text">
-                My teaching philosophy centers on creating an inclusive, engaging, and supportive learning environment 
-                that acknowledges the diverse backgrounds and learning styles of students. I believe in integrating 
-                research-backed practices with practical applications to provide a well-rounded educational experience.
-              </p>
-              
-              <p className="teaching-text">
-                <strong>Key principles that guide my teaching approach:</strong>
-              </p>
-              
-              <ul className="philosophy-list">
-                <li>
-                  <strong>Active Learning:</strong> Incorporating hands-on activities and collaborative problem-solving to enhance student engagement and understanding.
-                </li>
-                <li>
-                  <strong>Scaffolded Instruction:</strong> Providing appropriate levels of support and gradually increasing complexity to build confidence and competence.
-                </li>
-                <li>
-                  <strong>Inclusive Pedagogy:</strong> Creating accessible learning experiences that address diverse backgrounds, learning styles, and needs.
-                </li>
-                <li>
-                  <strong>Formative Assessment:</strong> Using frequent, low-stakes assessments to provide timely feedback and guide instructional decisions.
-                </li>
-                <li>
-                  <strong>Authentic Applications:</strong> Connecting theoretical concepts to real-world applications to enhance relevance and motivation.
-                </li>
-              </ul>
-              
-              <p className="teaching-text">
-                For a more comprehensive overview of my teaching approach and educational research, 
-                please refer to my <a href="/#/cv">CV</a> and <a href="/#/research">research statement</a>.
-              </p>
+
             </div>
           </Col>
         </Row>
