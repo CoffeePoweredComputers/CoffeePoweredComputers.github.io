@@ -1,30 +1,27 @@
-import React, { Component } from "react"
-import { Nav, Navbar, NavLink} from "react-bootstrap";
+import React from "react";
+import { Nav, Navbar, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "./NavBar.css"
-//<Nav.Link eventKey={2} componentClass={Link} href="#/publications" to="/publications"> Publications </Nav.Link>
-//<Nav.Link eventKey={2} componentClass={Link} href="#/travel" to="/Travel"> Travel </Nav.Link>
-//<Nav.Link eventKey={4} componentClass={Link} href="#/readinglist" to="/readinglist"> Reading List </Nav.Link>
+import "./NavBar.css";
 
-export default class NavBar extends Component {
-  render() {
-    return (
-      <Navbar bg="dark" expand="lg"> 
-        <Navbar.Brand>
+export default function NavBar() {
+  return (
+    <Navbar bg="dark" variant="dark" expand="lg" sticky="top" className="mb-3">
+      <Container>
+        <Navbar.Brand as={Link} to="/">
           David H Smith IV
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse>
-          <Nav className="ml-auto">
-            <Nav.Link eventKey={1} componentClass={Link} href="#/" to="/"> Home </Nav.Link>
-            <Nav.Link eventKey={2} componentClass={Link} href="#/research" to="/research"> Research </Nav.Link>
-            <Nav.Link eventKey={3} componentClass={Link} href="#/teaching" to="/teaching"> Teaching </Nav.Link>
-            <Nav.Link eventKey={4} componentClass={Link} href="#/blog" to="/blog" > Blog </Nav.Link>
-            <Nav.Link eventKey={5} componentClass={Link} href="#/cv" to="/cv"> Curriculum Vitae </Nav.Link>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="ms-auto">
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/research">Research</Nav.Link>
+            <Nav.Link as={Link} to="/teaching">Teaching</Nav.Link>
+            <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
+            <Nav.Link as={Link} to="/cv">CV</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-      </Navbar>
-    );
-  }
+      </Container>
+    </Navbar>
+  );
 }
 

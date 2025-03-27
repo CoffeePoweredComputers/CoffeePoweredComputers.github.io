@@ -1,98 +1,144 @@
-import React, { Component } from 'react';
-import { Jumbotron, Container, Row, Col, Button} from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Container, Row, Col, Badge, Card, Form, InputGroup, Nav } from 'react-bootstrap';
 import ReactMarkdown from 'react-markdown';
 import './Blog.css';
 import Content from './posts.json';
 
-export default class Blog extends Component {
-
-  constructor(props){
-
-    super(props);
-
-    /* Gets the set of all topics*/
-    let topics = new Set(); 
-    for(let i = 0; i < Content.length; i++){
-      for(let j = 0; j < Content[i].keywords.length; j++){
-        topics.add(Content[i].keywords[j])
-      }
+export default function Blog() {
+  /* Gets the set of all topics*/
+  let topicsSet = new Set(); 
+  for(let i = 0; i < Content.length; i++){
+    for(let j = 0; j < Content[i].keywords.length; j++){
+      topicsSet.add(Content[i].keywords[j])
     }
-
-    /* Sets up all of the initial states */
-    this.state = {
-      currentTopic: "",
-      topics: [...topics].sort()
-    };
-
-    this.handleClick = this.handleClick.bind(this);
   }
 
-  /* Does some stuff if the component mounts */
-  componentDidMount() {
+  /* Sets up all of the initial states */
+  const [currentTopic, setCurrentTopic] = useState("");
+  const [topics] = useState([...topicsSet].sort());
+  const [searchTerm, setSearchTerm] = useState("");
 
+  /* Update document title on component mount */
+  useEffect(() => {
     document.title = 'David H Smith IV | Blog';
+  }, []);
 
-  }
+  /* Handles the click for the topic selection */
+  const handleTopicSelect = (topic) => {
+    setCurrentTopic(currentTopic === topic ? "" : topic);
+  };
+  
+  /* Handles search input changes */
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
-  /* Handles the click for the topic selection buttons */
-  handleClick(event){
-    this.setState({
-      currentTopic: event.target.id
-    });
-  }
+  /* Clear all filters */
+  const clearFilters = () => {
+    setCurrentTopic("");
+    setSearchTerm("");
+  };
 
-  render() {
-
-    /* formats all the post data that was read during the component mounting */
-    const postData = Content.map( (field, key) => {
-
-      if(field.keywords.indexOf(this.state.currentTopic) > -1 || this.state.currentTopic === ''){
-        return(
-          <Jumbotron className='post'>
-            <Col>
-              <Row>
-                <div className="post-header">
-                  <div className='title'> {field.title} </div>
-                  <div className='date'> {field.date} </div>
-                </div>
-              </Row>
-              <Row>
-                <div className='topic'> 
-                  <b> Topics: </b> 
-                  {field.keywords.join(', ')}
-                </div>
-              </Row>
-              <Row className='post-body'>
-                {field.body}
-              </Row>
-              <Row>
-                <b><a href={field.link}> Continue reading on Medium... </a></b>
-              </Row>
-            </Col>
-          </Jumbotron>
-          );
-      }
-
-    });
-
-    const topicButtons = this.state.topics.map( (topic, key) => {
-      return <Button key={key} onClick={this.handleClick} id={topic} variant='dark'> {topic} </Button>
-      });
-
-
-    /* Gets the goods on the screen */
-    return (
-      <Container fluid>
-        <Jumbotron>
-          <div className='topic-selection'> Select a topic to view </div>
-          <Row className='topic-list'> 
-            <Button key={this.state.topics.length} onClick={this.handleClick} id='' variant='dark'> All </Button>
-            {topicButtons} 
+  /* filters and formats all the post data */
+  const postData = Content.filter(field => {
+    // Filter by topic if selected
+    const matchesTopic = field.keywords.indexOf(currentTopic) > -1 || currentTopic === '';
+    
+    // Filter by search term if provided
+    const matchesSearch = searchTerm === "" || 
+      field.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      field.body.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      field.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm.toLowerCase()));
+    
+    return matchesTopic && matchesSearch;
+  }).map((field, key) => {
+    return(
+      <Card className='post mb-4 p-4 bg-light' key={key}>
+        <Col>
+          <Row>
+            <div className="post-header">
+              <div className='title'> {field.title} </div>
+              <div className='date'> {field.date} </div>
+            </div>
           </Row>
-        </Jumbotron>
-        {postData}
-      </Container>
-      );
+          <Row>
+            <div className='topics-container'> 
+              <b>Topics:</b>&nbsp;
+              {field.keywords.map((keyword, idx) => (
+                <Badge 
+                  key={idx} 
+                  bg="dark" 
+                  className="topic-badge" 
+                  onClick={() => handleTopicSelect(keyword)}
+                >
+                  {keyword}
+                </Badge>
+              ))}
+            </div>
+          </Row>
+          <Row className='post-body'>
+            {field.body}
+          </Row>
+          <Row>
+            <b><a href={field.link} target="_blank" rel="noopener noreferrer"> Continue reading on Medium... </a></b>
+          </Row>
+        </Col>
+      </Card>
+    );
+  });
 
-}
+  /* Gets the goods on the screen */
+  return (
+    <Container fluid>
+      <div className='p-5 mb-4 bg-light rounded-3'>
+        <div className='topic-selection'> Search and filter blog posts </div>
+        
+        <InputGroup className="mb-3">
+          <Form.Control
+            placeholder="Search by title, content, or topic"
+            value={searchTerm}
+            onChange={handleSearch}
+            aria-label="Search blog posts"
+          />
+          {(searchTerm || currentTopic) && (
+            <InputGroup.Text 
+              className="clear-button" 
+              onClick={clearFilters}
+            >
+              Clear
+            </InputGroup.Text>
+          )}
+        </InputGroup>
+        
+        <div className='topic-selection'> Filter by topic </div>
+        <Nav variant="pills" className="topic-nav">
+          <Nav.Item>
+            <Nav.Link 
+              className={currentTopic === "" ? "active-topic" : "nav-topic"}
+              onClick={() => setCurrentTopic("")}
+            >
+              All
+            </Nav.Link>
+          </Nav.Item>
+          {topics.map((topic, index) => (
+            <Nav.Item key={index}>
+              <Nav.Link
+                className={currentTopic === topic ? "active-topic" : "nav-topic"}
+                onClick={() => handleTopicSelect(topic)}
+              >
+                {topic}
+              </Nav.Link>
+            </Nav.Item>
+          ))}
+        </Nav>
+      </div>
+      
+      {postData.length > 0 ? postData : (
+        <div className="text-center p-5">
+          <h3>No posts found</h3>
+          <p>Try adjusting your search terms or filters</p>
+        </div>
+      )}
+    </Container>
+  );
 }

@@ -4,36 +4,45 @@ body{
 
 .jumbotron{
   text-align: center;
-  padding: 25px; 
+  padding: 25px;
+  background-color: #f8f9fa;
 }
 
 .cv-img{
   display: inline-block;
   width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.cv-img:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 a:link {
-  color: black;
+  color: #C0C0C0;
   background-color: transparent;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 a:visited {
-  color: black;
+  color: #C0C0C0;
   background-color: transparent;
   text-decoration: none;
 }
 
 a:hover {
-  color: black;
+  color: #fff;
   background-color: transparent;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:active {
-  color: black;
+  color: #fff;
   background-color: transparent;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 ul{
@@ -41,12 +50,11 @@ ul{
   font-family: 'Roboto Condensed', sans-serif;
   margin-top: 15px;
   margin-bottom: 15px;
-
 }
 
 small{
   font-size: 15px;
-  color: black;
+  color: #666;
   font-weight: 300;
 }
 
@@ -56,6 +64,8 @@ small{
 
 .cv-title{
   text-align: center;
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  font-variant: small-caps;
 }
 
 .cv-position{
@@ -67,19 +77,35 @@ small{
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   font-size: 20px;
   font-variant: small-caps;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.5);
   margin-top: 15px;
+  margin-bottom: 10px;
+  color: #212529;
 }
 
 .cv-year{
-  float:right;
+  float: right;
   font-family: 'Montserrat', serif;
+  color: #666;
 }
 
 img {
-    transition:transform 0.25s ease;
+  transition: transform 0.3s ease;
+  border-radius: 4px;
+}
+
+img:hover {
+  transform: scale(1.02);
 }
 
 ul.cv-publist li {
-  margin-bottom: 2px;
+  margin-bottom: 5px;
+  padding-left: 5px;
+  border-left: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+ul.cv-publist li:hover {
+  border-left: 2px solid #212529;
+  background-color: rgba(192, 192, 192, 0.1);
 }

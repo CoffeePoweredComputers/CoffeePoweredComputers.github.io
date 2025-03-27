@@ -1,86 +1,182 @@
+/* Profile Section */
+.profile-container {
+  margin-bottom: 2rem;
+}
+
+.profile-image {
+  max-width: 200px;
+  height: auto;
+  margin: 0 auto 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 3px solid #fff;
+}
+
+.profile-name {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.profile-titles {
+  margin-bottom: 1rem;
+}
+
+.sub {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #666;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* News Section */
+.news-card, .bio-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  overflow: hidden;
+}
+
+/* width for Card.Title children */
+.news-title, .bio-title {
+  min-height: 20px !important;
+}
+
+.news-list {
+  list-style-type: none;
+  font-size: 0.9rem;
+  padding-left: 0;
+  margin-bottom: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.news-li {
+  position: relative;
+  padding-left: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
 .news-li::before {
   content: attr(date-data);
   font-weight: bold;
-  margin-right: 10px;
+  display: block;
+  color: #666;
+  margin-bottom: 0.25rem;
 }
 
 .news-li-border:not(:last-child) {
-    margin-bottom: 10px; /* Adjust the space as needed */
-    border-bottom: 1px solid #ccc; /* Adds a thin line between list items */
-    padding-bottom: 5px; /* Adds padding before the border */
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
 }
 
-.news-list{
-  list-style-type: none;
-  font-size: 15px;
-  padding-left: 0;
+/* Research Section */
+.research-intro {
+  padding: 1rem;
+  background-color: rgba(249, 249, 249, 0.5);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
 }
 
-.research-areas{
-  padding-left: 25px;
-  padding-right: 25px;
+.research-areas {
+  margin-bottom: 2rem;
 }
 
-.jumbotron{
-  background-color:#ebebeb;
-  margin-top: 15px;
+.research-card {
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-.sub{
-  font-size: 18px;
+.research-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.research-icon {
+  max-width: 100%;
+  height: auto;
+  max-height: 100px;
+  margin: 0 auto;
+}
+
+.research-title {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.research-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+.bio {
+  font-size: 1rem;
   font-weight: 300;
+  line-height: 1.6;
 }
 
-.bio{
-  font-size: 18px;
-  font-weight: 300;
-  margin-left: 25px;
-  margin-right: 25px;
-}
-
-.block{
-  margin-top: 15px;
-  font-size: 18px;
-  font-weight: 300;
-  text-align: left;
-  border-left: 3px solid black;
-  padding-left: 10px;
-  background-color: #f9f9f9;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.block-scroller{
-  overflow-y: scroll;
-  height: 300px;
-}
-
-b {
-  font-weight: bold;
-}
-
-
-@media screen and (max-width: 767px) {
-
-  .profile-photo-subtitle{
-    content: "";
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+  .profile-image {
+    max-width: 150px;
   }
-
-  .bio-alignment{
+  
+  .profile-name {
+    font-size: 1.25rem;
+  }
+  
+  .sub {
+    font-size: 1rem;
+  }
+  
+  .bio-alignment {
     text-align: center;
+    padding: 0 1rem;
   }
-
-
+  
+  .research-intro {
+    padding: 0.75rem;
+  }
+  
+  .research-title {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .research-text {
+    font-size: 0.9rem;
+  }
 }
 
-@media screen and (min-width: 767px) {
-
-  .profile-photo-subtitle{
-    content: "David H Smith IV";
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .profile-image {
+    max-width: 175px;
   }
+  
+  .bio-alignment {
+    text-align: left;
+    padding: 0 1rem;
+  }
+}
 
-  .bio-alignment{
+@media (min-width: 992px) {
+  .bio-alignment {
     text-align: left;
   }
-
+  
+  .research-intro {
+    padding: 1.5rem;
+  }
 }

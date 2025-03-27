@@ -1,14 +1,114 @@
-.App {
-  text-align: center;
+/* Global Styles */
+:root {
+  --primary-bg: #ffffff;
+  --secondary-bg: #f9f9f9;
+  --primary-text: #212529;
+  --secondary-text: #6c757d;
+  --accent-color: #404040;
+  --border-color: #dee2e6;
+  --link-color: #0d6efd;
+  --link-hover: #0a58ca;
 }
 
+/* Basic Layout */
+body {
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--primary-text);
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1 0 auto;
+  padding-bottom: 2rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* Component Styles */
+.rounded-3 {
+  border-radius: 0.5rem !important;
+}
+
+.bg-light {
+  background-color: var(--secondary-bg) !important;
+}
+
+.footer {
+  padding: 1.5rem 0;
+  background-color: var(--secondary-bg);
+  border-top: 1px solid var(--border-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Media Queries */
+@media (max-width: 767.98px) {
+  .container, .container-sm {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Legacy Styles (keeping for compatibility) */
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
-}
-
-.jumbotron p{
-  font-size: 18px;
 }
 
 .App-header {

@@ -1,16 +1,13 @@
-import React, { Component } from 'react'
-import { Jumbotron, Container, Row, Col, Image, Card, Accordion} from 'react-bootstrap';
+import React, { useEffect } from 'react';
+import { Container, Row, Col, Image, Card, Accordion } from 'react-bootstrap';
 import "./Publications.css";
 import Pubs from "./pubs.json";
 
 
-export default class Publications extends Component {
-
-  componentDidMount() {
+export default function Publications() {
+  useEffect(() => {
     document.title = "David H Smith IV | Publications";
-  }
-
-  render() {
+  }, []);
 
     /* Reads through the list of current publications and renders them according to the template */
 
@@ -21,9 +18,9 @@ export default class Publications extends Component {
        return(
          <React.Fragment>
             <Card.Header>
-              <Accordion.Toggle as={Card.Header} className="title-header" variant='link' eventKey={id}>
+              <Accordion.Button className="title-header" variant='link'>
                 {publication.title}
-              </Accordion.Toggle>
+              </Accordion.Button>
             </Card.Header>
             <Accordion.Collapse eventKey={id}>
               <Card.Body>
@@ -59,8 +56,7 @@ export default class Publications extends Component {
 
     return (
       <Container fluid>
-        <Jumbotron >
-
+        <div className="p-5 mb-4 bg-light rounded-3">
           <Row>
             <div className="pub-header">
               Publications
@@ -68,9 +64,7 @@ export default class Publications extends Component {
           </Row>
 
           {years}
-
-        </Jumbotron >
-      </Container >
-      );
-}
+        </div>
+      </Container>
+    );
 }

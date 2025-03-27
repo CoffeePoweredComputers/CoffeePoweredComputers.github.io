@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Jumbotron, Container, Row, Col, Image, Button} from 'react-bootstrap';
+import { Container, Row, Col, Image, Button} from 'react-bootstrap';
 import "./research.css";
 
 export default class Research extends Component {
@@ -12,8 +12,8 @@ export default class Research extends Component {
 
     return (
 
-      <Container fluid>
-        <Jumbotron>
+      <Container fluid className="p-4 mb-4 bg-light rounded">
+        <div className="research-container">
 
           <div class="section"> Research </div>
           <p>
@@ -130,7 +130,7 @@ export default class Research extends Component {
           </p>
 
 
-        </Jumbotron >
+        </div>
       </Container >
       );
   }

@@ -1,34 +1,40 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import { HashRouter, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/NavBar/NavBar.jsx';
 import Home from './components/Home/Home.jsx';
 import Publications from './components/Publications/Publications.jsx';
 import CV from './components/CV/cv.jsx';
 import Blog from './components/Blog/Blog.jsx';
-import ReadingList from './components/ReadingList/ReadingList.jsx';
-import Travel from './components/Travel/Travel.jsx';
 import Research from './components/Research/research.jsx';
 import Teaching from './components/Teaching/teaching.jsx';
-//<Route path="/readinglist" component={ReadingList} />
-//<Route path="/travel" component={Travel} />
+import { Container } from 'react-bootstrap';
 
-class App extends Component {
-  render() {
-    return (
-      <HashRouter>
-        <div>
-          <Navbar />
-          <Route exact path="/" component={Home} />
-          <Route path="/cv" component={CV} />
-          <Route path="/research" component={Research} />
-          <Route path="/teaching" component={Teaching} />
-          <Route path="/publications" component={Publications} />
-          <Route path="/blog" component={Blog} />
-        </div>
-      </HashRouter>
-    );
-  }
+function App() {
+  return (
+    <HashRouter>
+      <div className="app-wrapper">
+        <Navbar />
+        <Container fluid className="px-0 main-content">
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/cv" element={<CV />} />
+            <Route path="/research" element={<Research />} />
+            <Route path="/teaching" element={<Teaching />} />
+            <Route path="/publications" element={<Publications />} />
+            <Route path="/blog" element={<Blog />} />
+          </Routes>
+        </Container>
+        <footer className="footer mt-auto py-3">
+          <Container>
+            <div className="text-center text-muted">
+              © {new Date().getFullYear()} David H Smith IV
+            </div>
+          </Container>
+        </footer>
+      </div>
+    </HashRouter>
+  );
 }
 
 export default App;

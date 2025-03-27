@@ -6,6 +6,7 @@ body{
   text-align: center;
   padding: 25px; 
   width: 100%;
+  background-color: #f8f9fa;
 }
 
 li{
@@ -24,24 +25,25 @@ p{
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   font-size: 30px;
   font-variant: small-caps;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.5);
   margin-top: 15px;
+  margin-bottom: 15px;
 }
-
 
 .subsection{
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   font-size: 20px;
   font-variant: small-caps;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.5);
   margin-top: 15px;
+  margin-bottom: 15px;
   text-align: left;
 }
 
 .subsubsection{
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   font-size: 14px;
-  border-bottom: 1px dashed black;
+  border-bottom: 1px dashed rgba(192, 192, 192, 0.5);
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: left;
@@ -51,34 +53,41 @@ p{
   padding: 10px;
   background-color: white;
   text-align: center;
-  border: 3px solid black;
+  border: 2px solid rgba(33, 37, 41, 0.2);
   margin-top: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
+.img-container:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-color: rgba(33, 37, 41, 0.4);
+}
 
 a:link {
-  color: black;
+  color: #C0C0C0;
   background-color: transparent;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 a:visited {
-  color: black;
+  color: #C0C0C0;
   background-color: transparent;
   text-decoration: none;
 }
 
 a:hover {
-  color: black;
+  color: #fff;
   background-color: transparent;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:active {
-  color: black;
+  color: #fff;
   background-color: transparent;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 ul{
@@ -90,11 +99,9 @@ ul{
 
 small{
   font-size: 15px;
-  color: black;
+  color: #C0C0C0;
   font-weight: 300;
 }
-
-
 
 .cv{
   text-align: left;
@@ -115,7 +122,11 @@ small{
 }
 
 img {
-    transition:transform 0.25s ease;
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
 }
 
 ul.cv-publist li {

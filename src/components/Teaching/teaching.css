@@ -7,46 +7,60 @@ body{
 }
 
 .styled-card {
-  transition: transform 0.2s;
+  transition: all 0.3s ease;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(192, 192, 192, 0.3);
+}
+
+.styled-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .card-title {
-  font-size: 1.25rem; /* Font size for the title */
-  font-weight: bold; /* Bold title */
-  margin-bottom: 10px; /* Spacing below the title */
-  background-color: #3332;
-  border-radius: 10px;
-  padding: 10px; /* Padding around the title */
-  min-height: 100px; /* Set a minimum height */
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  background-color: rgba(33, 37, 41, 0.8);
+  color: #C0C0C0;
+  border-radius: 4px;
+  padding: 10px;
+  min-height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-left: 3px solid black;
-  border-right: 3px solid black;
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  font-variant: small-caps;
+  transition: all 0.3s ease;
 }
 
 .card-title a {
-  text-decoration: none; /* Remove underline from links */
+  text-decoration: none;
+  color: #C0C0C0;
+  transition: all 0.3s ease;
+}
+
+.card-title a:hover {
+  color: #fff;
 }
 
 .styled-card a:hover {
-  background-color: #f9f9f9;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
+  text-decoration: none;
 }
 
 .card-text {
-  font-size: 1rem; /* Font size for the text */
-  line-height: 1.5; /* Improve line spacing */
-  color: #333; /* Text color */
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
 }
 
 .jumbotron{
   text-align: center;
   padding: 25px; 
   width: 100%;
+  background-color: #f8f9fa;
 }
 
 li{
@@ -58,17 +72,16 @@ li{
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   font-size: 30px;
   font-variant: small-caps;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.5);
   margin-top: 15px;
   margin-bottom: 15px;
 }
-
 
 .subsection{
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   font-size: 25px;
   font-variant: small-caps;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.5);
   margin-top: 15px;
   margin-bottom: 15px;
   text-align: left;
@@ -77,23 +90,23 @@ li{
 .subsubsection{
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   font-size: 20px;
-  border-bottom: 1px dashed black;
+  border-bottom: 1px dashed rgba(192, 192, 192, 0.5);
   margin-top: 10px;
+  margin-bottom: 10px;
   text-align: left;
 }
 
 .blockquote-text{
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-  /* make it block quote like */
   margin-left: 50px;
   margin-right: 50px;
   font-size: 20px;
   font-style: italic;
   text-align: left;
-  border-left: 3px solid black;
-  padding-left: 10px;
-  background-color: #f9f9f9;
-  padding: 10px;
-  border-radius: 5px;
+  border-left: 3px solid #212529;
+  padding: 15px;
+  background-color: rgba(192, 192, 192, 0.1);
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 

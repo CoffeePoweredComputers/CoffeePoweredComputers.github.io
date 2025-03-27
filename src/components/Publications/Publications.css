@@ -1,9 +1,17 @@
 .jumbotron{
-  background-color:#ebebeb;
+  background-color: #f8f9fa;
+  padding: 25px;
 }
 
 .profile-pic{
   margin-top: 15px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.profile-pic:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .body{
@@ -19,37 +27,67 @@
   text-align: left;
   font-weight: 600;
   font-variant: small-caps;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.5);
   margin-bottom: 25px;
+  color: #212529;
 }
 
 .year-header{
   margin-left: 10px;
   margin-right: 10px;
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-  font-size: 15;
+  font-size: 15px;
   width: 100%;
   text-align: left;
-  font-weight: 00;
+  font-weight: 600;
   font-variant: small-caps;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.5);
+  color: #C0C0C0;
+  background-color: #212529;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 15px;
 }
-
 
 .title-header{
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   text-align: left;
+  transition: all 0.3s ease;
+  padding: 5px 0;
+}
+
+.title-header:hover {
+  color: #212529;
+  background-color: rgba(192, 192, 192, 0.1);
+  border-radius: 4px;
+  padding-left: 5px;
 }
 
 .abstract{
-
   margin-left: 15px;
   margin-right: 15px;
   margin-bottom: 25px;
-  margin-top:10px;
-
+  margin-top: 10px;
   text-align: left;
   font-size: 15px;
   font-weight: 100;
   font-family: 'Roboto Condensed', sans-serif;
+  padding: 10px;
+  border-left: 3px solid #212529;
+  background-color: rgba(192, 192, 192, 0.05);
+  border-radius: 0 4px 4px 0;
+}
+
+/* Links */
+a:link, a:visited {
+  color: #C0C0C0;
+  background-color: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover, a:active {
+  color: #fff;
+  background-color: transparent;
+  text-decoration: none;
 }

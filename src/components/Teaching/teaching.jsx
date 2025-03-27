@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Jumbotron, Container, Row, Col, Image, Button, ListGroup, CardDeck, Card} from 'react-bootstrap';
+import { Container, Row, Col, Image, Button, ListGroup, Card} from 'react-bootstrap';
 import "./teaching.css";
 
 export default class Teaching extends Component {
@@ -12,8 +12,8 @@ export default class Teaching extends Component {
 
     return (
 
-      <Container fluid>
-        <Jumbotron>
+      <Container fluid className="p-4 mb-4 bg-light rounded">
+        <div className="teaching-container">
           <Col>
             <div class="section"> Teaching Statement </div>
             <p className="mb-3" style={{ marginLeft: '1.5em' }}>
@@ -60,51 +60,57 @@ export default class Teaching extends Component {
               at the following links:
             </p>
 
-            <CardDeck className="styled-card-deck">
-              <Card className="styled-card">
-                <a href="https://hamiltonfour.tech/cs-105-summer-21/" className="card-link">
-                  <Card.Body>
-                    <Card.Title className="card-title">
-                      <b>Introduction to Programming for Non-technical Majors (CS 105)</b>
-                    </Card.Title>
-                    <Card.Text className="card-text">
-                      A comprehensive course designed to introduce programming
-                      concepts to students without a technical background,
-                      focusing on the fundamentals of the Python programming
-                      language.
-                    </Card.Text>
-                  </Card.Body>
-                </a>
-              </Card>
-              <Card className="styled-card">
-                <a href="https://hamiltonfour.tech/uni-high-fall-21/" className="card-link">
-                  <Card.Body>
-                    <Card.Title className="card-title">
-                      <b>Introduction to Programming - University Laboratory High School</b>
-                    </Card.Title>
-                    <Card.Text className="card-text">
-                      An introductory course aimed at high school students,
-                      emphasizing hands-on projects and peer instruction to
-                      foster a collaborative learning environment.
-                    </Card.Text>
-                  </Card.Body>
-                </a>
-              </Card>
-              <Card className="styled-card">
-                <a href="https://hamiltonfour.tech/487-data-structures/" className="card-link">
-                  <Card.Body>
-                    <Card.Title className="card-title">
-                      <b>Data Structures for CS Teachers (CI 487)</b>
-                    </Card.Title>
-                    <Card.Text className="card-text">
-                      A specialized course I developed, tailored for in-service
-                      K-12 teachers, focusing on Java programming fundamentals
-                      and the principles of data structures.
-                    </Card.Text>
-                  </Card.Body>
-                </a>
-              </Card>
-            </CardDeck>
+            <Row xs={1} md={3} className="g-4 styled-card-deck">
+              <Col>
+                <Card className="styled-card">
+                  <a href="https://hamiltonfour.tech/cs-105-summer-21/" className="card-link">
+                    <Card.Body>
+                      <Card.Title className="card-title">
+                        <b>Introduction to Programming for Non-technical Majors (CS 105)</b>
+                      </Card.Title>
+                      <Card.Text className="card-text">
+                        A comprehensive course designed to introduce programming
+                        concepts to students without a technical background,
+                        focusing on the fundamentals of the Python programming
+                        language.
+                      </Card.Text>
+                    </Card.Body>
+                  </a>
+                </Card>
+              </Col>
+              <Col>
+                <Card className="styled-card">
+                  <a href="https://hamiltonfour.tech/uni-high-fall-21/" className="card-link">
+                    <Card.Body>
+                      <Card.Title className="card-title">
+                        <b>Introduction to Programming - University Laboratory High School</b>
+                      </Card.Title>
+                      <Card.Text className="card-text">
+                        An introductory course aimed at high school students,
+                        emphasizing hands-on projects and peer instruction to
+                        foster a collaborative learning environment.
+                      </Card.Text>
+                    </Card.Body>
+                  </a>
+                </Card>
+              </Col>
+              <Col>
+                <Card className="styled-card">
+                  <a href="https://hamiltonfour.tech/487-data-structures/" className="card-link">
+                    <Card.Body>
+                      <Card.Title className="card-title">
+                        <b>Data Structures for CS Teachers (CI 487)</b>
+                      </Card.Title>
+                      <Card.Text className="card-text">
+                        A specialized course I developed, tailored for in-service
+                        K-12 teachers, focusing on Java programming fundamentals
+                        and the principles of data structures.
+                      </Card.Text>
+                    </Card.Body>
+                  </a>
+                </Card>
+              </Col>
+            </Row>
 
             <div class="subsection">Teaching Philosophy - Sustainable Adoption of Evidence-Based Best Practices</div>
             <p className="mb-3" style={{ marginLeft: '1.5em' }}>
@@ -129,7 +135,7 @@ export default class Teaching extends Component {
               To support these practices, I leverage technologies like PrairieLearn and interactive textbooks. The auto-grading features they provide <strong>enable sustainable adoption of best practices</strong> like immediate feedback and frequent testing, allowing my instructional staff and me to focus on aspects that are harder to scale, such as individualized support.
             </p>
           </Col>
-        </Jumbotron >
+        </div>
       </Container >
       );
 }
