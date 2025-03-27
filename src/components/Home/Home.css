@@ -1,105 +1,75 @@
 /* Profile Section */
 .profile-container {
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-xl);
 }
 
+/* Home-specific link override for dark text */
+.home-link {
+  color: var(--primary-text);
+}
+
+/* Profile Elements */
 .profile-image {
-  max-width: 200px;
+  max-width: 250px;
   height: auto;
-  margin: 0 auto 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto var(--space-md);
+  box-shadow: var(--card-shadow-hover);
   border: 3px solid #fff;
 }
 
 .profile-name {
+  font-family: var(--font-family-serif);
+  font-variant: small-caps;
   font-weight: 600;
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-xl);
 }
 
 .profile-titles {
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-md);
 }
 
 .sub {
   font-size: 1.1rem;
   font-weight: 300;
-  color: #666;
+  color: var(--secondary-text);
 }
 
 .social-icons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: var(--space-sm);
 }
 
-/* News Section */
-.news-card, .bio-card {
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  overflow: hidden;
+/* Bio Section */
+.bio {
+  font-size: var(--font-size-md);
+  font-weight: 300;
+  line-height: 1.6;
 }
 
-/* width for Card.Title children */
+/* Title Styling */
 .news-title, .bio-title {
+  font-family: var(--font-family-serif);
+  font-variant: small-caps;
+  border-bottom: 1px solid var(--border-light) !important;
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-sm);
   min-height: 20px !important;
 }
 
-.news-list {
-  list-style-type: none;
-  font-size: 0.9rem;
-  padding-left: 0;
-  margin-bottom: 0;
-  max-height: 300px;
-  overflow-y: auto;
-}
-
-.news-li {
-  position: relative;
-  padding-left: 0;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  line-height: 1.4;
-}
-
-.news-li::before {
-  content: attr(date-data);
-  font-weight: bold;
-  display: block;
-  color: #666;
-  margin-bottom: 0.25rem;
-}
-
-.news-li-border:not(:last-child) {
-  margin-bottom: 0.5rem;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 0.5rem;
-}
-
-/* Research Section */
+/* Research Section Elements */
 .research-intro {
-  padding: 1rem;
-  background-color: rgba(249, 249, 249, 0.5);
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
+  padding: var(--space-md);
+  background-color: var(--highlight-bg);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--space-lg);
+  width: 100%;
 }
 
 .research-areas {
-  margin-bottom: 2rem;
-}
-
-.research-card {
-  margin-bottom: 1.5rem;
-  border-radius: 8px;
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-}
-
-.research-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: var(--space-xl);
 }
 
 .research-icon {
@@ -110,40 +80,36 @@
 }
 
 .research-title {
+  font-family: var(--font-family-serif);
+  font-variant: small-caps;
   font-weight: 600;
   margin-bottom: 0.75rem;
-  font-size: 1.25rem;
+  font-size: var(--font-size-lg);
 }
 
 .research-text {
-  font-size: 0.95rem;
+  font-size: var(--font-size-sm);
   line-height: 1.5;
-  color: #444;
-}
-
-.bio {
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.6;
+  color: var(--secondary-text);
 }
 
 /* Responsive Adjustments */
 @media (max-width: 767.98px) {
   .profile-image {
-    max-width: 150px;
+    max-width: 250px;
   }
   
   .profile-name {
-    font-size: 1.25rem;
+    font-size: var(--font-size-lg);
   }
   
   .sub {
-    font-size: 1rem;
+    font-size: var(--font-size-md);
   }
   
   .bio-alignment {
     text-align: center;
-    padding: 0 1rem;
+    padding: 0 var(--space-md);
   }
   
   .research-intro {
@@ -152,22 +118,22 @@
   
   .research-title {
     font-size: 1.1rem;
-    margin-top: 0.5rem;
+    margin-top: var(--space-sm);
   }
   
   .research-text {
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
   }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
   .profile-image {
-    max-width: 175px;
+    max-width: 250px;
   }
   
   .bio-alignment {
     text-align: left;
-    padding: 0 1rem;
+    padding: 0 var(--space-md);
   }
 }
 
@@ -177,6 +143,6 @@
   }
   
   .research-intro {
-    padding: 1.5rem;
+    padding: var(--space-lg);
   }
 }

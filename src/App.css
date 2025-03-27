@@ -1,25 +1,9 @@
-/* Global Styles */
-:root {
-  --primary-bg: #ffffff;
-  --secondary-bg: #f9f9f9;
-  --primary-text: #212529;
-  --secondary-text: #6c757d;
-  --accent-color: #404040;
-  --border-color: #dee2e6;
-  --link-color: #0d6efd;
-  --link-hover: #0a58ca;
-}
+/* 
+ * App-specific component styles
+ * This file contains styles for reusable app components that build on global styles
+ */
 
 /* Basic Layout */
-body {
-  overflow-x: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: var(--primary-text);
-}
-
 .app-wrapper {
   display: flex;
   flex-direction: column;
@@ -28,30 +12,24 @@ body {
 
 .main-content {
   flex: 1 0 auto;
-  padding-bottom: 2rem;
+  padding-bottom: var(--space-xl);
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 1rem;
-  font-weight: 600;
-  line-height: 1.2;
+/* Component Layouts */
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
+.content-section {
+  margin-bottom: var(--space-xl);
 }
 
-a {
-  color: var(--link-color);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-a:hover {
-  color: var(--link-hover);
-  text-decoration: underline;
+.content-section-sm {
+  margin-bottom: var(--space-lg);
 }
 
 /* Component Styles */
@@ -63,23 +41,108 @@ a:hover {
   background-color: var(--secondary-bg) !important;
 }
 
-.footer {
-  padding: 1.5rem 0;
-  background-color: var(--secondary-bg);
-  border-top: 1px solid var(--border-color);
+/* Common Component Typography */
+.subtitle {
+  font-size: var(--font-size-md);
+  color: var(--secondary-text);
+  font-weight: 300;
+  margin-bottom: var(--space-md);
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+.year-indicator {
+  float: right;
+  font-family: var(--font-family-condensed);
+  color: var(--secondary-text);
+}
+
+.small-text {
+  font-size: var(--font-size-sm);
+  color: var(--secondary-text);
+  font-weight: 300;
+}
+
+/* Reusable CV/Publications Styling */
+.cv-header, .pub-header, .research-header {
+  font-family: var(--font-family-serif);
+  font-size: var(--font-size-lg);
+  font-variant: small-caps;
+  border-bottom: 1px solid var(--border-light);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-md);
+  color: var(--primary-text);
+}
+
+.pub-list, .cv-list {
+  text-align: left;
+  font-family: var(--font-family-condensed);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.pub-list li, .cv-list li {
+  margin-bottom: var(--space-sm);
+  padding-left: var(--space-sm);
+  border-left: 2px solid transparent;
+  transition: var(--transition-standard);
+}
+
+.pub-list li:hover, .cv-list li:hover {
+  border-left: 2px solid var(--primary-text);
+  background-color: var(--highlight-bg);
+}
+
+/* News and Card Listings */
+.news-card, .bio-card, .research-card {
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.news-list {
+  list-style-type: none;
+  font-size: var(--font-size-sm);
+  padding-left: 0;
+  margin-bottom: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.news-li {
+  position: relative;
+  padding: var(--space-sm) 0;
+  line-height: 1.4;
+}
+
+.news-li::before {
+  content: attr(date-data);
+  font-weight: bold;
+  display: block;
+  color: var(--secondary-text);
+  margin-bottom: var(--space-xs);
+}
+
+.news-li-border:not(:last-child) {
+  margin-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: var(--space-sm);
+}
+
+/* Footer */
+.footer {
+  padding: var(--space-lg) 0;
+  background-color: var(--secondary-bg);
+  border-top: 1px solid var(--border-color);
 }
 
 /* Media Queries */
 @media (max-width: 767.98px) {
   .container, .container-sm {
     max-width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
   }
   
   h1 {
@@ -91,6 +154,10 @@ img {
   }
   
   h3 {
+    font-size: 1.25rem;
+  }
+
+  .cv-header, .pub-header, .research-header {
     font-size: 1.25rem;
   }
 }
