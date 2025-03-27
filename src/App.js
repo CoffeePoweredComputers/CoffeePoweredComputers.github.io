@@ -4,10 +4,10 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/NavBar/NavBar.jsx';
 import Home from './components/Home/Home.jsx';
 import Publications from './components/Publications/Publications.jsx';
-import CV from './components/CV/cv.jsx';
+import CV from './components/CV/CV.jsx';
 import Blog from './components/Blog/Blog.jsx';
-import Research from './components/Research/research.jsx';
-import Teaching from './components/Teaching/teaching.jsx';
+import Research from './components/Research/Research.jsx';
+import Teaching from './components/Teaching/Teaching.jsx';
 import { Container } from 'react-bootstrap';
 
 function App() {

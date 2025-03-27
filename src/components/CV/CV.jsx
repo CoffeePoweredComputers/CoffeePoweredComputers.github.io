@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
-import "./cv.css";
-import CVData from './cv.json';
+import "./CV.css";
+import CVData from './CV.json';
 
 export default function CV() {
     useEffect(() => {

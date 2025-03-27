@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Row, Col, Image, Button, ListGroup, Card} from 'react-bootstrap';
-import "./teaching.css";
+import "./Teaching.css";
 
 export default class Teaching extends Component {
 
@@ -111,31 +111,6 @@ export default class Teaching extends Component {
                 </Card>
               </Col>
             </Row>
-
-            <div class="subsection">Teaching Philosophy - Sustainable Adoption of Evidence-Based Best Practices</div>
-            <p className="mb-3" style={{ marginLeft: '1.5em' }}>
-              In my teaching, I use evidence-based teaching practices across all aspects of the course. Though I have encountered many in my time as an educator and education researcher, the following are those which I have adopted and found most effective:
-              <ul>
-                <li>
-                  <strong>Individualized Support:</strong> As a former tutor who has benefited greatly from tutoring, I recognize the unique impact of one-on-one support. In my courses, I aim to offer ample opportunities for individualized help through office hours and tutoring sessions.
-                </li>
-                <li>
-                  <strong>Frequent Testing:</strong> In the design of summative assessments, I am a firm believer in the effectiveness of <em>frequent testing</em> for promoting frequent study and improving students' learning outcomes. I use PrairieLearn, an open-source platform with automatically graded questions, to facilitate frequent, authentic assessments.
-                </li>
-                <li>
-                  <strong>Active Learning:</strong> This involves engaging students through activities such as discussions and problem solving with the goal of improving both engagement and learning. To support this, I design computer-based activities and tools which I embed within lectures, allowing students hands-on practice, illustrate points, and allow students to interact with worked examples.
-                </li>
-                <li>
-                  <strong>Peer Instruction:</strong> I facilitate peer instruction through in-lecture questions and activities, transforming lectures into active learning sessions where students at a similar level collaboratively solve problems, reinforcing their understanding and improving learning outcomes while reducing fail rates.
-                </li>
-                <li>
-                  <strong>Spiral Curriculum Design:</strong> The spiral curriculum introduces all course topics briefly in the first half of the course, then revisits each in greater depth in the second. I find this particularly effective in introductory programming, as it gives students with limited experience a lay of the programming landscape before exploring topics in detail and allows them to begin writing more interesting programs early on in the course.
-                </li>
-              </ul>
-              To support these practices, I leverage technologies like PrairieLearn and interactive textbooks. The auto-grading features they provide <strong>enable sustainable adoption of best practices</strong> like immediate feedback and frequent testing, allowing my instructional staff and me to focus on aspects that are harder to scale, such as individualized support.
-            </p>
-          </Col>
-        </div>
       </Container >
       );
 }

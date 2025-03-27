@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Row, Col, Image, Button} from 'react-bootstrap';
-import "./research.css";
+import "./Research.css";
 
 export default class Research extends Component {
 
