@@ -1,77 +1,459 @@
-/*
- * CV Component Specific Styles
- * Builds on global styles from index.css and App.css
- */
-
-/* CV Component Layout */
-.cv {
-  text-align: left;
+/* CV Content Container */
+.cv-content {
+  margin-bottom: var(--space-xl);
 }
 
-/* CV-specific typography */
-.cv-title {
+/* CV Header Styling */
+.cv-header-container {
   text-align: center;
+  padding: var(--space-md);
+  background-color: var(--highlight-bg);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--space-lg);
+}
+
+.cv-main-title {
   font-family: var(--font-family-serif);
   font-variant: small-caps;
+  font-weight: 600;
+  font-size: 2.2rem;
+  margin-bottom: 0.25rem;
 }
 
-.cv-position {
+.cv-subtitle {
+  color: var(--secondary-text);
+  font-size: 1rem;
+  margin-bottom: var(--space-md);
+}
+
+
+/* Section Styling */
+.cv-section {
+  padding: var(--space-md);
+  background-color: var(--highlight-bg);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--space-lg);
+}
+
+.section-title {
+  font-family: var(--font-family-serif);
+  font-variant: small-caps;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-light);
   margin-top: var(--space-sm);
-  text-align: left;
+  margin-bottom: var(--space-md);
+  font-size: var(--font-size-xl);
+  padding-bottom: 0.5rem;
 }
 
-/* CV-specific links (light color links for dark backgrounds) */
-.cv-link:link,
-.cv-link:visited {
-  color: #C0C0C0;
-  text-decoration: none;
-  transition: var(--transition-standard);
+.section-content {
+  padding: var(--space-sm);
 }
 
-.cv-link:hover,
-.cv-link:active {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* CV Image styling */
-.cv-img {
-  display: inline-block;
-  width: 100%;
-  box-shadow: var(--card-shadow);
+/* Year Badges */
+.year-badge {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 4px 10px;
   border-radius: var(--border-radius-sm);
-  transition: var(--transition-standard);
+  font-size: 0.8rem;
+  font-weight: 500;
 }
 
-.cv-img:hover {
+/* Education Cards */
+.education-card {
+  transition: all 0.3s ease;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-light);
+  margin-bottom: var(--space-md);
+}
+
+.education-card:hover {
+  transform: var(--hover-lift-sm);
   box-shadow: var(--card-shadow-hover);
 }
 
-/* Year indicator */
-.cv-year {
-  float: right;
-  font-family: 'Montserrat', serif;
+.institution-name {
+  font-family: var(--font-family-serif);
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: var(--space-sm);
+  color: var(--accent-color);
+}
+
+.degrees-list {
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.degree-item {
+  margin-bottom: 5px;
+  font-style: italic;
+}
+
+.degree-icon {
+  margin-right: 8px;
+  color: var(--accent-color);
+}
+
+.advisor-info {
+  margin-top: var(--space-sm);
+  font-size: 0.9rem;
   color: var(--secondary-text);
 }
 
-/* Publication list styling (extends the common styles) */
-ul.cv-publist {
-  text-align: left;
-  font-family: var(--font-family-condensed);
-  margin-top: var(--space-lg);
-  margin-bottom: var(--space-lg);
-  list-style-type: none;
-  padding-left: 0;
+/* Experience Cards */
+.simplified-experience-card {
+  transition: all 0.3s ease;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-light);
+  margin-bottom: var(--space-md);
 }
 
-ul.cv-publist li {
+.simplified-experience-card:hover {
+  transform: var(--hover-lift-sm);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: var(--space-sm);
-  padding-left: var(--space-sm);
-  border-left: 2px solid transparent;
-  transition: var(--transition-standard);
 }
 
-ul.cv-publist li:hover {
-  border-left: 2px solid var(--primary-text);
-  background-color: var(--highlight-bg);
+.employer-name {
+  font-family: var(--font-family-serif);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--accent-color);
+}
+
+.position-title {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--secondary-text);
+  margin-bottom: var(--space-sm);
+}
+
+.accomplishment-text {
+  font-size: 0.9rem;
+  color: var(--secondary-text);
+  line-height: 1.6;
+  margin-top: auto;
+}
+
+/* Publication Section */
+.publications-section {
+  margin-bottom: var(--space-lg);
+}
+
+.year-heading {
+  font-family: var(--font-family-serif);
+  font-variant: small-caps;
+  font-weight: 600;
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-sm);
+  font-size: 1.3rem;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--accent-color);
+  display: inline-block;
+}
+
+.publication-card {
+  transition: all 0.3s ease;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-light);
+  margin-bottom: var(--space-sm);
+}
+
+.publication-card:hover {
+  transform: var(--hover-lift-sm);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.publication-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.publication-authors {
+  font-style: italic;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: var(--secondary-text);
+}
+
+.publication-venue {
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  color: var(--secondary-text);
+}
+
+.publication-link a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.publication-link a:hover {
+  text-decoration: underline;
+}
+
+/* Venue Badges */
+.venue-badge {
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: var(--border-radius-sm);
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.venue-badge.sigcse {
+  background-color: #007bff;
+}
+
+.venue-badge.iticse {
+  background-color: #6610f2;
+}
+
+.venue-badge.icer {
+  background-color: #6f42c1;
+}
+
+.venue-badge.comped {
+  background-color: #fd7e14;
+}
+
+.venue-badge.asee {
+  background-color: #28a745;
+}
+
+.venue-badge.journal {
+  background-color: #dc3545;
+}
+
+.venue-badge.workshop {
+  background-color: #20c997;
+}
+
+.venue-badge.other {
+  background-color: #6c757d;
+}
+
+/* Award emoji styles */
+.award-emoji {
+  margin-left: 10px;
+  font-size: 1.1rem;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: help;
+}
+
+/* Projects Section */
+.project-card {
+  transition: all 0.3s ease;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-light);
+}
+
+.project-card:hover {
+  transform: var(--hover-lift);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.project-title {
+  font-family: var(--font-family-serif);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: var(--accent-color);
+}
+
+.project-client {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--secondary-text);
+}
+
+.project-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 120px;
+  border: 1px solid var(--border-light);
+  padding: 5px;
+  background-color: white;
+  border-radius: var(--border-radius-sm);
+}
+
+.project-details {
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.project-details li {
+  margin-bottom: 5px;
+}
+
+/* Workshop Cards */
+.workshop-card {
+  transition: all 0.3s ease;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-light);
+  margin-bottom: var(--space-sm);
+}
+
+.workshop-card:hover {
+  transform: var(--hover-lift-sm);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.workshop-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.workshop-authors {
+  font-style: italic;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: var(--secondary-text);
+}
+
+.workshop-venue {
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  color: var(--secondary-text);
+}
+
+.workshop-link a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.workshop-link a:hover {
+  text-decoration: underline;
+}
+
+/* Course Website Cards */
+.course-website-card {
+  transition: all 0.3s ease;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-light);
+}
+
+.course-website-card:hover {
+  transform: var(--hover-lift);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.course-name {
+  font-family: var(--font-family-serif);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: var(--space-md);
+  color: var(--accent-color);
+  text-align: center;
+}
+
+/* Achievement Cards */
+.achievement-card {
+  transition: all 0.3s ease;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-light);
+  margin-bottom: var(--space-sm);
+}
+
+.achievement-card:hover {
+  transform: var(--hover-lift-sm);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.achievement-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  font-style: italic;
+  color: var(--accent-color);
+}
+
+.achievement-description {
+  font-size: 0.9rem;
+  color: var(--secondary-text);
+}
+
+/* CV Footer */
+.cv-footer {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-light);
+}
+
+.note {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--secondary-text);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+  .cv-main-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .publication-title, .workshop-title, .achievement-title, .project-title, .course-name {
+    font-size: 1rem;
+  }
+  
+  .cv-section {
+    padding: 0.75rem;
+  }
+  
+  .year-heading {
+    font-size: 1.2rem;
+  }
+  
+  .publication-authors, .workshop-authors, .achievement-description, .project-details li {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .cv-content {
+    padding: 0 var(--space-md);
+  }
+  
+  .publication-title, .workshop-title {
+    font-size: 1.05rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .cv-section {
+    padding: var(--space-lg);
+  }
 }
