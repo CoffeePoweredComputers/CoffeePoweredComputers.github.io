@@ -1,63 +1,141 @@
-.styled-card-deck {
-  min-height: 350px;
+/* Teaching Content Container */
+.teaching-content {
+  margin-bottom: var(--space-xl);
 }
 
-.styled-card {
-  transition: all 0.3s ease;
-  height: 100%;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(192, 192, 192, 0.3);
-}
-
-.styled-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.styled-card {
-  text-decoration: none;
-}
-
-.section{
-  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-  font-size: 30px;
+/* Section Title Styling */
+.section-title {
+  font-family: var(--font-family-serif);
   font-variant: small-caps;
-  border-bottom: 1px solid rgba(192, 192, 192, 0.5);
-  margin-top: 15px;
-  margin-bottom: 15px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-light);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-md);
+  font-size: var(--font-size-xl);
+  padding-bottom: 0.5rem;
 }
 
-.subsection{
-  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-  font-size: 25px;
-  font-variant: small-caps;
-  border-bottom: 1px solid rgba(192, 192, 192, 0.5);
-  margin-top: 15px;
-  margin-bottom: 15px;
-  text-align: left;
+/* Text Styling */
+.teaching-text {
+  font-size: var(--font-size-md);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+  color: var(--secondary-text);
 }
 
-.subsubsection{
-  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-  font-size: 20px;
-  border-bottom: 1px dashed rgba(192, 192, 192, 0.5);
-  margin-top: 10px;
-  margin-bottom: 10px;
-  text-align: left;
-}
-
-.blockquote-text{
-  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-  margin-left: 50px;
-  margin-right: 50px;
-  font-size: 20px;
+/* Blockquote Styling */
+.blockquote-text {
+  font-family: var(--font-family-serif);
+  margin: var(--space-md) var(--space-lg);
+  font-size: var(--font-size-md);
   font-style: italic;
   text-align: left;
-  border-left: 3px solid #212529;
-  padding: 15px;
-  background-color: rgba(192, 192, 192, 0.1);
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  border-left: 3px solid var(--primary-color);
+  padding: var(--space-md);
+  background-color: var(--highlight-bg);
+  border-radius: var(--border-radius-md);
+  color: var(--secondary-text);
 }
 
+/* Section Containers */
+.teaching-intro, .teaching-experience, .teaching-philosophy {
+  padding: var(--space-md);
+  background-color: var(--highlight-bg);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--space-lg);
+  width: 100%;
+}
+
+/* Courses Container */
+.courses-container {
+  margin-top: var(--space-md);
+}
+
+/* Course Cards - Styled like research cards */
+.course-card {
+  transition: all 0.3s ease;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+}
+
+.course-card:hover {
+  transform: var(--hover-lift);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.course-icon {
+  max-width: 100%;
+  height: auto;
+  max-height: 120px;
+  margin: 0 auto;
+}
+
+.course-title {
+  font-family: var(--font-family-serif);
+  font-variant: small-caps;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-size: var(--font-size-lg);
+}
+
+.course-description {
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  color: var(--secondary-text);
+}
+
+/* Philosophy List */
+.philosophy-list {
+  padding-left: 1.5rem;
+  margin-bottom: var(--space-md);
+}
+
+.philosophy-list li {
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-sm);
+  color: var(--secondary-text);
+  line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+  .section-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .teaching-text, .blockquote-text {
+    font-size: var(--font-size-sm);
+  }
+  
+  .teaching-intro, .teaching-experience, .teaching-philosophy {
+    padding: 0.75rem;
+  }
+  
+  .course-title {
+    font-size: 1.1rem;
+    margin-top: var(--space-sm);
+  }
+  
+  .course-description {
+    font-size: var(--font-size-sm);
+  }
+  
+  .philosophy-list li {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .teaching-content {
+    padding: 0 var(--space-md);
+  }
+}
+
+@media (min-width: 992px) {
+  .teaching-intro, .teaching-experience, .teaching-philosophy {
+    padding: var(--space-lg);
+  }
+}

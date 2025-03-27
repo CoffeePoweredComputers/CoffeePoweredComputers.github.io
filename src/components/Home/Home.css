@@ -8,6 +8,35 @@
   color: var(--primary-text);
 }
 
+/* News Tags */
+.news-tag {
+  display: inline-block;
+  padding: 2px 6px;
+  margin-right: 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  vertical-align: middle;
+}
+
+.news-tag.general {
+  background-color: #6c757d; /* Gray */
+}
+
+.news-tag.grant {
+  background-color: #28a745; /* Green */
+}
+
+.news-tag.paper {
+  background-color: #007bff; /* Blue */
+}
+
+.news-tag.talk {
+  background-color: #fd7e14; /* Orange */
+}
+
 /* Profile Elements */
 .profile-image {
   max-width: 250px;

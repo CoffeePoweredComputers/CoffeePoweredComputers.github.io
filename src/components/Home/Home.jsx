@@ -77,15 +77,19 @@ export default function Home() {
                           <Card.Title className="border-bottom pb-2 fw-bold news-title">Latest News</Card.Title>
                           <ul className="news-list">
                             <li className="news-li news-li-border" date-data="04/16/2025">
+                              <span className="news-tag general">General</span>
                               I am excited to have joined the <a href="https://dl.acm.org/journal/toce" target="_blank" rel="noopener noreferrer">ACM Transactions on Computing Education</a> as an Associate Editor!
                             </li>
                             <li className="news-li news-li-border" date-data="03/21/2025">
+                              <span className="news-tag grant">Grant</span>
                               In collaboration with Paul Denny from the University of Auckland, we have been awarded a Llama Impact Grant from Meta to support the development and evaluation of Explain in Plain English Questions!
                             </li>
                             <li className="news-li news-li-border" date-data="03/13/2025">
+                              <span className="news-tag general">General</span>
                               I am very excited to have accepted a tenure-track Assistant Professor position at Virginia Tech in the Department of Computer Science starting in Fall 2025!
                             </li>
                             <li className="news-li news-li-border" date-data="03/01/2025">
+                              <span className="news-tag paper">Paper</span>
                               Two papers related to ongoing work on EiPL questions were accepted to ITiCSE 2025 the pre-print of which are no avaliable on arXiv:
                               <ul style={{marginTop: 0, marginBottom: 0}}>
                                 <li><a href="https://arxiv.org/pdf/2503.12207">ReDefining Code Comprehension: Function Naming as a Mechanism for Evaluating Code Comprehension</a></li>
@@ -94,15 +98,19 @@ export default function Home() {
                               Many thanks to my co-authors and collaborators on this ongoing work!
                             </li>
                             <li className="news-li news-li-border" date-data="10/02/2024"> 
+                              <span className="news-tag paper">Paper</span>
                               Our paper "Exploring Student Reactions to LLM-Generated Feedback on Explain in Plain English Problems" was accepted to ACM SIGCSE 2025!
                             </li>
                             <li className="news-li news-li-border" date-data="10/01/2024 - 10/02/2024">
+                              <span className="news-tag talk">Talk</span>
                               I visited the University of Toronto St. George and University of Toronto Mississauga to give a talk on "Explain in Plain Language Questions". 
                             </li>
                             <li className="news-li news-li-border" date-data="10/01/2024"> 
+                              <span className="news-tag paper">Paper</span>
                               Our paper "Explain in Plain Language Question with Indic Languages" was accepted to COMPUTE 2025 and is now available on <a href="https://arxiv.org/abs/2409.20297" target="_blank" rel="noopener noreferrer">arXiv</a>.
                             </li>
                             <li className="news-li news-li-border" date-data="09/23/2024">
+                              <span className="news-tag talk">Talk</span>
                               I am very excited to have been invited to Dagstuhl Seminar 25311 on "Generative AI is Programming Education"!
                             </li>
                           </ul>
