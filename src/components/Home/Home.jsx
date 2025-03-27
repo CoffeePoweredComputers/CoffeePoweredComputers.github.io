@@ -76,13 +76,16 @@ export default function Home() {
                         <Card.Body className="text-start">
                           <Card.Title className="border-bottom pb-2 fw-bold news-title">Latest News</Card.Title>
                           <ul className="news-list">
-                            <li className="news-li news-li-border" date-data="05/21/2025">
+                            <li className="news-li news-li-border" date-data="04/16/2025">
+                              I am excited to have joined the <a href="https://dl.acm.org/journal/toce" target="_blank" rel="noopener noreferrer">ACM Transactions on Computing Education</a> as an Associate Editor!
+                            </li>
+                            <li className="news-li news-li-border" date-data="03/21/2025">
                               In collaboration with Paul Denny from the University of Auckland, we have been awarded a Llama Impact Grant from Meta to support the development and evaluation of Explain in Plain English Questions!
                             </li>
-                            <li className="news-li news-li-border" date-data="05/13/2025">
+                            <li className="news-li news-li-border" date-data="03/13/2025">
                               I am very excited to have accepted a tenure-track Assistant Professor position at Virginia Tech in the Department of Computer Science starting in Fall 2025!
                             </li>
-                            <li className="news-li news-li-border" date-data="05/01/2025">
+                            <li className="news-li news-li-border" date-data="03/01/2025">
                               Two papers related to ongoing work on EiPL questions were accepted to ITiCSE 2025 the pre-print of which are no avaliable on arXiv:
                               <ul style={{marginTop: 0, marginBottom: 0}}>
                                 <li><a href="https://arxiv.org/pdf/2503.12207">ReDefining Code Comprehension: Function Naming as a Mechanism for Evaluating Code Comprehension</a></li>
@@ -144,13 +147,7 @@ export default function Home() {
                               <Col xs={12} sm={9} md={9} lg={10}>
                                 <h5 className="research-title">Enabling Code Comprehension and Prompting Activities at Scale</h5>
                                 <p className="research-text">
-                                  My research focuses on tools to help students develop Human-GenAI collaborative
-                                  coding skills. I introduced <a href="https://arxiv.org/pdf/2311.14903.pdf" target="_blank" rel="noopener noreferrer">"Code
-                                  Generation Based Grading"</a> for Explain in Plain
-                                  English (EiPE), which develops students' AI prompting and code comprehension skills.
-                                  I maintain <a href="https://github.com/CoffeePoweredComputers/eiplgrader" target="_blank" rel="noopener noreferrer"><code>eiplgrader</code></a>,
-                                  a Python package supporting this autograder. Recent work examines this approach in
-                                  linguistically diverse contexts like <a href="https://arxiv.org/abs/2409.20297" target="_blank" rel="noopener noreferrer">India</a>.
+                                  My research focuses on tools to help students develop Human-GenAI collaborative coding skills. I introduced <a href="https://arxiv.org/pdf/2311.14903.pdf" target="_blank" rel="noopener noreferrer">"Code Generation Based Grading"</a> for Explain in Plain English (EiPE), which develops students' AI prompting and code comprehension skills. I maintain <a href="https://github.com/CoffeePoweredComputers/eiplgrader" target="_blank" rel="noopener noreferrer"><code>eiplgrader</code></a>, a Python package supporting this autograder. Recent work examines this approach in linguistically diverse contexts like <a href="https://arxiv.org/abs/2409.20297" target="_blank" rel="noopener noreferrer">India</a>.
                                 </p>
                               </Col>
                             </Row>
@@ -167,15 +164,46 @@ export default function Home() {
                               <Col xs={12} sm={9} md={9} lg={10}>
                                 <h5 className="research-title">Scaling Summative Assessment through Computer Based Testing</h5>
                                 <p className="research-text">
-                                  I support at-scale computer-based testing for frequent assessment with immediate feedback.
-                                  I've investigated <a href="https://par.nsf.gov/servlets/purl/10434207" target="_blank" rel="noopener noreferrer">second chance testing policies</a>, 
-                                  <a href="https://dl.acm.org/doi/pdf/10.1145/3478431.3499388" target="_blank" rel="noopener noreferrer">fairness of randomized exams</a>, and 
-                                  <a href="https://par.nsf.gov/servlets/purl/10434191" target="_blank" rel="noopener noreferrer">impacts of frequent exams</a> on student performance.
+                                  I support at-scale computer-based testing for frequent assessment with immediate feedback. I've investigated <a href="https://par.nsf.gov/servlets/purl/10434207" target="_blank" rel="noopener noreferrer">second chance testing policies</a>, <a href="https://dl.acm.org/doi/pdf/10.1145/3478431.3499388" target="_blank" rel="noopener noreferrer">fairness of randomized exams</a>, and  <a href="https://par.nsf.gov/servlets/purl/10434191" target="_blank" rel="noopener noreferrer">impacts of frequent exams</a> on student performance.
                                 </p>
                               </Col>
                             </Row>
                           </Card.Body>
                         </Card>
+
+                        {/* Research Area 4 
+                        <Card className="mb-4 research-card">
+                          <Card.Body>
+                            <Row className="align-items-center">
+                              <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
+                                <Image src="" alt="Teaching Software Testing in Introductory Computer Science" className="research-icon" />
+                              </Col>
+                              <Col xs={12} sm={9} md={9} lg={10}>
+                                <h5 className="research-title">Teaching Software Testing in Introductory Computer Science</h5>
+                                <p className="research-text">
+                                </p>
+                              </Col>
+                            </Row>
+                          </Card.Body>
+                        </Card>
+
+
+                        Research Area 5 
+                        <Card className="mb-4 research-card">
+                          <Card.Body>
+                            <Row className="align-items-center">
+                              <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
+                                <Image src="" alt="Computing Educating for End-User Scientific Programmers" className="research-icon" />
+                              </Col>
+                              <Col xs={12} sm={9} md={9} lg={10}>
+                                <h5 className="research-title">Computing Educating for End-User Scientific Programmers</h5>
+                                <p className="research-text">
+                                </p>
+                              </Col>
+                            </Row>
+                          </Card.Body>
+                        </Card>
+                        */}
                       </div>
 
                       <div className="text-center text-md-start mt-4">

@@ -42,19 +42,6 @@
   border-color: rgba(33, 37, 41, 0.4);
 }
 
-ul{
-  text-align: left;
-  font-family: 'Roboto Condensed', sans-serif;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-small{
-  font-size: 15px;
-  color: #C0C0C0;
-  font-weight: 300;
-}
-
 .cv{
   text-align: left;
 }
