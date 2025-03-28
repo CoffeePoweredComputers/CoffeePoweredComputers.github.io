@@ -8,13 +8,35 @@ import bibTexString from './cvBib';
 
 export default function CV() {
   const [publications, setPublications] = useState([]);
+  const [posters, setPosters] = useState([]);
+  const [expandedYears, setExpandedYears] = useState({});
+  const [publicationStats, setPublicationStats] = useState({
+    total: 0,
+    byYear: {},
+    byVenue: {}
+  });
 
   // Helper function to format BibTeX author string
   const formatAuthors = (authorString) => {
     if (!authorString) return "";
+    // Remove BibTeX braces
     authorString = authorString.replace(/{|}/g, "");
+    // Split by "and" to get individual authors
     const authors = authorString.split(" and ");
-    return authors.join(", ");
+    
+    // Process each author to convert from "Last, First" to "First Last"
+    const formattedAuthors = authors.map(author => {
+      // Handle "Last, First" format common in BibTeX
+      if (author.includes(",")) {
+        const [lastName, firstName] = author.split(",").map(part => part.trim());
+        return `${firstName} ${lastName}`;
+      }
+      // Return as is if not in "Last, First" format
+      return author.trim();
+    });
+    
+    // Join with commas
+    return formattedAuthors.join(", ");
   };
 
   useEffect(() => {
@@ -50,6 +72,35 @@ export default function CV() {
       });
 
       setPublications(parsedPublications);
+      
+      // Initialize expandedYears with all years expanded by default
+      const years = {};
+      parsedPublications.forEach(pub => {
+        if (pub.year) years[pub.year] = true;
+      });
+      setExpandedYears(years);
+      
+      // Calculate publication statistics
+      const stats = {
+        total: parsedPublications.length,
+        byYear: {},
+        byVenue: {}
+      };
+      
+      // Count publications by year
+      parsedPublications.forEach(pub => {
+        if (pub.year) {
+          stats.byYear[pub.year] = (stats.byYear[pub.year] || 0) + 1;
+        }
+        
+        // Count publications by venue
+        const venueName = pub.venueName || pub.venue;
+        if (venueName) {
+          stats.byVenue[venueName] = (stats.byVenue[venueName] || 0) + 1;
+        }
+      });
+      
+      setPublicationStats(stats);
     } catch (error) {
       console.error("Error parsing bib file:", error);
     }
@@ -58,17 +109,21 @@ export default function CV() {
   // Helper function to highlight the author's name in publications
   const markMe = (str) => {
     if (!str) return "";
-    let authors = str.includes("and") ? str.split("and") : str.split(",");
-    let marked = "";
+    // Split by comma since authors are now comma-separated
+    let authors = str.split(",");
+    let marked = [];
+    
     for (let i = 0; i < authors.length; i++) {
       let author = authors[i].trim();
-      if (author.includes("Smith IV, David") || author.includes("Smith, David")) {
-        marked += "<u>David H. Smith IV" + (author.includes("*") ? "*" : "") + "</u>, ";
+      // Check for the author's name in the new "First Last" format
+      if (author.includes("David Smith") || author.includes("David H. Smith") || author.includes("David H Smith")) {
+        marked.push("<u>David H. Smith IV" + (author.includes("*") ? "*" : "") + "</u>");
       } else {
-        marked += author + ", ";
+        marked.push(author);
       }
     }
-    return marked.substring(0, marked.length - 2);
+    
+    return marked.join(", ");
   };
 
   // Group publications by year for better organization
@@ -90,6 +145,24 @@ export default function CV() {
   };
 
   const groupedPublications = groupByYear(publications);
+  
+  // Toggle year expansion
+  const toggleYearExpansion = (year) => {
+    setExpandedYears(prev => ({
+      ...prev,
+      [year]: !prev[year]
+    }));
+  };
+  
+  // Get top 5 venues by publication count
+  const getTopVenues = () => {
+    const venues = Object.entries(publicationStats.byVenue)
+      .map(([name, count]) => ({ name, count }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 5);
+    
+    return venues;
+  };
 
   // Helper function to get publication type badge
   const getPublicationBadge = (venueName, type) => {
@@ -145,7 +218,7 @@ export default function CV() {
                     </div>
                     <div className="degrees-list">
                       <div className="degree-item">
-                        <i className="fas fa-graduation-cap degree-icon"></i>
+                        <span className="degree-icon">🎓</span>
                         <span>Doctorate of Computer Science</span>
                       </div>
                     </div>
@@ -164,7 +237,7 @@ export default function CV() {
                     <div className="degrees-list">
                       {edu.degrees.map((degree, i) => (
                       <div key={i} className="degree-item">
-                        <i className="fas fa-graduation-cap degree-icon"></i>
+                        <span className="degree-icon">🎓</span>
                         <span>{degree}</span>
                       </div>
                       ))}
@@ -218,28 +291,111 @@ export default function CV() {
             {/* Publications Section */}
             <div className="cv-section publications-section mb-4">
               <h4 className="section-title">Publications</h4>
+              
+              {/* Publications Dashboard */}
+              <div className="dashboard-container mb-4">
+                <div className="stats-overview">
+                  <div className="stats-card total-publications">
+                    <h5>Total Publications</h5>
+                    <div className="stats-number">{publicationStats.total}</div>
+                  </div>
+                </div>
+                
+                <div className="visualizations-row">
+                  {/* Publications per Year Bar Chart */}
+                  <div className="chart-container">
+                    <h5 className="chart-title">Publications per Year</h5>
+                    <div className="bar-chart">
+                      {Object.entries(publicationStats.byYear)
+                        .sort((a, b) => a[0] - b[0]) // Sort by year ascending
+                        .map(([year, count]) => (
+                          <div key={year} className="chart-item">
+                            <div className="bar-label">{year}</div>
+                            <div className="bar-container">
+                              <div 
+                                className="bar" 
+                                style={{ 
+                                  height: `${Math.max(count * 20, 30)}px`,
+                                  backgroundColor: `hsl(${parseInt(year) % 10 * 36}, 70%, 60%)`
+                                }}
+                              >
+                                <span className="bar-value">{count}</span>
+                              </div>
+                            </div>
+                          </div>
+                        ))
+                      }
+                    </div>
+                  </div>
+                  
+                  {/* Top 5 Venues */}
+                  <div className="chart-container">
+                    <h5 className="chart-title">Top Publication Venues</h5>
+                    <div className="top-venues">
+                      {getTopVenues().map((venue, idx) => (
+                        <div key={idx} className="venue-item">
+                          <div className="venue-name">{venue.name}</div>
+                          <div className="venue-bar-container">
+                            <div 
+                              className="venue-bar" 
+                              style={{ 
+                                width: `${Math.min(venue.count * 15, 100)}%`,
+                                backgroundColor: `hsl(${180 + idx * 30}, 70%, 50%)`
+                              }}
+                            >
+                              <span className="venue-count">{venue.count}</span>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
               <div className="section-content">
                 {groupedPublications.map((group, gIdx) => (
                 <div key={gIdx} className="publication-year-group">
-                  <h5 className="year-heading">{group.year}</h5>
-                  <div className="publications-list">
-                    {group.publications.map((pub, idx) => (
-                    <Card key={idx} className="mb-3 publication-card">
-                      <Card.Body>
-                        <div className="publication-title">
-                          {pub.title} 
-                          {getPublicationBadge(pub.venueName, pub.type)}
-                          {getAwardEmoji(pub.award)}
+                  <div className="year-dropdown">
+                    <div 
+                      className="year-header"
+                      onClick={() => toggleYearExpansion(group.year)}
+                    >
+                      <div className="year-header-content">
+                        <h5 className="year-label">{group.year}</h5>
+                        <div className="year-meta">
+                          <Badge bg="primary" className="publication-count">
+                            {group.publications.length} publication{group.publications.length !== 1 ? 's' : ''}
+                          </Badge>
+                          <span className={`chevron-icon ${expandedYears[group.year] ? 'expanded' : ''}`}>
+                            ▼
+                          </span>
                         </div>
-                        <div className="publication-authors">
-                          <span dangerouslySetInnerHTML={{__html: markMe(pub.authors)}}></span>
-                        </div>
-                        <div className="publication-venue">
-                          {pub.venue}
-                        </div>
-                      </Card.Body>
-                    </Card>
-                    ))}
+                      </div>
+                    </div>
+                    <div className={`year-content ${expandedYears[group.year] ? 'expanded' : ''}`}>
+                      {group.publications.map((pub, idx) => (
+                      <Card key={idx} className="publication-card">
+                        <Card.Body>
+                          <div className="d-flex justify-content-between align-items-start">
+                            <div className="flex-grow-1">
+                              <div className="publication-title">
+                                {pub.title}
+                                {getAwardEmoji(pub.award)}
+                              </div>
+                              <div className="publication-venue">
+                                {pub.venue}
+                              </div>
+                              <div className="publication-authors">
+                                <span dangerouslySetInnerHTML={{__html: markMe(pub.authors)}}></span>
+                              </div>
+                            </div>
+                            {getPublicationBadge(pub.venueName, pub.type)}
+                          </div>
+                        </Card.Body>
+                      </Card>
+                      ))}
+                    </div>
                   </div>
                 </div>
                 ))}
@@ -289,23 +445,27 @@ export default function CV() {
                   {CVData.workshops.map((workshop, idx) => (
                   <Card key={idx} className="mb-3 workshop-card">
                     <Card.Body>
-                      <div className="workshop-title">
-                        {workshop.title}
+                      <div className="d-flex justify-content-between align-items-start">
+                        <div className="flex-grow-1">
+                          <div className="workshop-title">
+                            {workshop.title}
+                            {workshop.slides && (
+                            <div className="workshop-link mt-1">
+                              <a href={workshop.slides} target="_blank" rel="noopener noreferrer">
+                                🔗 View Slides
+                              </a>
+                            </div>
+                            )}
+                          </div>
+                          <div className="workshop-venue">
+                            {workshop.venue}
+                          </div>
+                          <div className="workshop-authors">
+                            <span dangerouslySetInnerHTML={{__html: markMe(workshop.authors)}}></span>
+                          </div>
+                        </div>
                         <Badge className="venue-badge workshop">Workshop</Badge>
                       </div>
-                      <div className="workshop-authors">
-                        <span dangerouslySetInnerHTML={{__html: markMe(workshop.authors)}}></span>
-                      </div>
-                      <div className="workshop-venue">
-                        {workshop.venue}
-                      </div>
-                      {workshop.slides && (
-                      <div className="workshop-link">
-                        <a href={workshop.slides} target="_blank" rel="noopener noreferrer">
-                          <i className="fas fa-external-link-alt"></i> View Slides
-                        </a>
-                      </div>
-                      )}
                     </Card.Body>
                   </Card>
                   ))}
