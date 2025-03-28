@@ -126,14 +126,12 @@ export default function CV() {
     }
   }, []);
   
-  // Create D3 charts when publication stats change
   useEffect(() => {
     if (Object.keys(publicationStats.byYear).length > 0) {
       createYearChart();
       createVenueChart();
     }
     
-    // Add window resize handler to make charts responsive
     const handleResize = () => {
       createYearChart();
       createVenueChart();
@@ -141,16 +139,13 @@ export default function CV() {
     
     window.addEventListener('resize', handleResize);
     
-    // Cleanup
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, [publicationStats]);
 
-  // Helper function to highlight the author's name in publications
   const markMe = (str) => {
     if (!str) return "";
-    // Split by comma since authors are now comma-separated
     let authors = str.split(",");
     let marked = [];
     
@@ -269,7 +264,8 @@ export default function CV() {
     // Color scale for publication types
     const color = d3.scaleOrdinal()
       .domain(types)
-      .range(["#007bff", "#6610f2", "#6f42c1", "#fd7e14", "#20c997", "#28a745", "#dc3545", "#ffc107"]);
+      .range(["#011f4b", "#03396c", "#005b96", "#6497b1", "#b3cde0"]);
+
     
     // Add X axis
     svg.append("g")
@@ -340,20 +336,15 @@ export default function CV() {
       .text(d => d);
   };
   
-  // Create D3 venue chart with bars colored by venue type (conference vs journal)
   const createVenueChart = () => {
     if (!venueChartRef.current) return;
     
-    // Clear previous chart
     d3.select(venueChartRef.current).selectAll("*").remove();
     
-    // Get top venues (excluding ArXiv)
     const topVenues = getTopVenues();
     if (topVenues.length === 0) return;
     
-    // Determine venue type (conference or journal)
     const venueData = topVenues.map(venue => {
-      // Check if this venue has any Journal Article publications
       const isJournal = publicationStats.byVenueAndType[venue.name] && 
                       publicationStats.byVenueAndType[venue.name]["Journal Article"] > 0;
       
@@ -390,7 +381,7 @@ export default function CV() {
     // Color scale for venue types
     const color = d3.scaleOrdinal()
       .domain(["Conference", "Journal"])
-      .range(["#007bff", "#dc3545"]);
+      .range(["#03396c", "#d72638"]);
     
     // Add X axis
     svg.append("g")
@@ -506,9 +497,7 @@ export default function CV() {
                   <Card.Body>
                     <Row className="align-items-center">
                       <Col xs={3} sm={2} md={2} lg={1} className="text-center">
-                        <div className="employer-icon-placeholder">
-                          {exp.employer.split(' ').map(word => word[0]).join('')}
-                        </div>
+                        <Image src={exp.logo} alt={exp.employer} className="employer-logo" />
                       </Col>
                       <Col xs={9} sm={10} md={10} lg={11}>
                         <div className="experience-header">
@@ -538,9 +527,7 @@ export default function CV() {
                   <Card.Body>
                     <Row className="align-items-center">
                       <Col xs={3} sm={2} md={2} lg={1} className="text-center">
-                        <div className="institution-icon-placeholder">
-                          {edu.school.split(' ').map(word => word[0]).join('')}
-                        </div>
+                        <Image src={edu.logo} alt={edu.school} className="institution-logo" />
                       </Col>
                       <Col xs={9} sm={10} md={10} lg={11}>
                         <div className="d-flex justify-content-between align-items-start">
@@ -577,7 +564,7 @@ export default function CV() {
                 <div className="visualizations-row">
                   {/* Publications per Year Bar Chart */}
                   <div className="chart-container">
-                    <h5 className="chart-title">Publications per Year</h5>
+                    <h5 className="chart-title">Publication by Year</h5>
                     <div 
                       className="d3-chart year-chart"
                       ref={yearChartRef}
@@ -586,7 +573,7 @@ export default function CV() {
                   
                   {/* Top 5 Venues */}
                   <div className="chart-container">
-                    <h5 className="chart-title">Top Publication Venues</h5>
+                    <h5 className="chart-title">Top-5 Venues by Publications</h5>
                     <div 
                       className="d3-chart venue-chart"
                       ref={venueChartRef}

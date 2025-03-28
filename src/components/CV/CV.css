@@ -289,19 +289,10 @@
   transition: all 0.3s ease;
 }
 
-.year-chart rect:hover {
-  opacity: 0.8;
-  transform: scale(1.05, 1);
-}
-
 .venue-chart rect {
   transition: all 0.3s ease;
 }
 
-.venue-chart rect:hover {
-  opacity: 0.8;
-  transform: scaleX(1.02);
-}
 
 /* Responsive Adjustments for Dashboard */
 @media (max-width: 768px) {
@@ -394,12 +385,12 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease;
-  padding: 0 1rem;
+  padding: 0rem;
 }
 
 .year-content.expanded {
   max-height: 5000px; /* Large enough value to accommodate all content */
-  padding: 1rem;
+  padding: 0rem;
 }
 
 .publication-card {
@@ -407,7 +398,7 @@
   border-radius: var(--border-radius-md);
   box-shadow: var(--card-shadow);
   border: 1px solid var(--border-light);
-  margin-bottom: 0.75rem;
+  margin: 0.75rem;
   animation: fadeIn 0.5s ease-in-out;
 }
 
@@ -661,7 +652,7 @@
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0px);
   }
 }
 

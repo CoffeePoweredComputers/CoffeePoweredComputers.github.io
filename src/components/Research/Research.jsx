@@ -157,31 +157,31 @@ export default function Research() {
                           <a href="https://dl.acm.org/doi/abs/10.1145/3649217.3653582" target="_blank" rel="noopener noreferrer">
                             Code Generation Based Grading: Evaluating an Auto-grading Mechanism for "Explain-in-Plain-English" Questions
                           </a>
-                          <span className="research-publication-venue">SIGCSE TS 2024</span>
+                          <span className="research-publications-venue">SIGCSE TS 2024</span>
                         </li>
                         <li>
                           <a href="https://dl.acm.org/doi/pdf/10.1145/3657604.3662039" target="_blank" rel="noopener noreferrer">
                             Prompting for Comprehension: Exploring the Intersection of Explain in Plain English Questions and Prompt Writing
                           </a>
-                          <span className="research-publication-venue">ITiCSE 2024</span>
+                          <span className="research-publications-venue">ITiCSE 2024</span>
                         </li>
                         <li>
                           <a href="https://dl.acm.org/doi/pdf/10.1145/3649217.3653587" target="_blank" rel="noopener noreferrer">
                             Explaining code with a purpose: An integrated approach for developing code comprehension and prompting skills
                           </a>
-                          <span className="research-publication-venue">SIGCSE TS 2024</span>
+                          <span className="research-publications-venue">SIGCSE TS 2024</span>
                         </li>
                         <li>
                           <a href="https://arxiv.org/pdf/2409.20297" target="_blank" rel="noopener noreferrer">
                             Explain in Plain Language Questions with Indic Languages: Drawbacks, Affordances, and Opportunities
                           </a>
-                          <span className="research-publication-venue">COMPUTE 2024</span>
+                          <span className="research-publications-venue">COMPUTE 2024</span>
                         </li>
                         <li>
                           <a href="https://arxiv.org/abs/2410.03063" target="_blank" rel="noopener noreferrer">
                             Integrating Natural Language Prompting Tasks in Introductory Programming Courses
                           </a>
-                          <span className="research-publication-venue">SIGCSE TS 2025</span>
+                          <span className="research-publications-venue">SIGCSE TS 2025</span>
                         </li>
                       </ul>
                     </div>
@@ -228,13 +228,13 @@ export default function Research() {
                               <a href="https://par.nsf.gov/servlets/purl/10434207" target="_blank" rel="noopener noreferrer">
                                 In Which We Investigate the Impact of Second Chance Testing in Large-scale Computer-based Testing
                               </a>
-                              <span className="research-publication-venue">SIGCSE TS 2022</span>
+                              <span className="research-publications-venue">SIGCSE TS 2022</span>
                             </li>
                             <li>
                               <a href="https://dl.acm.org/doi/pdf/10.1145/3478431.3499388" target="_blank" rel="noopener noreferrer">
                                 Investigating the Fairness and Efficacy of Randomized Exams in CS1: Enabling Frequent Testing at Scale
                               </a>
-                              <span className="research-publication-venue">SIGCSE TS 2022</span>
+                              <span className="research-publications-venue">SIGCSE TS 2022</span>
                             </li>
                             <li>
                               <a href="https://par.nsf.gov/servlets/purl/10434191" target="_blank" rel="noopener noreferrer">
@@ -287,14 +287,6 @@ export default function Research() {
                   </Card>
                 </Col>
               </Row>
-            </div>
-            
-            <div className="text-center text-md-start mt-4">
-              <p className="conclusion-text">
-                For a complete list of publications and more details about my research, 
-                please refer to my <a href="/#/cv">CV</a> or visit my 
-                <a href="https://scholar.google.com/citations?user=3eUc2OMAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"> Google Scholar profile</a>.
-              </p>
             </div>
           </Col>
         </Row>

@@ -3,18 +3,21 @@
   "education": [
     {
       "school": "University of Illinois: Urbana-Champaign",
+      "logo": "assets/illinois.png",
       "years": "2020-2025",
       "advisor": "Craig Zilles",
       "degrees": [ "Doctorate of Computer Science" ]
     },
     {
       "school": "Western Washington University",
+      "logo": "assets/wwu.png",
       "years": "2017-2019",
       "advisor": "Qiang Hao",
       "degrees": [ "Bachelors of Science - Computer Science" ]
     },  
     {
       "school": "Skagit Valley College",
+      "logo": "assets/svc.png",
       "years": "2015-2017",
       "advisor": "",
       "degrees": [ 
@@ -27,6 +30,7 @@
   "experience" : [
     {
       "employer": "Virginia Tech",
+      "logo": "assets/vtech.png",
       "position":  "Assistant Professor",
       "duration": "Starting Fall 2025 - Present",
       "accomplishments": [
@@ -34,6 +38,7 @@
     },
     {
       "employer": "University of Illinois at Urbana-Champaign",
+      "logo": "assets/illinois.png",
       "position":  "Instructor and Course Designer - CI 487",
       "duration": "Fall 2022",
       "accomplishments": [
@@ -42,6 +47,7 @@
     },
     {
       "employer": "University Laboratory High School",
+      "logo": "assets/uni.png",
       "position":  "Instructor - Intro to Computer Programming ",
       "duration": "Fall 2021",
       "accomplishments": [
@@ -49,6 +55,7 @@
     },
     {
       "employer": "University of Illinois at Urbana-Champaign",
+      "logo": "assets/illinois.png",
       "position":  "Instructor/Co-Instructor/Teaching Assistant - CS 105",
       "duration": "Fall 2020 - Spring 2022",
       "accomplishments": [
@@ -59,6 +66,7 @@
     },
     {
       "employer": "Western Washington University",
+      "logo": "assets/wwu.png",
       "position":  "Undergraduate Research Assistant",
       "duration": "2017-2019",
       "accomplishments": [
@@ -72,6 +80,7 @@
     },
     {
       "employer": "Western Washington University",
+      "logo": "assets/wwu.png",
       "position":  "ACM Peer Mentor",
       "duration": "2018-2019",
       "accomplishments": [
