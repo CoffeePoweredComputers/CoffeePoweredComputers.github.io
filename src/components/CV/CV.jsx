@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Container, Row, Col, Card, Image, Badge } from 'react-bootstrap';
 import bibtexParse from 'bibtex-parse-js';
+import * as d3 from 'd3';
 import "./CV.css";
 import CVData from './CV_General.json';
 import bibTexString from './cvBib'; 
@@ -15,27 +16,23 @@ export default function CV() {
     byYear: {},
     byVenue: {}
   });
+  
+  const yearChartRef = useRef(null);
+  const venueChartRef = useRef(null);
 
-  // Helper function to format BibTeX author string
   const formatAuthors = (authorString) => {
     if (!authorString) return "";
-    // Remove BibTeX braces
     authorString = authorString.replace(/{|}/g, "");
-    // Split by "and" to get individual authors
     const authors = authorString.split(" and ");
     
-    // Process each author to convert from "Last, First" to "First Last"
     const formattedAuthors = authors.map(author => {
-      // Handle "Last, First" format common in BibTeX
       if (author.includes(",")) {
         const [lastName, firstName] = author.split(",").map(part => part.trim());
         return `${firstName} ${lastName}`;
       }
-      // Return as is if not in "Last, First" format
       return author.trim();
     });
     
-    // Join with commas
     return formattedAuthors.join(", ");
   };
 
@@ -45,13 +42,12 @@ export default function CV() {
     // Directly parse the imported bib file as a string
     try {
       const entries = bibtexParse.toJSON(bibTexString);
-      console.log("Entries: ", entries);
 
       // Convert BibTeX entries to publication format
       const parsedPublications = entries.map(entry => {
         const authors = entry.entryTags.author || "";
         const title = entry.entryTags.title || "";
-        const venue = entry.entryTags.venue || "";
+        const venueShort = entry.entryTags.venue || "";
         const year = entry.entryTags.year || "";
         // Use entryType if a "type" tag isn’t provided
         const type = entry.entryTags.type || entry.entryType || "Conference Paper";
@@ -59,24 +55,23 @@ export default function CV() {
 
         // Format venue from either booktitle or journal fields
         const formattedVenue = entry.entryTags.booktitle || entry.entryTags.journal || "";
-
         return {
           title,
           authors: formatAuthors(authors),
           venue: formattedVenue,
+          venueShort: venueShort,
           year,
           type,
-          venueName: venue,
           award
         };
       });
 
       setPublications(parsedPublications);
       
-      // Initialize expandedYears with all years expanded by default
+      // Initialize expandedYears with all years collapsed by default
       const years = {};
       parsedPublications.forEach(pub => {
-        if (pub.year) years[pub.year] = true;
+        if (pub.year) years[pub.year] = false;
       });
       setExpandedYears(years);
       
@@ -84,19 +79,44 @@ export default function CV() {
       const stats = {
         total: parsedPublications.length,
         byYear: {},
-        byVenue: {}
+        byYearAndType: {},
+        byVenue: {},
+        byVenueAndType: {},
+        types: new Set()
       };
       
-      // Count publications by year
+      // Count publications by year and type
       parsedPublications.forEach(pub => {
+        // Track publication types
+        const pubType = pub.type || "Other";
+        stats.types.add(pubType);
+        
         if (pub.year) {
+          // Count total by year
           stats.byYear[pub.year] = (stats.byYear[pub.year] || 0) + 1;
+          
+          // Initialize year if not exists
+          if (!stats.byYearAndType[pub.year]) {
+            stats.byYearAndType[pub.year] = {};
+          }
+          
+          // Count by year and type
+          stats.byYearAndType[pub.year][pubType] = (stats.byYearAndType[pub.year][pubType] || 0) + 1;
         }
         
         // Count publications by venue
-        const venueName = pub.venueName || pub.venue;
-        if (venueName) {
-          stats.byVenue[venueName] = (stats.byVenue[venueName] || 0) + 1;
+        const venueShort = pub.venueShort;
+        if (venueShort) {
+          // Count total by venue
+          stats.byVenue[venueShort] = (stats.byVenue[venueShort] || 0) + 1;
+          
+          // Initialize venue if not exists
+          if (!stats.byVenueAndType[venueShort]) {
+            stats.byVenueAndType[venueShort] = {};
+          }
+          
+          // Count by venue and type
+          stats.byVenueAndType[venueShort][pubType] = (stats.byVenueAndType[venueShort][pubType] || 0) + 1;
         }
       });
       
@@ -105,6 +125,27 @@ export default function CV() {
       console.error("Error parsing bib file:", error);
     }
   }, []);
+  
+  // Create D3 charts when publication stats change
+  useEffect(() => {
+    if (Object.keys(publicationStats.byYear).length > 0) {
+      createYearChart();
+      createVenueChart();
+    }
+    
+    // Add window resize handler to make charts responsive
+    const handleResize = () => {
+      createYearChart();
+      createVenueChart();
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [publicationStats]);
 
   // Helper function to highlight the author's name in publications
   const markMe = (str) => {
@@ -154,40 +195,289 @@ export default function CV() {
     }));
   };
   
-  // Get top 5 venues by publication count
+  // Get top 5 venues by publication count, excluding ArXiv
   const getTopVenues = () => {
     const venues = Object.entries(publicationStats.byVenue)
+      .filter(([name]) => !name.toLowerCase().includes('arxiv')) // Exclude ArXiv
       .map(([name, count]) => ({ name, count }))
       .sort((a, b) => b.count - a.count)
       .slice(0, 5);
     
     return venues;
   };
+  
+  // Create D3 year chart with stacked bars by publication type
+  const createYearChart = () => {
+    if (!yearChartRef.current || Object.keys(publicationStats.byYear).length === 0) return;
+    
+    // Clear previous chart
+    d3.select(yearChartRef.current).selectAll("*").remove();
+    
+    // Get all years and types
+    const years = Object.keys(publicationStats.byYearAndType).sort((a, b) => a - b);
+    const types = Array.from(publicationStats.types);
+    
+    // Prepare data for stacked bars
+    const stackedData = [];
+    
+    years.forEach(year => {
+      const yearData = { year };
+      
+      // Add count for each type, defaulting to 0 if type not present for this year
+      types.forEach(type => {
+        yearData[type] = (publicationStats.byYearAndType[year] && 
+                           publicationStats.byYearAndType[year][type]) || 0;
+      });
+      
+      // Add total count for the year
+      yearData.total = publicationStats.byYear[year];
+      
+      stackedData.push(yearData);
+    });
+    
+    // Prepare stack generator
+    const stack = d3.stack()
+      .keys(types)
+      .order(d3.stackOrderNone)
+      .offset(d3.stackOffsetNone);
+    
+    const series = stack(stackedData);
+    
+    const margin = { top: 20, right: 100, bottom: 40, left: 40 };
+    const width = yearChartRef.current.clientWidth - margin.left - margin.right;
+    const height = 230 - margin.top - margin.bottom;
+    
+    // Create SVG
+    const svg = d3.select(yearChartRef.current)
+      .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform", `translate(${margin.left},${margin.top})`);
+    
+    // X scale
+    const x = d3.scaleBand()
+      .domain(years)
+      .range([0, width])
+      .padding(0.2);
+    
+    // Y scale
+    const y = d3.scaleLinear()
+      .domain([0, d3.max(stackedData, d => d.total) * 1.1])
+      .range([height, 0]);
+    
+    // Color scale for publication types
+    const color = d3.scaleOrdinal()
+      .domain(types)
+      .range(["#007bff", "#6610f2", "#6f42c1", "#fd7e14", "#20c997", "#28a745", "#dc3545", "#ffc107"]);
+    
+    // Add X axis
+    svg.append("g")
+      .attr("transform", `translate(0,${height})`)
+      .call(d3.axisBottom(x))
+      .selectAll("text")
+      .style("font-size", "10px")
+      .style("text-anchor", "middle");
+    
+    // Add Y axis
+    svg.append("g")
+      .call(d3.axisLeft(y).ticks(5))
+      .selectAll("text")
+      .style("font-size", "10px");
+    
+    // Add stacked bars
+    svg.append("g")
+      .selectAll("g")
+      .data(series)
+      .enter()
+      .append("g")
+      .attr("fill", d => color(d.key))
+      .selectAll("rect")
+      .data(d => d)
+      .enter()
+      .append("rect")
+      .attr("x", d => x(d.data.year))
+      .attr("y", d => y(d[1]))
+      .attr("height", d => y(d[0]) - y(d[1]))
+      .attr("width", x.bandwidth())
+      .attr("class", "bar");
+    
+    // Add values on top of total bars
+    svg.selectAll(".bar-value")
+      .data(stackedData)
+      .enter()
+      .append("text")
+      .attr("class", "bar-value")
+      .attr("x", d => x(d.year) + x.bandwidth() / 2)
+      .attr("y", d => y(d.total) - 5)
+      .attr("text-anchor", "middle")
+      .style("font-size", "12px")
+      .style("font-weight", "bold")
+      .style("fill", "#666")
+      .text(d => d.total);
+    
+    // Add legend
+    const legend = svg.append("g")
+      .attr("font-family", "sans-serif")
+      .attr("font-size", 10)
+      .attr("text-anchor", "start")
+      .selectAll("g")
+      .data(types)
+      .enter()
+      .append("g")
+      .attr("transform", (d, i) => `translate(${width + 10},${i * 20})`);
+    
+    legend.append("rect")
+      .attr("x", 0)
+      .attr("width", 15)
+      .attr("height", 15)
+      .attr("fill", d => color(d));
+    
+    legend.append("text")
+      .attr("x", 20)
+      .attr("y", 7.5)
+      .attr("dy", "0.32em")
+      .text(d => d);
+  };
+  
+  // Create D3 venue chart with bars colored by venue type (conference vs journal)
+  const createVenueChart = () => {
+    if (!venueChartRef.current) return;
+    
+    // Clear previous chart
+    d3.select(venueChartRef.current).selectAll("*").remove();
+    
+    // Get top venues (excluding ArXiv)
+    const topVenues = getTopVenues();
+    if (topVenues.length === 0) return;
+    
+    // Determine venue type (conference or journal)
+    const venueData = topVenues.map(venue => {
+      // Check if this venue has any Journal Article publications
+      const isJournal = publicationStats.byVenueAndType[venue.name] && 
+                      publicationStats.byVenueAndType[venue.name]["Journal Article"] > 0;
+      
+      return {
+        name: venue.name,
+        count: venue.count,
+        type: isJournal ? "Journal" : "Conference"
+      };
+    });
+    
+    const margin = { top: 20, right: 100, bottom: 20, left: 150 };
+    const width = venueChartRef.current.clientWidth - margin.left - margin.right;
+    const height = 230 - margin.top - margin.bottom;
+    
+    // Create SVG
+    const svg = d3.select(venueChartRef.current)
+      .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform", `translate(${margin.left},${margin.top})`);
+    
+    // X scale
+    const x = d3.scaleLinear()
+      .domain([0, d3.max(venueData, d => d.count) * 1.1])
+      .range([0, width]);
+    
+    // Y scale
+    const y = d3.scaleBand()
+      .domain(venueData.map(d => d.name))
+      .range([0, height])
+      .padding(0.2);
+    
+    // Color scale for venue types
+    const color = d3.scaleOrdinal()
+      .domain(["Conference", "Journal"])
+      .range(["#007bff", "#dc3545"]);
+    
+    // Add X axis
+    svg.append("g")
+      .attr("transform", `translate(0,${height})`)
+      .call(d3.axisBottom(x).ticks(5))
+      .selectAll("text")
+      .style("font-size", "10px");
+    
+    // Add Y axis
+    svg.append("g")
+      .call(d3.axisLeft(y))
+      .selectAll("text")
+      .style("font-size", "10px")
+      .attr("dy", "0.3em")
+      .style("text-anchor", "end")
+      .text(d => {
+        // Truncate venue names if too long
+        return d.length > 20 ? d.substring(0, 20) + "..." : d;
+      });
+    
+    // Add bars
+    svg.selectAll(".bar")
+      .data(venueData)
+      .enter()
+      .append("rect")
+      .attr("class", "bar")
+      .attr("x", 0)
+      .attr("y", d => y(d.name))
+      .attr("width", d => x(d.count))
+      .attr("height", y.bandwidth())
+      .attr("fill", d => color(d.type));
+    
+    // Add values inside bars
+    svg.selectAll(".bar-value")
+      .data(venueData)
+      .enter()
+      .append("text")
+      .attr("class", "bar-value")
+      .attr("x", d => x(d.count) - 5)
+      .attr("y", d => y(d.name) + y.bandwidth() / 2)
+      .attr("dy", "0.35em")
+      .attr("text-anchor", "end")
+      .style("font-size", "12px")
+      .style("font-weight", "bold")
+      .style("fill", "white")
+      .text(d => d.count);
+    
+    // Add legend for venue types
+    const legend = svg.append("g")
+      .attr("font-family", "sans-serif")
+      .attr("font-size", 10)
+      .attr("text-anchor", "start")
+      .selectAll("g")
+      .data(["Conference", "Journal"])
+      .enter()
+      .append("g")
+      .attr("transform", (d, i) => `translate(${width + 10},${i * 20})`);
+    
+    legend.append("rect")
+      .attr("x", 0)
+      .attr("width", 15)
+      .attr("height", 15)
+      .attr("fill", d => color(d));
+    
+    legend.append("text")
+      .attr("x", 20)
+      .attr("y", 7.5)
+      .attr("dy", "0.32em")
+      .text(d => d);
+  };
 
   // Helper function to get publication type badge
-  const getPublicationBadge = (venueName, type) => {
+  const getPublicationBadge = (type) => {
     if (type === "Poster") {
-      return <Badge className="venue-badge other">Poster</Badge>;
+      return <Badge className="venue-badge poster">Poster</Badge>;
     } else if (type === "Workshop Paper") {
       return <Badge className="venue-badge workshop">Workshop</Badge>;
     } else if (type === "Journal Article") {
       return <Badge className="venue-badge journal">Journal</Badge>;
     } else if (type === "Preprint") {
-      return <Badge className="venue-badge other">Preprint</Badge>;
+      return <Badge className="venue-badge preprint">Preprint</Badge>;
     } else if (type === "Working Group Report") {
-      return <Badge className="venue-badge other">Working Group</Badge>;
-    } else if (venueName.includes("SIGCSE")) {
-      return <Badge className="venue-badge sigcse">SIGCSE</Badge>;
-    } else if (venueName.includes("ITiCSE")) {
-      return <Badge className="venue-badge iticse">ITiCSE</Badge>;
-    } else if (venueName.includes("ICER")) {
-      return <Badge className="venue-badge icer">ICER</Badge>;
-    } else if (venueName.includes("CompEd")) {
-      return <Badge className="venue-badge comped">CompEd</Badge>;
-    } else if (venueName.includes("ASEE")) {
-      return <Badge className="venue-badge asee">ASEE</Badge>;
+      return <Badge className="venue-badge workinggroup">Working Group</Badge>;
+    } else if (type === "Conference Paper") {
+      return <Badge className="venue-badge conference">Conference</Badge>;
     } else {
-      return <Badge className="venue-badge other">Conference</Badge>;
+      return <Badge className="venue-badge other">{type}</Badge>;
     }
   };
 
@@ -206,87 +496,77 @@ export default function CV() {
       <div className="p-3 p-md-5 mb-4 bg-light rounded-3">
         <Row className="justify-content-center">
           <Col xs={12} lg={10} className="cv-content px-3 px-md-4">
-            {/* Education Section */}
+
+            {/* Experience Section */}
             <div className="cv-section mb-4">
-              <h4 className="section-title">Education</h4>
+              <h4 className="section-title">Experience</h4>
               <div className="section-content">
-                <Card className="mb-3 education-card">
+                {CVData.experience.map((exp, idx) => (
+                <Card key={idx} className="mb-3 simplified-experience-card">
                   <Card.Body>
-                    <div className="d-flex justify-content-between align-items-start">
-                      <h5 className="institution-name">University of Illinois: Urbana-Champaign</h5>
-                      <span className="year-badge">2020-2025</span>
-                    </div>
-                    <div className="degrees-list">
-                      <div className="degree-item">
-                        <span className="degree-icon">🎓</span>
-                        <span>Doctorate of Computer Science</span>
-                      </div>
-                    </div>
-                    <div className="advisor-info">
-                      <strong>Advisor:</strong> Craig Zilles
-                    </div>
-                  </Card.Body>
-                </Card>
-                {CVData.education.filter(edu => !edu.school.includes("Illinois")).map((edu, idx) => (
-                <Card key={idx} className="mb-3 education-card">
-                  <Card.Body>
-                    <div className="d-flex justify-content-between align-items-start">
-                      <h5 className="institution-name">{edu.school}</h5>
-                      <span className="year-badge">{edu.years}</span>
-                    </div>
-                    <div className="degrees-list">
-                      {edu.degrees.map((degree, i) => (
-                      <div key={i} className="degree-item">
-                        <span className="degree-icon">🎓</span>
-                        <span>{degree}</span>
-                      </div>
-                      ))}
-                    </div>
-                    {edu.advisor && (
-                    <div className="advisor-info">
-                      <strong>Advisor:</strong> {edu.advisor}
-                    </div>
-                    )}
+                    <Row className="align-items-center">
+                      <Col xs={3} sm={2} md={2} lg={1} className="text-center">
+                        <div className="employer-icon-placeholder">
+                          {exp.employer.split(' ').map(word => word[0]).join('')}
+                        </div>
+                      </Col>
+                      <Col xs={9} sm={10} md={10} lg={11}>
+                        <div className="experience-header">
+                          <h5 className="employer-name">{exp.employer}</h5>
+                          <span className="year-badge">{exp.duration}</span>
+                        </div>
+                        <div className="position-title">{exp.position}</div>
+                        {exp.accomplishments.length > 0 && exp.accomplishments[0] && (
+                        <p className="accomplishment-text">
+                          {exp.accomplishments[0]}
+                        </p>
+                        )}
+                      </Col>
+                    </Row>
                   </Card.Body>
                 </Card>
                 ))}
               </div>
             </div>
 
-            {/* Experience Section */}
+            {/* Education Section */}
             <div className="cv-section mb-4">
-              <h4 className="section-title">Teaching Experience</h4>
+              <h4 className="section-title">Education</h4>
               <div className="section-content">
-                <Card className="mb-3 simplified-experience-card">
+                {CVData.education.map((edu, idx) => (
+                <Card key={idx} className="mb-3 education-card">
                   <Card.Body>
-                    <div className="experience-header">
-                      <h5 className="employer-name">Virginia Tech</h5>
-                      <span className="year-badge">Starting Fall 2025</span>
-                    </div>
-                    <div className="position-title">Assistant Professor</div>
-                    <p className="accomplishment-text">
-                      Teaching computing education research and computer science courses
-                    </p>
-                  </Card.Body>
-                </Card>
-                {CVData.experience.map((exp, idx) => (
-                <Card key={idx} className="mb-3 simplified-experience-card">
-                  <Card.Body>
-                    <div className="experience-header">
-                      <h5 className="employer-name">{exp.employer}</h5>
-                      <span className="year-badge">{exp.duration}</span>
-                    </div>
-                    <div className="position-title">{exp.position}</div>
-                    {exp.accomplishments.length > 0 && exp.accomplishments[0] && (
-                    <p className="accomplishment-text">
-                      {exp.accomplishments[0]}
-                    </p>
-                    )}
+                    <Row className="align-items-center">
+                      <Col xs={3} sm={2} md={2} lg={1} className="text-center">
+                        <div className="institution-icon-placeholder">
+                          {edu.school.split(' ').map(word => word[0]).join('')}
+                        </div>
+                      </Col>
+                      <Col xs={9} sm={10} md={10} lg={11}>
+                        <div className="d-flex justify-content-between align-items-start">
+                          <h5 className="institution-name">{edu.school}</h5>
+                          <span className="year-badge">{edu.years}</span>
+                        </div>
+                        <div className="degrees-list">
+                          {edu.degrees.map((degree, i) => (
+                          <div key={i} className="degree-item">
+                            <span>{degree}</span>
+                          </div>
+                          ))}
+                        </div>
+                        {edu.advisor && (
+                        <div className="advisor-info">
+                          <strong>Advisor:</strong> {edu.advisor}
+                        </div>
+                        )}
+                      </Col>
+                    </Row>
                   </Card.Body>
                 </Card>
                 ))}
               </div>
             </div>
+
 
             {/* Publications Section */}
             <div className="cv-section publications-section mb-4">
@@ -294,65 +574,34 @@ export default function CV() {
               
               {/* Publications Dashboard */}
               <div className="dashboard-container mb-4">
-                <div className="stats-overview">
-                  <div className="stats-card total-publications">
-                    <h5>Total Publications</h5>
-                    <div className="stats-number">{publicationStats.total}</div>
-                  </div>
-                </div>
-                
                 <div className="visualizations-row">
                   {/* Publications per Year Bar Chart */}
                   <div className="chart-container">
                     <h5 className="chart-title">Publications per Year</h5>
-                    <div className="bar-chart">
-                      {Object.entries(publicationStats.byYear)
-                        .sort((a, b) => a[0] - b[0]) // Sort by year ascending
-                        .map(([year, count]) => (
-                          <div key={year} className="chart-item">
-                            <div className="bar-label">{year}</div>
-                            <div className="bar-container">
-                              <div 
-                                className="bar" 
-                                style={{ 
-                                  height: `${Math.max(count * 20, 30)}px`,
-                                  backgroundColor: `hsl(${parseInt(year) % 10 * 36}, 70%, 60%)`
-                                }}
-                              >
-                                <span className="bar-value">{count}</span>
-                              </div>
-                            </div>
-                          </div>
-                        ))
-                      }
-                    </div>
+                    <div 
+                      className="d3-chart year-chart"
+                      ref={yearChartRef}
+                    ></div>
                   </div>
                   
                   {/* Top 5 Venues */}
                   <div className="chart-container">
                     <h5 className="chart-title">Top Publication Venues</h5>
-                    <div className="top-venues">
-                      {getTopVenues().map((venue, idx) => (
-                        <div key={idx} className="venue-item">
-                          <div className="venue-name">{venue.name}</div>
-                          <div className="venue-bar-container">
-                            <div 
-                              className="venue-bar" 
-                              style={{ 
-                                width: `${Math.min(venue.count * 15, 100)}%`,
-                                backgroundColor: `hsl(${180 + idx * 30}, 70%, 50%)`
-                              }}
-                            >
-                              <span className="venue-count">{venue.count}</span>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+                    <div 
+                      className="d3-chart venue-chart"
+                      ref={venueChartRef}
+                    ></div>
                   </div>
                 </div>
               </div>
               
+              <div className="cv-footer text-center mt-4">
+                <p className="note">
+                  Note: Publications marked with * indicate equal contribution. 
+                  Publications marked with 🥈 indicate best paper nomination and 
+                  🏆 indicate best paper award.
+                </p>
+              </div>
               <div className="section-content">
                 {groupedPublications.map((group, gIdx) => (
                 <div key={gIdx} className="publication-year-group">
@@ -364,7 +613,7 @@ export default function CV() {
                       <div className="year-header-content">
                         <h5 className="year-label">{group.year}</h5>
                         <div className="year-meta">
-                          <Badge bg="primary" className="publication-count">
+                          <Badge className="publication-count">
                             {group.publications.length} publication{group.publications.length !== 1 ? 's' : ''}
                           </Badge>
                           <span className={`chevron-icon ${expandedYears[group.year] ? 'expanded' : ''}`}>
@@ -384,13 +633,13 @@ export default function CV() {
                                 {getAwardEmoji(pub.award)}
                               </div>
                               <div className="publication-venue">
-                                {pub.venue}
+                                <b>{pub.venueShort}: </b>{pub.venue}
                               </div>
                               <div className="publication-authors">
                                 <span dangerouslySetInnerHTML={{__html: markMe(pub.authors)}}></span>
                               </div>
                             </div>
-                            {getPublicationBadge(pub.venueName, pub.type)}
+                            {getPublicationBadge(pub.type)}
                           </div>
                         </Card.Body>
                       </Card>
@@ -406,7 +655,7 @@ export default function CV() {
             <div className="cv-section mb-4">
               <h4 className="section-title">Projects</h4>
               <div className="section-content">
-                <Row xs={1} md={2} className="g-4">
+                <Row xs={1} className="g-4">
                   {CVData.projects.map((project, idx) => (
                   <Col key={idx}>
                     <Card className="h-100 project-card">
@@ -417,10 +666,10 @@ export default function CV() {
                           <div className="project-client mb-2">{project.client}</div>
                           )}
                           <Row className="flex-grow-1">
-                            <Col xs={12} md={5} className="text-center mb-3 mb-md-0">
+                            <Col xs={12} md={3} className="text-center mb-3 mb-md-0">
                               <Image src={project.image_path} alt={project.title} className="project-image" />
                             </Col>
-                            <Col xs={12} md={7}>
+                            <Col xs={12} md={9}>
                               <ul className="project-details">
                                 {project.work.map((w, i) => (
                                 <li key={i}>{w}</li>
@@ -511,13 +760,6 @@ export default function CV() {
               </div>
             </div>
 
-            <div className="cv-footer text-center mt-4">
-              <p className="note">
-                Note: Publications marked with * indicate equal contribution. 
-                Publications marked with 🥈 indicate best paper nomination and 
-                🏆 indicate best paper award.
-              </p>
-            </div>
           </Col>
         </Row>
       </div>

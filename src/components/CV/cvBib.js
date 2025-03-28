@@ -44,7 +44,7 @@ const bibTexString = `
   year={2020},
   publisher={Springer International Publishing},
   type={Journal Article},
-  venue={IJETHE}
+  venue={International Journal of Educational Technology in Higher Education}
 }
 
 % 2021 Publications
@@ -69,7 +69,7 @@ const bibTexString = `
   year={2022},
   publisher={Routledge},
   type={Journal Article},
-  venue={CSE}
+  venue={Computer Science Education}
 }
 
 @inproceedings{fowler2022we,
@@ -92,7 +92,7 @@ const bibTexString = `
   year={2022},
   publisher={Routledge},
   type={Journal Article},
-  venue={CSE}
+  venue={Computer Science Education}
 }
 
 % 2023 Publications
@@ -147,7 +147,7 @@ const bibTexString = `
 
 @inproceedings{fowler2023don,
   title={"I Don't Gamble To Make My Livelihood": Understanding the Incentives For, Needs Of, and Motivations Surrounding Open Educational Resources in Computing},
-  author={Fowler, Max and Smith IV, David H and Chen, Binglin and Zilles, Craig},
+  author={Fowler*, Max and Smith IV*, David H and Chen, Binglin and Zilles, Craig},
   booktitle={Proceedings of the 2023 ACM Conference on International Computing Education Research-Volume 1},
   pages={430--443},
   year={2023},
@@ -170,7 +170,7 @@ const bibTexString = `
   booktitle={Proceedings of the 2023 ACM Conference on International Computing Education Research-Volume 2},
   pages={62--63},
   year={2023},
-  type={Workshop Paper},
+  type={Poster},
   venue={ACM ICER}
 }
 
@@ -178,8 +178,8 @@ const bibTexString = `
   title={Generating Multiple Choice Questions for Computing Courses using Large Language Models},
   author={Tran, Andrew and Angelikas, Kenneth and Rama, Egi and Okechukwu, Chiku and Smith IV, David H and MacNeil, Stephen},
   year={2023},
-  type={Preprint},
-  venue={arXiv}
+  type={Conference Paper},
+  venue={IEEE FIE}
 }
 
 @inproceedings{smith2023comparing,
@@ -295,10 +295,10 @@ const bibTexString = `
 @article{smith2024explain,
   title={Explain in Plain Language Questions with Indic Languages: Drawbacks, Affordances, and Opportunities},
   author={Smith IV, David H. and Kumar, Viraj and Denny, Paul},
-  journal={arXiv preprint arXiv:2409.20297},
+  journal={ACM India Conference on Computing Education},
   year={2024},
-  type={Preprint},
-  venue={arXiv}
+  type={Conference Paper},
+  venue={ACM India COMPUTE}
 }
 
 @inproceedings{kerslake2024integrating,
@@ -364,19 +364,19 @@ const bibTexString = `
 @article{smith2025counting,
   title={Counting the Trees in the Forest: Evaluating Prompt Segmentation for Classifying Code Comprehension Level},
   author={Smith IV, David H and Fowler, Max and Denny, Paul and Zilles, Craig},
-  journal={arXiv preprint arXiv:2503.12216},
+  booktitle={Proceedings of the 2025 on Innovation and Technology in Computer Science Education V. 1},
   year={2025},
-  type={Preprint},
-  venue={arXiv}
+  type={Conference Paper},
+  venue={ACM ITiCSE}
 }
 
 @article{smith2025redefining,
   title={ReDefining Code Comprehension: Function Naming as a Mechanism for Evaluating Code Comprehension},
   author={Smith IV, David H and Fowler, Max and Denny, Paul and Zilles, Craig},
-  journal={arXiv preprint arXiv:2503.12207},
+  booktitle={Proceedings of the 2025 on Innovation and Technology in Computer Science Education V. 1},
   year={2025},
-  type={Preprint},
-  venue={arXiv}
+  type={Conference Paper},
+  venue={ACM ITiCSE}
 }
 `
 

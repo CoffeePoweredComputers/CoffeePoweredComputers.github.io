@@ -3,7 +3,7 @@
   "education": [
     {
       "school": "University of Illinois: Urbana-Champaign",
-      "years": "2020-",
+      "years": "2020-2025",
       "advisor": "Craig Zilles",
       "degrees": [ "Doctorate of Computer Science" ]
     },
@@ -25,6 +25,13 @@
   ],
   "workshops": [],
   "experience" : [
+    {
+      "employer": "Virginia Tech",
+      "position":  "Assistant Professor",
+      "duration": "Starting Fall 2025 - Present",
+      "accomplishments": [
+      ]
+    },
     {
       "employer": "University of Illinois at Urbana-Champaign",
       "position":  "Instructor and Course Designer - CI 487",

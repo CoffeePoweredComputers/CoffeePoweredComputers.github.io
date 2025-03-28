@@ -3,7 +3,6 @@ import './App.css';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/NavBar/NavBar.jsx';
 import Home from './components/Home/Home.jsx';
-import Publications from './components/Publications/Publications.jsx';
 import CV from './components/CV/CV.jsx';
 import Blog from './components/Blog/Blog.jsx';
 import Research from './components/Research/Research.jsx';
@@ -21,7 +20,6 @@ function App() {
             <Route path="/cv" element={<CV />} />
             <Route path="/research" element={<Research />} />
             <Route path="/teaching" element={<Teaching />} />
-            <Route path="/publications" element={<Publications />} />
             <Route path="/blog" element={<Blog />} />
           </Routes>
         </Container>

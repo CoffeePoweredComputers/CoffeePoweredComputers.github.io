@@ -127,7 +127,6 @@ export default function Home() {
                         <strong>I develop and evaluate interactive and engaging tools that support novice programmers.</strong> My goal as a researcher working at the intersection of <a href="https://faculty.washington.edu/ajko/cer" target="_blank" rel="noopener noreferrer">Computing Education Research (CER)</a> and Human-Computer Interaction (HCI) is to draw on theories of learning to create effective and scalable approaches for educating the next generation of computing professionals. My work has included a wide range of topics within CER, and my current areas of focus are as follows.
                       </p>
 
-                      <div className="research-areas">
                         {/* Research Area 1 */}
                         <Card className="mb-4 research-card">
                           <Card.Body>
@@ -212,7 +211,6 @@ export default function Home() {
                           </Card.Body>
                         </Card>
                         */}
-                      </div>
 
                       <div className="text-center text-md-start mt-4">
                         <p>

@@ -82,32 +82,32 @@ export default function Research() {
                               outcomes for learners in formative contexts.
                             </p>
                             
-                            <div className="publications">
-                              <h6 className="publications-title">Key Publications:</h6>
-                              <ul className="publications-list">
+                            <div className="research-publications">
+                              <h6 className="research-publications-title">Key Publications:</h6>
+                              <ul className="research-publications-list">
                                 <li>
                                   <a href="http://zilles.cs.illinois.edu/papers/smith_parsons_sigcse23.pdf" target="_blank" rel="noopener noreferrer">
                                     Discovering, Autogenerating, and Evaluating Distractors for Python Parsons Problems in CS1
                                   </a>
-                                  <span className="publication-venue">SIGCSE TS 2023</span>
+                                  <span className="research-publications-venue">SIGCSE TS 2023</span>
                                 </li>
                                 <li>
                                   <a href="https://drive.google.com/file/d/1ZrqD_eS2A4_5QMDdl1GgC34wlu2qdw_1/view" target="_blank" rel="noopener noreferrer">
                                     Investigating the Role and Impact of Distractors on Parsons Problems in CS1 Assessments
                                   </a>
-                                  <span className="publication-venue">ACM TOCE 2023</span>
+                                  <span className="research-publications-venue">ACM TOCE 2023</span>
                                 </li>
                                 <li>
                                   <a href="https://zilles.cs.illinois.edu/papers/smith_parsons_grouped_COMPED_2023.pdf" target="_blank" rel="noopener noreferrer">
                                     Comparing the Impacts of Visually Grouped and Jumbled Distractors on Parsons Problems in CS1 Assessments
                                   </a>
-                                  <span className="publication-venue">CompEd 2023</span>
+                                  <span className="research-publications-venue">CompEd 2023</span>
                                 </li>
                                 <li>
                                   <a href="https://dl.acm.org/doi/pdf/10.1145/3632620.3671114" target="_blank" rel="noopener noreferrer">
                                     Distractors Make You Pay Attention: Investigating the Learning Outcomes of Including Distractor Blocks in Parsons Problems
                                   </a>
-                                  <span className="publication-venue">SIGCSE TS 2024</span>
+                                  <span className="research-publications-venue">SIGCSE TS 2024</span>
                                 </li>
                               </ul>
                             </div>
@@ -150,38 +150,38 @@ export default function Research() {
                       </Col>
                     </Row>
                     
-                    <div className="publications">
-                      <h6 className="publications-title">Key Publications:</h6>
-                      <ul className="publications-list">
+                    <div className="research-publications">
+                      <h6 className="research-publications-title">Key Publications:</h6>
+                      <ul className="research-publications-list">
                         <li>
                           <a href="https://dl.acm.org/doi/abs/10.1145/3649217.3653582" target="_blank" rel="noopener noreferrer">
                             Code Generation Based Grading: Evaluating an Auto-grading Mechanism for "Explain-in-Plain-English" Questions
                           </a>
-                          <span className="publication-venue">SIGCSE TS 2024</span>
+                          <span className="research-publication-venue">SIGCSE TS 2024</span>
                         </li>
                         <li>
                           <a href="https://dl.acm.org/doi/pdf/10.1145/3657604.3662039" target="_blank" rel="noopener noreferrer">
                             Prompting for Comprehension: Exploring the Intersection of Explain in Plain English Questions and Prompt Writing
                           </a>
-                          <span className="publication-venue">ITiCSE 2024</span>
+                          <span className="research-publication-venue">ITiCSE 2024</span>
                         </li>
                         <li>
                           <a href="https://dl.acm.org/doi/pdf/10.1145/3649217.3653587" target="_blank" rel="noopener noreferrer">
                             Explaining code with a purpose: An integrated approach for developing code comprehension and prompting skills
                           </a>
-                          <span className="publication-venue">SIGCSE TS 2024</span>
+                          <span className="research-publication-venue">SIGCSE TS 2024</span>
                         </li>
                         <li>
                           <a href="https://arxiv.org/pdf/2409.20297" target="_blank" rel="noopener noreferrer">
                             Explain in Plain Language Questions with Indic Languages: Drawbacks, Affordances, and Opportunities
                           </a>
-                          <span className="publication-venue">COMPUTE 2024</span>
+                          <span className="research-publication-venue">COMPUTE 2024</span>
                         </li>
                         <li>
                           <a href="https://arxiv.org/abs/2410.03063" target="_blank" rel="noopener noreferrer">
                             Integrating Natural Language Prompting Tasks in Introductory Programming Courses
                           </a>
-                          <span className="publication-venue">SIGCSE TS 2025</span>
+                          <span className="research-publication-venue">SIGCSE TS 2025</span>
                         </li>
                       </ul>
                     </div>
@@ -221,26 +221,26 @@ export default function Research() {
                           fairness of randomized exams, and impacts of frequent exams on student performance.
                         </p>
                         
-                        <div className="publications">
-                          <h6 className="publications-title">Key Publications:</h6>
-                          <ul className="publications-list">
+                        <div className="research-publications">
+                          <h6 className="research-publications-title">Key Publications:</h6>
+                          <ul className="research-publications-list">
                             <li>
                               <a href="https://par.nsf.gov/servlets/purl/10434207" target="_blank" rel="noopener noreferrer">
                                 In Which We Investigate the Impact of Second Chance Testing in Large-scale Computer-based Testing
                               </a>
-                              <span className="publication-venue">SIGCSE TS 2022</span>
+                              <span className="research-publication-venue">SIGCSE TS 2022</span>
                             </li>
                             <li>
                               <a href="https://dl.acm.org/doi/pdf/10.1145/3478431.3499388" target="_blank" rel="noopener noreferrer">
                                 Investigating the Fairness and Efficacy of Randomized Exams in CS1: Enabling Frequent Testing at Scale
                               </a>
-                              <span className="publication-venue">SIGCSE TS 2022</span>
+                              <span className="research-publication-venue">SIGCSE TS 2022</span>
                             </li>
                             <li>
                               <a href="https://par.nsf.gov/servlets/purl/10434191" target="_blank" rel="noopener noreferrer">
                                 Measuring the Effects of Frequent Testing in a CS1 Course with the Digital SAT Model
                               </a>
-                              <span className="publication-venue">SIGCSE TS 2022</span>
+                              <span className="research-publications-venue">SIGCSE TS 2022</span>
                             </li>
                           </ul>
                         </div>
