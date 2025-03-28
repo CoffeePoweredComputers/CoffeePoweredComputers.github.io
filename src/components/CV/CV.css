@@ -46,6 +46,10 @@
   padding-bottom: 0.5rem;
 }
 
+.section-title.small {
+  font-size: var(--font-size-md);
+}
+
 .section-content {
   padding: var(--space-sm);
 }
@@ -365,6 +369,36 @@
   background-color: var(--accent-color) !important;
 }
 
+
+.publication-count.journal {
+  background-color: var(--bs-danger) !important; /* #dc3545 */
+}
+
+.publication-count.workshop {
+  background-color: var(--bs-success) !important; /* #28a745 */
+}
+
+.publication-count.conference {
+  background-color: var(--bs-primary) !important; /* #007bff */
+}
+
+.publication-count.workinggroup {
+  background-color: var(--bs-secondary) !important; /* #6c757d */
+}
+
+.publication-count.preprint {
+  background-color: var(--bs-warning) !important; /* #ffc107 */
+}
+
+.publication-count.poster {
+  background-color: var(--bs-dark) !important; /* #343a40 */
+}
+
+.publication-count.other {
+  background-color: var(--bs-info) !important; /* #17a2b8 */
+}
+
+
 .chevron-icon {
   display: inline-block;
   transition: transform 0.3s ease;
@@ -450,6 +484,9 @@
   margin-left: 10px;
   vertical-align: middle;
 }
+
+
+
 
 .venue-badge.journal {
   background-color: var(--bs-danger) !important; /* #dc3545 */
@@ -664,6 +701,10 @@
   
   .section-title {
     font-size: var(--font-size-lg);
+  }
+
+  .section-title.small {
+    font-size: var(--font-size-md);
   }
   
   .publication-title, .workshop-title, .achievement-title, .project-title, .course-name {

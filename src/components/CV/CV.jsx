@@ -192,10 +192,26 @@ export default function CV() {
   
   // Get top 5 venues by publication count, excluding ArXiv
   const getTopVenues = () => {
-    const venues = Object.entries(publicationStats.byVenue)
+    console.log(publicationStats.byVenueAndType);
+    const venues = Object.entries(publicationStats.byVenueAndType)
       .filter(([name]) => !name.toLowerCase().includes('arxiv')) // Exclude ArXiv
+      .filter(([name]) => publicationStats.byVenueAndType[name]["Journal Article"] > 0 || publicationStats.byVenueAndType[name]["Conference Paper"] > 0)
+    /* reduce and sum conference and journal articles */
+      .map(([name, counts]) => {
+        const count = (counts["Journal Article"] || 0) + (counts["Conference Paper"] || 0);
+        return [name, count];
+      })
       .map(([name, count]) => ({ name, count }))
       .sort((a, b) => b.count - a.count)
+    /* order them so when equal it goes ICER, CompEd, then Computer Science Education */
+      .sort((a, b) => {
+        if (a.count === b.count) {
+          if (a.name === "ACM ICER") return -2;
+          if (a.name === "ACM CompEd") return -1;
+          if (a.name === "Computer Science Education") return 0;
+          return 100;
+        }
+      })
       .slice(0, 5);
     
     return venues;
@@ -264,7 +280,14 @@ export default function CV() {
     // Color scale for publication types
     const color = d3.scaleOrdinal()
       .domain(types)
-      .range(["#011f4b", "#03396c", "#005b96", "#6497b1", "#b3cde0"]);
+      .range([
+        "#dc3545", /* journal */
+        "#007bff", /* conference */
+        "#343a40", /* */
+        "#6c757d", /* workinggroup */
+        "#28a745", /* workshop */
+        "#ffc107",
+      ]);
 
     
     // Add X axis
@@ -381,7 +404,10 @@ export default function CV() {
     // Color scale for venue types
     const color = d3.scaleOrdinal()
       .domain(["Conference", "Journal"])
-      .range(["#03396c", "#d72638"]);
+      .range([
+        "#007bff", /* conference */
+        "#dc3545", /* journal */
+      ]);
     
     // Add X axis
     svg.append("g")
@@ -589,19 +615,23 @@ export default function CV() {
                   🏆 indicate best paper award.
                 </p>
               </div>
+              <h4 className="section-title small">Peer Reviewed Conference and Journal</h4>
               <div className="section-content">
                 {groupedPublications.map((group, gIdx) => (
-                <div key={gIdx} className="publication-year-group">
+                <div key={gIdx + "-pub"} className="publication-year-group">
                   <div className="year-dropdown">
                     <div 
                       className="year-header"
-                      onClick={() => toggleYearExpansion(group.year)}
+                      onClick={() => toggleYearExpansion(group.year + "-pub")}
                     >
                       <div className="year-header-content">
                         <h5 className="year-label">{group.year}</h5>
                         <div className="year-meta">
-                          <Badge className="publication-count">
-                            {group.publications.length} publication{group.publications.length !== 1 ? 's' : ''}
+                          <Badge className="publication-count conference">
+                            {group.publications.filter(pub => pub.type === "Conference Paper").length} Conference{group.publications.filter(pub => pub.type === "Conference Paper").length !== 1 ? 's' : ''}
+                          </Badge>
+                          <Badge className="publication-count journal">
+                            {group.publications.filter(pub => pub.type === "Journal Article").length} Journal{group.publications.filter(pub => pub.type === "Journal Article").length !== 1 ? 's' : ''}
                           </Badge>
                           <span className={`chevron-icon ${expandedYears[group.year] ? 'expanded' : ''}`}>
                             ▼
@@ -609,8 +639,8 @@ export default function CV() {
                         </div>
                       </div>
                     </div>
-                    <div className={`year-content ${expandedYears[group.year] ? 'expanded' : ''}`}>
-                      {group.publications.map((pub, idx) => (
+                    <div className={`year-content ${expandedYears[group.year + "-pub"] ? 'expanded' : ''}`}>
+                      {group.publications.filter(pub => pub.type === "Conference Paper" || pub.type === "Journal Article").map((pub, idx) => (
                       <Card key={idx} className="publication-card">
                         <Card.Body>
                           <div className="d-flex justify-content-between align-items-start">
@@ -636,6 +666,61 @@ export default function CV() {
                 </div>
                 ))}
               </div>
+              <h4 className="section-title small">Posters, Workshops, and Long Abstracts</h4>
+              <div className="section-content">
+                {groupedPublications.filter(group => group.publications.some(pub => pub.type === "Poster" || pub.type === "Workshop Paper")).map((group, gIdx) => (
+                <div key={gIdx} className="publication-year-group">
+                  <div className="year-dropdown">
+                    <div 
+                      className="year-header"
+                      onClick={() => toggleYearExpansion(group.year + "-non-pub")}
+                    >
+                      <div className="year-header-content">
+                        <h5 className="year-label">{group.year}</h5>
+                        <div className="year-meta">
+                          <Badge className="publication-count poster">
+                            {group.publications.filter(pub => pub.type === "Poster").length} Poster{group.publications.filter(pub => pub.type === "Poster").length !== 1 ? 's' : ''}
+                          </Badge>
+                          <Badge className="publication-count abstract">
+                            {group.publications.filter(pub => pub.type === "Abstract").length} Abstract{group.publications.filter(pub => pub.type === "Abstract").length !== 1 ? 's' : ''}
+                          </Badge>
+                          <Badge className="publication-count workshop">
+                            {group.publications.filter(pub => pub.type === "Workshop Paper").length} Workshop{group.publications.filter(pub => pub.type === "Workshop Paper").length !== 1 ? 's' : ''}
+                          </Badge>
+                          <span className={`chevron-icon ${expandedYears[group.year + "-non-pub"] ? 'expanded' : ''}`}>
+                            ▼
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className={`year-content ${expandedYears[group.year + "-non-pub"] ? 'expanded' : ''}`}>
+                      {group.publications.filter(pub => pub.type === "Poster" || pub.type === "Workshop Paper").map((pub, idx) => (
+                      <Card key={idx} className="publication-card">
+                        <Card.Body>
+                          <div className="d-flex justify-content-between align-items-start">
+                            <div className="flex-grow-1">
+                              <div className="publication-title">
+                                {pub.title}
+                                {getAwardEmoji(pub.award)}
+                              </div>
+                              <div className="publication-venue">
+                                <b>{pub.venueShort}: </b>{pub.venue}
+                              </div>
+                              <div className="publication-authors">
+                                <span dangerouslySetInnerHTML={{__html: markMe(pub.authors)}}></span>
+                              </div>
+                            </div>
+                            {getPublicationBadge(pub.type)}
+                          </div>
+                        </Card.Body>
+                      </Card>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                ))}
+              </div>
+
             </div>
 
             {/* Projects Section */}
@@ -674,40 +759,6 @@ export default function CV() {
             </div>
 
             {/* Workshops Section */}
-            <div className="cv-section mb-4">
-              <h4 className="section-title">Posters, Workshops, and Long Abstracts</h4>
-              <div className="section-content">
-                <div className="workshops-list">
-                  {CVData.workshops.map((workshop, idx) => (
-                  <Card key={idx} className="mb-3 workshop-card">
-                    <Card.Body>
-                      <div className="d-flex justify-content-between align-items-start">
-                        <div className="flex-grow-1">
-                          <div className="workshop-title">
-                            {workshop.title}
-                            {workshop.slides && (
-                            <div className="workshop-link mt-1">
-                              <a href={workshop.slides} target="_blank" rel="noopener noreferrer">
-                                🔗 View Slides
-                              </a>
-                            </div>
-                            )}
-                          </div>
-                          <div className="workshop-venue">
-                            {workshop.venue}
-                          </div>
-                          <div className="workshop-authors">
-                            <span dangerouslySetInnerHTML={{__html: markMe(workshop.authors)}}></span>
-                          </div>
-                        </div>
-                        <Badge className="venue-badge workshop">Workshop</Badge>
-                      </div>
-                    </Card.Body>
-                  </Card>
-                  ))}
-                </div>
-              </div>
-            </div>
 
             {/* Course Websites Section */}
             <div className="cv-section mb-4">

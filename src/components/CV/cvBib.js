@@ -122,7 +122,7 @@ const bibTexString = `
   booktitle={Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education V. 2},
   pages={571--572},
   year={2023},
-  type={Conference Paper},
+  type={Abstract},
   venue={ACM ITiCSE}
 }
 
@@ -197,7 +197,7 @@ const bibTexString = `
   author={Ericson, Barbara and Pearce, Janice and Rodger, Susan and Csizmadia, Andrew and Garcia, Rita and Gutierrez, Francisco and Liaskos, Konstantinos and Padiyath, Aadarsh and Scott, Michael and Smith, David and others},
   year={2023},
   publisher={Association for Computing Machinery},
-  type={Working Group Report},
+  type={Conference Paper},
   venue={ACM ITiCSE}
 }
 
@@ -268,7 +268,7 @@ const bibTexString = `
   booktitle={Proceedings of the 2024 on Innovation and Technology in Computer Science Education V. 2},
   pages={771--772},
   year={2024},
-  type={Poster},
+  type={Abstract},
   venue={ACM ITiCSE}
 }
 
@@ -308,7 +308,7 @@ const bibTexString = `
   pages={88--94},
   year={2024},
   type={Conference Paper},
-  venue={ACM CompEd}
+  venue={ACM SIGCSE Virtual}
 }
 
 @article{newar2024mining,
@@ -337,7 +337,7 @@ const bibTexString = `
   journal={2024 Working Group Reports on Innovation and Technology in Computer Science Education},
   pages={300--338},
   year={2025},
-  type={Working Group Report},
+  type={Conference Paper},
   venue={ACM ITiCSE}
 }
 

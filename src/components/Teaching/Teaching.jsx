@@ -65,16 +65,18 @@ export default function Teaching() {
                   <Card.Body>
                     <Row className="align-items-center">
                       <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
-                        <Image src="assets/uiuc_ed.png" alt="CER Seminar" className="course-icon" />
+                        <Image src="assets/vtech.png" alt="CER Seminar" className="course-icon" />
                       </Col>
                       <Col xs={12} sm={9} md={9} lg={10}>
                         <h5 className="course-title">Computing Education Research Seminar</h5>
                         <p className="course-description">
-                          A graduate seminar exploring current research in computing education. 
-                          Students will engage with recent literature, research methodologies, and emerging trends 
-                          in the field of computing education. The course will emphasize critical analysis of 
-                          research papers, development of research questions, and understanding of theoretical frameworks.
-                          <span className="coming-soon-badge">Coming Fall 2025</span>
+                          A graduate seminar exploring current research in
+                          computing education. Students will engage with recent
+                          literature, research methodologies, and emerging
+                          trends in the field of computing education. The
+                          course will emphasize critical analysis of research
+                          papers, development of research questions, and
+                          understanding of theoretical frameworks.
                         </p>
                       </Col>
                     </Row>
@@ -90,15 +92,17 @@ export default function Teaching() {
                   <Card.Body>
                     <Row className="align-items-center">
                       <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
-                        <Image src="assets/comped.png" alt="Intro to Programming" className="course-icon" />
+                        <Image src="assets/illinois.png" alt="Intro to Programming" className="course-icon" />
                       </Col>
                       <Col xs={12} sm={9} md={9} lg={10}>
                         <h5 className="course-title">Introduction to Programming (CS 105)</h5>
                         <p className="course-description">
-                          A comprehensive course designed to introduce programming
-                          concepts to students without a technical background,
-                          focusing on Python programming fundamentals. The course covers basic syntax, 
-                          control structures, functions, and data manipulation through practical exercises and projects.
+                          A comprehensive course designed to introduce
+                          programming concepts to students without a technical
+                          background, focusing on Python programming
+                          fundamentals. The course covers basic syntax, control
+                          structures, functions, and data manipulation through
+                          practical exercises and projects.
                           <a href="https://hamiltonfour.tech/cs-105-summer-21/" target="_blank" rel="noopener noreferrer" className="d-block mt-2">
                             Course Website →
                           </a>
@@ -113,7 +117,7 @@ export default function Teaching() {
                   <Card.Body>
                     <Row className="align-items-center">
                       <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
-                        <Image src="assets/prof.png" alt="High School Programming" className="course-icon" />
+                        <Image src="assets/uni.png" alt="High School Programming" className="course-icon" />
                       </Col>
                       <Col xs={12} sm={9} md={9} lg={10}>
                         <h5 className="course-title">Introduction to Programming (High School)</h5>
@@ -136,7 +140,7 @@ export default function Teaching() {
                   <Card.Body>
                     <Row className="align-items-center">
                       <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
-                        <Image src="assets/textbook.png" alt="Data Structures" className="course-icon" />
+                        <Image src="assets/illinois_education.png" alt="Data Structures" className="course-icon" />
                       </Col>
                       <Col xs={12} sm={9} md={9} lg={10}>
                         <h5 className="course-title">Data Structures for CS Teachers</h5>

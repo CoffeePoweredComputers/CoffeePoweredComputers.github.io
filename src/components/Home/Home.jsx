@@ -23,7 +23,7 @@ export default function Home() {
             />
 
               <div className="profile-titles mb-3">
-                <div className="sub">Assistant Professor</div>
+                <div className="sub">Gradudate Research Assistant</div>
                 <div className="sub">Computing Education Researcher</div>
                 <div className="sub">Linux & Coffee Enthusiast</div>
               </div>
@@ -67,7 +67,8 @@ export default function Home() {
                         <Card.Body className="text-start">
                           <Card.Title className="border-bottom pb-2 fw-bold bio-title">Bio</Card.Title>
                           <Card.Text className="small-text">
-                            I am an incomming Assistant Professor at Virginia Tech in the <a href="https://cs.vt.edu/" target="_blank" rel="noopener noreferrer">Department of Computer Science</a>. I will be completing my PhD at University of Illinois Urbana-Champaign in May of 2025 where I am a part of the <a href="https://siebelschool.illinois.edu/research/areas/computers-and-education" target="_blank" rel="noopener noreferrer">Computers and Education</a> research area and am advised by <a href="https://zilles.cs.illinois.edu/" target="_blank" rel="noopener noreferrer">Craig Zilles</a>. I completed Bachelor's of Science in Computer Science at Western Washington University where I was advised by <a href="https://qhao.info/" target="_blank" rel="noopener noreferrer">Qiang Hao</a>.
+                            I am a PhD candidate at the University of Illinois Urbana-Champaign and wil be joining Virginia Tech as an Assistant Professor in the <a href="https://cs.vt.edu/" target="_blank" rel="noopener noreferrer">Department of Computer Science</a>. 
+                            I will be completing my PhD in May of 2025 where I am a part of the <a href="https://siebelschool.illinois.edu/research/areas/computers-and-education" target="_blank" rel="noopener noreferrer">Computers and Education</a> research area and am advised by <a href="https://zilles.cs.illinois.edu/" target="_blank" rel="noopener noreferrer">Craig Zilles</a>. I completed Bachelor's of Science in Computer Science at Western Washington University where I was advised by <a href="https://qhao.info/" target="_blank" rel="noopener noreferrer">Qiang Hao</a>.
                           </Card.Text>
                         </Card.Body>
                       </Card>
