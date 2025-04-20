@@ -7,6 +7,7 @@ import CV from './components/CV/CV.jsx';
 import Blog from './components/Blog/Blog.jsx';
 import Research from './components/Research/Research.jsx';
 import Teaching from './components/Teaching/Teaching.jsx';
+import Lab from './components/Lab/Lab.jsx';
 import { Container } from 'react-bootstrap';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route path="/cv" element={<CV />} />
             <Route path="/research" element={<Research />} />
+            <Route path="/lab" element={<Lab />} />
             <Route path="/teaching" element={<Teaching />} />
             <Route path="/blog" element={<Blog />} />
           </Routes>

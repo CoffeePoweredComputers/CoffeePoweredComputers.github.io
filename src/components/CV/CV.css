@@ -73,10 +73,6 @@
   margin-bottom: var(--space-md);
 }
 
-.education-card:hover {
-  transform: var(--hover-lift-sm);
-  box-shadow: var(--card-shadow-hover);
-}
 
 .institution-name {
   font-family: var(--font-family-serif);
@@ -138,10 +134,6 @@
   margin-bottom: var(--space-md);
 }
 
-.simplified-experience-card:hover {
-  transform: var(--hover-lift-sm);
-  box-shadow: var(--card-shadow-hover);
-}
 
 .experience-header {
   display: flex;
@@ -222,10 +214,6 @@
   transition: transform 0.3s ease;
 }
 
-.stats-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
 
 .stats-card h5 {
   font-size: 0.9rem;
@@ -338,9 +326,6 @@
   border-bottom: 1px solid var(--border-light);
 }
 
-.year-header:hover {
-  background-color: #e9ecef;
-}
 
 .year-header-content {
   display: flex;
@@ -394,7 +379,7 @@
   background-color: var(--bs-dark) !important; /* #343a40 */
 }
 
-.publication-count.other {
+.publication-count.abstract {
   background-color: var(--bs-info) !important; /* #17a2b8 */
 }
 
@@ -436,10 +421,6 @@
   animation: fadeIn 0.5s ease-in-out;
 }
 
-.publication-card:hover {
-  transform: var(--hover-lift-sm);
-  box-shadow: var(--card-shadow-hover);
-}
 
 .publication-title {
   font-weight: 600;
@@ -472,9 +453,6 @@
   margin-top: 5px;
 }
 
-.publication-link a:hover {
-  text-decoration: underline;
-}
 
 /* Venue Badges */
 .venue-badge {
@@ -533,10 +511,6 @@
   border: 1px solid var(--border-light);
 }
 
-.project-card:hover {
-  transform: var(--hover-lift);
-  box-shadow: var(--card-shadow-hover);
-}
 
 .project-title {
   font-family: var(--font-family-serif);
@@ -580,10 +554,6 @@
   margin-bottom: var(--space-sm);
 }
 
-.workshop-card:hover {
-  transform: var(--hover-lift-sm);
-  box-shadow: var(--card-shadow-hover);
-}
 
 .workshop-title {
   font-weight: 600;
@@ -627,10 +597,6 @@
   border: 1px solid var(--border-light);
 }
 
-.course-website-card:hover {
-  transform: var(--hover-lift);
-  box-shadow: var(--card-shadow-hover);
-}
 
 .course-name {
   font-family: var(--font-family-serif);
@@ -650,10 +616,6 @@
   margin-bottom: var(--space-sm);
 }
 
-.achievement-card:hover {
-  transform: var(--hover-lift-sm);
-  box-shadow: var(--card-shadow-hover);
-}
 
 .achievement-title {
   font-weight: 600;

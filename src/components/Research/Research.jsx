@@ -82,6 +82,9 @@ export default function Research() {
                               outcomes for learners in formative contexts.
                             </p>
                             
+                          </Col>
+                        </Row>
+                        <Row className="align-items-center mt-4">
                             <div className="research-publications">
                               <h6 className="research-publications-title">Key Publications:</h6>
                               <ul className="research-publications-list">
@@ -111,8 +114,7 @@ export default function Research() {
                                 </li>
                               </ul>
                             </div>
-                          </Col>
-                        </Row>
+                          </Row>
                       </Card.Body>
                     </Card>
                   </Card.Body>
@@ -149,7 +151,8 @@ export default function Research() {
                         </p>
                       </Col>
                     </Row>
-                    
+                    <Row className="align-items-center mb-4"> 
+                    <Col>
                     <div className="research-publications">
                       <h6 className="research-publications-title">Key Publications:</h6>
                       <ul className="research-publications-list">
@@ -200,6 +203,8 @@ export default function Research() {
                         Science.
                       </p>
                     </div>
+                </Col>
+                  </Row>
                   </Card.Body>
                 </Card>
               </div>
@@ -220,7 +225,10 @@ export default function Research() {
                           of computer-based testing in large-scale CS courses. I've investigated second chance testing policies, 
                           fairness of randomized exams, and impacts of frequent exams on student performance.
                         </p>
-                        
+                      </Col>
+                    </Row>
+                    <Row className="align-items-center mt-4"> 
+                      <Col>
                         <div className="research-publications">
                           <h6 className="research-publications-title">Key Publications:</h6>
                           <ul className="research-publications-list">
@@ -250,44 +258,6 @@ export default function Research() {
                 </Card>
               </div>
             </div>
-
-            {/* Current Projects 
-            <div className="current-projects mb-4">
-              <h4 className="section-title">Current Projects</h4>
-              
-              <Row xs={1} md={2} className="g-4">
-                <Col>
-                  <Card className="project-card h-100">
-                    <Card.Body>
-                      <h5 className="project-title">Supporting Human-GenAI Collaborative Programming</h5>
-                      <p className="project-text">
-                        This project investigates pedagogical approaches for developing students' skills in 
-                        human-GenAI collaborative programming. We are developing and evaluating activities 
-                        that help students learn effective prompting strategies, including the ability to 
-                        communicate intent clearly, analyze generated code critically, and iteratively refine prompts.
-                      </p>
-                      <span className="project-status">Ongoing - Meta Llama Impact Grant</span>
-                    </Card.Body>
-                  </Card>
-                </Col>
-                
-                <Col>
-                  <Card className="project-card h-100">
-                    <Card.Body>
-                      <h5 className="project-title">Evaluating Code Comprehension Assessment Methods</h5>
-                      <p className="project-text">
-                        This project compares different methods for assessing code comprehension, including 
-                        explain-in-plain-language questions, function naming tasks, and code tracing. We are 
-                        investigating the relationships between these different assessment approaches and 
-                        their correlation with code writing performance.
-                      </p>
-                      <span className="project-status">Ongoing - Multiple publications in preparation</span>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              </Row>
-            </div>
-            */}
           </Col>
         </Row>
       </div>

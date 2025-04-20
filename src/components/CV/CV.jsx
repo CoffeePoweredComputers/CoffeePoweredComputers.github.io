@@ -283,10 +283,11 @@ export default function CV() {
       .range([
         "#dc3545", /* journal */
         "#007bff", /* conference */
-        "#343a40", /* */
+        "#17a2b8", /* abstract */
+        "#343a40", /* poster */
+        "#ffc107", /* preprint */
         "#6c757d", /* workinggroup */
         "#28a745", /* workshop */
-        "#ffc107",
       ]);
 
     
@@ -493,7 +494,7 @@ export default function CV() {
       return <Badge className="venue-badge workinggroup">Working Group</Badge>;
     } else if (type === "Conference Paper") {
       return <Badge className="venue-badge conference">Conference</Badge>;
-    } else {
+    } else if (type === "Abstract") {
       return <Badge className="venue-badge other">{type}</Badge>;
     }
   };
@@ -694,7 +695,7 @@ export default function CV() {
                       </div>
                     </div>
                     <div className={`year-content ${expandedYears[group.year + "-non-pub"] ? 'expanded' : ''}`}>
-                      {group.publications.filter(pub => pub.type === "Poster" || pub.type === "Workshop Paper").map((pub, idx) => (
+                      {group.publications.filter(pub => pub.type === "Poster" || pub.type === "Workshop Paper" || pub.type === "Abstract").map((pub, idx) => (
                       <Card key={idx} className="publication-card">
                         <Card.Body>
                           <div className="d-flex justify-content-between align-items-start">

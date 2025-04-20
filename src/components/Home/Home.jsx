@@ -81,9 +81,10 @@ export default function Home() {
                               <span className="news-tag general">General</span>
                               I am excited to have joined the <a href="https://dl.acm.org/journal/toce" target="_blank" rel="noopener noreferrer">ACM Transactions on Computing Education</a> as an Associate Editor!
                             </li>
-                            <li className="news-li news-li-border" date-data="03/21/2025">
-                              <span className="news-tag grant">Grant</span>
-                              In collaboration with Paul Denny from the University of Auckland, we have been awarded a Llama Impact Grant from Meta to support the development and evaluation of Explain in Plain English Questions!
+                            <li className="news-li news-li-border" date-data="04/09/2025">
+                              <span className="news-tag general">General</span>
+                              I have successfully defended my dissertation "Discovering, Auto-generating, and Evaluating Distractors in Parsons Problems in CS1". many thanks to my advisor Craig Zilles as well as my committee members Katie Cunningham, Barbara Ericson, and Colleen Lewis.
+
                             </li>
                             <li className="news-li news-li-border" date-data="03/13/2025">
                               <span className="news-tag general">General</span>

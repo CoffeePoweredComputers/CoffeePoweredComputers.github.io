@@ -1,0 +1,68 @@
+.lab-container {
+  padding: 30px;
+}
+
+.announcement-card {
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.announcement-header {
+  background-color: #343a40;
+  padding: 15px;
+  color: white;
+}
+
+.announcement-header h2 {
+  margin-bottom: 0;
+  font-size: 1.5rem;
+}
+
+.announcement-content {
+  font-size: 1.1rem;
+  background-color: #f8f9fa;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-top: none;
+}
+
+.name-badge {
+  background-color: #343a40;
+  padding: 10px 16px;
+  width: 100%;
+  text-align: center;
+}
+
+.name-badge h5 {
+  margin-bottom: 2px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.position-text {
+  font-size: 0.85rem;
+  color: #e9ecef;
+  margin-bottom: 0;
+}
+
+.member-card {
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.member-image {
+  object-fit: cover;
+  height: 250px;
+  width: 100%;
+  border-radius: 0;
+}
+
+.role-section {
+  margin-bottom: 40px;
+}
+
+.role-title {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #007bff;
+}

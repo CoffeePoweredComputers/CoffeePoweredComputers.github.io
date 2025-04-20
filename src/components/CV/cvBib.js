@@ -378,6 +378,15 @@ const bibTexString = `
   type={Conference Paper},
   venue={ACM ITiCSE}
 }
+@article{zastudil2025neurodiversity,
+  title={Neurodiversity in Computing Education Research: A Systematic Literature Review},
+  author={Zastudil, Cynthia and Smith IV, David H and Tohamy, Yusef and Nasimova, Rayhona and Montross, Gavin and MacNeil, Stephen},
+  booktitle={Proceedings of the 2025 on Innovation and Technology in Computer Science Education V. 1},
+  type={Conference Paper},
+  venue={ACM ITiCSE},
+  year={2025}
+}
+
 `
 
 export default bibTexString;
