@@ -77,6 +77,13 @@ export default function Home() {
                         <Card.Body className="text-start">
                           <Card.Title className="border-bottom pb-2 fw-bold news-title">Latest News</Card.Title>
                           <ul className="news-list">
+                            <li className="news-li news-li-border" date-data="04/30/2025">
+                              <p>
+                              <span className="news-tag grant">Grant</span>
+                                I am excited to announce that me and my collaborator Paul Denny have been awarded a Llama Impact grant to pursue our work on EiPL questions and Prompt problems! The press release can be found <a href="https://about.fb.com/news/2025/04/llama-impact-grant-recipients/" target="_blank" rel="noopener noreferrer">here</a>.
+                              </p>
+                              <Image src="assets/llama-impact-2025.png" alt="Llama Impact Grant" rounded className="news-icon" />
+                            </li>
                             <li className="news-li news-li-border" date-data="04/16/2025">
                               <span className="news-tag general">General</span>
                               I am excited to have joined the <a href="https://dl.acm.org/journal/toce" target="_blank" rel="noopener noreferrer">ACM Transactions on Computing Education</a> as an Associate Editor!
