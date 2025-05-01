@@ -30,48 +30,64 @@ export default function Home() {
 
               <div className="social-icons mb-3">
                 <SocialIcon 
-                url="https://www.linkedin.com/in/david-smith-1b9499102/" 
+                url="https://www.linkedin.com/in/david-h-smith-iv-1b9499102/" 
                 style={{ height: 35, width: 35, margin: 5 }} 
                 bgColor='#000000' 
                 fgColor='#c0c0c0'
                 rel="noopener noreferrer"
                 target="_blank"
               />
-                  <SocialIcon 
-                  url="https://github.com/CoffeePoweredComputers" 
-                  style={{ height: 35, width: 35, margin: 5 }} 
-                  bgColor='#000000' 
-                  fgColor='#c0c0c0'
-                  rel="noopener noreferrer"
-                  target="_blank"
-                />
-                    <SocialIcon 
-                    url="https://twitter.com/DavidHSmithIV" 
-                    style={{ height: 35, width: 35, margin: 5 }} 
-                    bgColor='#000000' 
-                    fgColor='#c0c0c0'
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  />
-                      <SocialIcon 
-                      url="https://medium.com/@davidhsmith4" 
-                      style={{ height: 35, width: 35, margin: 5 }} 
-                      bgColor='#000000' 
-                      fgColor='#c0c0c0'
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    />
-                      </div>
+                <SocialIcon 
+                url="https://github.com/CoffeePoweredComputers" 
+                style={{ height: 35, width: 35, margin: 5 }} 
+                bgColor='#000000' 
+                fgColor='#c0c0c0'
+                rel="noopener noreferrer"
+                target="_blank"
+              />
+                <SocialIcon 
+                url="https://x.com/David_H_SmithIV" 
+                style={{ height: 35, width: 35, margin: 5 }} 
+                bgColor='#000000' 
+                fgColor='#c0c0c0'
+                rel="noopener noreferrer"
+                target="_blank"
+              />
+                <SocialIcon 
+                url="https://medium.com/@davidhsmith4" 
+                style={{ height: 35, width: 35, margin: 5 }} 
+                bgColor='#000000' 
+                fgColor='#c0c0c0'
+                rel="noopener noreferrer"
+                target="_blank"
+              />
+                <SocialIcon 
+                url="https://www.threads.com/@david_h_smith_iv" 
+                style={{ height: 35, width: 35, margin: 5 }} 
+                bgColor='#000000' 
+                fgColor='#c0c0c0'
+                rel="noopener noreferrer"
+                target="_blank"
+              />
+                <SocialIcon 
+                url="https://www.instagram.com/david_h_smith_iv/" 
+                style={{ height: 35, width: 35, margin: 5 }} 
+                bgColor='#000000' 
+                fgColor='#c0c0c0'
+                rel="noopener noreferrer"
+                target="_blank"
+              />
+            </div>
 
-                      <Card className="mb-3 bio-card">
-                        <Card.Body className="text-start">
-                          <Card.Title className="border-bottom pb-2 fw-bold bio-title">Bio</Card.Title>
-                          <Card.Text className="small-text">
-                            I am a PhD candidate at the University of Illinois Urbana-Champaign and wil be joining Virginia Tech as an Assistant Professor in the <a href="https://cs.vt.edu/" target="_blank" rel="noopener noreferrer">Department of Computer Science</a>. 
-                            I will be completing my PhD in May of 2025 where I am a part of the <a href="https://siebelschool.illinois.edu/research/areas/computers-and-education" target="_blank" rel="noopener noreferrer">Computers and Education</a> research area and am advised by <a href="https://zilles.cs.illinois.edu/" target="_blank" rel="noopener noreferrer">Craig Zilles</a>. I completed Bachelor's of Science in Computer Science at Western Washington University where I was advised by <a href="https://qhao.info/" target="_blank" rel="noopener noreferrer">Qiang Hao</a>.
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
+            <Card className="mb-3 bio-card">
+              <Card.Body className="text-start">
+                <Card.Title className="border-bottom pb-2 fw-bold bio-title">Bio</Card.Title>
+                <Card.Text className="small-text">
+                  I am a PhD candidate at the University of Illinois Urbana-Champaign and wil be joining Virginia Tech as an Assistant Professor in the <a href="https://cs.vt.edu/" target="_blank" rel="noopener noreferrer">Department of Computer Science</a>. 
+                  I will be completing my PhD in May of 2025 where I am a part of the <a href="https://siebelschool.illinois.edu/research/areas/computers-and-education" target="_blank" rel="noopener noreferrer">Computers and Education</a> research area and am advised by <a href="https://zilles.cs.illinois.edu/" target="_blank" rel="noopener noreferrer">Craig Zilles</a>. I completed Bachelor's of Science in Computer Science at Western Washington University where I was advised by <a href="https://qhao.info/" target="_blank" rel="noopener noreferrer">Qiang Hao</a>.
+                </Card.Text>
+              </Card.Body>
+            </Card>
 
                       <Card className="news-card">
                         <Card.Body className="text-start">
@@ -79,7 +95,7 @@ export default function Home() {
                           <ul className="news-list">
                             <li className="news-li news-li-border" date-data="04/30/2025">
                               <p>
-                              <span className="news-tag grant">Grant</span>
+                                <span className="news-tag grant">Grant</span>
                                 I am excited to announce that me and my collaborator Paul Denny have been awarded a Llama Impact grant to pursue our work on EiPL questions and Prompt problems! The press release can be found <a href="https://about.fb.com/news/2025/04/llama-impact-grant-recipients/" target="_blank" rel="noopener noreferrer">here</a>.
                               </p>
                               <Image src="assets/llama-impact-2025.png" alt="Llama Impact Grant" rounded className="news-icon" />
@@ -136,90 +152,90 @@ export default function Home() {
                         <strong>I develop and evaluate interactive and engaging tools that support novice programmers.</strong> My goal as a researcher working at the intersection of <a href="https://faculty.washington.edu/ajko/cer" target="_blank" rel="noopener noreferrer">Computing Education Research (CER)</a> and Human-Computer Interaction (HCI) is to draw on theories of learning to create effective and scalable approaches for educating the next generation of computing professionals. My work has included a wide range of topics within CER, and my current areas of focus are as follows.
                       </p>
 
-                        {/* Research Area 1 */}
-                        <Card className="mb-4 research-card">
-                          <Card.Body>
-                            <Row className="align-items-center">
-                              <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
-                                <Image src="assets/parsons2.png" alt="Scaffolding Learning" className="research-icon" />
-                              </Col>
-                              <Col xs={12} sm={9} md={9} lg={10}>
-                                <h5 className="research-title">Scaffolding Code Writing with Parsons Problems</h5>
-                                <p className="research-text">
-                                  I investigate the design of Parsons Problems for teaching and exams in introductory Python. My work includes investigations on distractor blocks in problem <a href="https://zilles.cs.illinois.edu/papers/smith_parsons_grouped_COMPED_2023.pdf" target="_blank" rel="noopener noreferrer">psychometric properties</a> and their <a href="https://dl.acm.org/doi/pdf/10.1145/3632620.3671114" target="_blank" rel="noopener noreferrer">impact on learning</a>. I've contributed to <a href="https://arxiv.org/pdf/2405.19460" target="_blank" rel="noopener noreferrer">micro-parsons problems</a> assessment and <a href="https://repository.falmouth.ac.uk/5216/1/ITiCSE_2023_WorkingGroup_Parsons_Report.pdf" target="_blank" rel="noopener noreferrer">multi-institutional studies</a> on Parsons Problems' impact on learning. I support the <a href="https://prairielearn.readthedocs.io/en/latest/elements/#pl-order-blocks-element" target="_blank" rel="noopener noreferrer">order-blocks</a> element on <a href="https://us.prairielearn.com/" target="_blank" rel="noopener noreferrer">PrairieLearn</a> and have contributed to the Parsons Problems question element on <a href="https://www.codespec.org/" target="_blank" rel="noopener noreferrer">CodeSpec</a>.
-                                </p>
-                              </Col>
-                            </Row>
-                          </Card.Body>
-                        </Card>
+                      {/* Research Area 1 */}
+                      <Card className="mb-4 research-card">
+                        <Card.Body>
+                          <Row className="align-items-center">
+                            <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
+                              <Image src="assets/parsons2.png" alt="Scaffolding Learning" className="research-icon" />
+                            </Col>
+                            <Col xs={12} sm={9} md={9} lg={10}>
+                              <h5 className="research-title">Scaffolding Code Writing with Parsons Problems</h5>
+                              <p className="research-text">
+                                I investigate the design of Parsons Problems for teaching and exams in introductory Python. My work includes investigations on distractor blocks in problem <a href="https://zilles.cs.illinois.edu/papers/smith_parsons_grouped_COMPED_2023.pdf" target="_blank" rel="noopener noreferrer">psychometric properties</a> and their <a href="https://dl.acm.org/doi/pdf/10.1145/3632620.3671114" target="_blank" rel="noopener noreferrer">impact on learning</a>. I've contributed to <a href="https://arxiv.org/pdf/2405.19460" target="_blank" rel="noopener noreferrer">micro-parsons problems</a> assessment and <a href="https://repository.falmouth.ac.uk/5216/1/ITiCSE_2023_WorkingGroup_Parsons_Report.pdf" target="_blank" rel="noopener noreferrer">multi-institutional studies</a> on Parsons Problems' impact on learning. I support the <a href="https://prairielearn.readthedocs.io/en/latest/elements/#pl-order-blocks-element" target="_blank" rel="noopener noreferrer">order-blocks</a> element on <a href="https://us.prairielearn.com/" target="_blank" rel="noopener noreferrer">PrairieLearn</a> and have contributed to the Parsons Problems question element on <a href="https://www.codespec.org/" target="_blank" rel="noopener noreferrer">CodeSpec</a>.
+                              </p>
+                            </Col>
+                          </Row>
+                        </Card.Body>
+                      </Card>
 
-                        {/* Research Area 2 */}
-                        <Card className="mb-4 research-card">
-                          <Card.Body>
-                            <Row className="align-items-center">
-                              <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
-                                <Image src="assets/eipllogo.png" alt="Human-GenAI Collaborative Coding" className="research-icon" />
-                              </Col>
-                              <Col xs={12} sm={9} md={9} lg={10}>
-                                <h5 className="research-title">Enabling Code Comprehension and Prompting Activities at Scale</h5>
-                                <p className="research-text">
-                                  My research focuses on tools to help students develop Human-GenAI collaborative coding skills. I introduced <a href="https://arxiv.org/pdf/2311.14903.pdf" target="_blank" rel="noopener noreferrer">"Code Generation Based Grading"</a> for Explain in Plain English (EiPE), which develops students' AI prompting and code comprehension skills. I maintain <a href="https://github.com/CoffeePoweredComputers/eiplgrader" target="_blank" rel="noopener noreferrer"><code>eiplgrader</code></a>, a Python package supporting this autograder. Recent work examines this approach in linguistically diverse contexts like <a href="https://arxiv.org/abs/2409.20297" target="_blank" rel="noopener noreferrer">India</a>.
-                                </p>
-                              </Col>
-                            </Row>
-                          </Card.Body>
-                        </Card>
+                      {/* Research Area 2 */}
+                      <Card className="mb-4 research-card">
+                        <Card.Body>
+                          <Row className="align-items-center">
+                            <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
+                              <Image src="assets/eipllogo.png" alt="Human-GenAI Collaborative Coding" className="research-icon" />
+                            </Col>
+                            <Col xs={12} sm={9} md={9} lg={10}>
+                              <h5 className="research-title">Enabling Code Comprehension and Prompting Activities at Scale</h5>
+                              <p className="research-text">
+                                My research focuses on tools to help students develop Human-GenAI collaborative coding skills. I introduced <a href="https://arxiv.org/pdf/2311.14903.pdf" target="_blank" rel="noopener noreferrer">"Code Generation Based Grading"</a> for Explain in Plain English (EiPE), which develops students' AI prompting and code comprehension skills. I maintain <a href="https://github.com/CoffeePoweredComputers/eiplgrader" target="_blank" rel="noopener noreferrer"><code>eiplgrader</code></a>, a Python package supporting this autograder. Recent work examines this approach in linguistically diverse contexts like <a href="https://arxiv.org/abs/2409.20297" target="_blank" rel="noopener noreferrer">India</a>.
+                              </p>
+                            </Col>
+                          </Row>
+                        </Card.Body>
+                      </Card>
 
-                        {/* Research Area 3 */}
-                        <Card className="mb-4 research-card">
-                          <Card.Body>
-                            <Row className="align-items-center">
-                              <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
-                                <Image src="assets/cbtf.png" alt="Computer Based Testing" className="research-icon" />
-                              </Col>
-                              <Col xs={12} sm={9} md={9} lg={10}>
-                                <h5 className="research-title">Scaling Summative Assessment through Computer Based Testing</h5>
-                                <p className="research-text">
-                                  I support at-scale computer-based testing for frequent assessment with immediate feedback. I've investigated <a href="https://par.nsf.gov/servlets/purl/10434207" target="_blank" rel="noopener noreferrer">second chance testing policies</a>, <a href="https://dl.acm.org/doi/pdf/10.1145/3478431.3499388" target="_blank" rel="noopener noreferrer">fairness of randomized exams</a>, and  <a href="https://par.nsf.gov/servlets/purl/10434191" target="_blank" rel="noopener noreferrer">impacts of frequent exams</a> on student performance.
-                                </p>
-                              </Col>
-                            </Row>
-                          </Card.Body>
-                        </Card>
+                      {/* Research Area 3 */}
+                      <Card className="mb-4 research-card">
+                        <Card.Body>
+                          <Row className="align-items-center">
+                            <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
+                              <Image src="assets/cbtf.png" alt="Computer Based Testing" className="research-icon" />
+                            </Col>
+                            <Col xs={12} sm={9} md={9} lg={10}>
+                              <h5 className="research-title">Scaling Summative Assessment through Computer Based Testing</h5>
+                              <p className="research-text">
+                                I support at-scale computer-based testing for frequent assessment with immediate feedback. I've investigated <a href="https://par.nsf.gov/servlets/purl/10434207" target="_blank" rel="noopener noreferrer">second chance testing policies</a>, <a href="https://dl.acm.org/doi/pdf/10.1145/3478431.3499388" target="_blank" rel="noopener noreferrer">fairness of randomized exams</a>, and  <a href="https://par.nsf.gov/servlets/purl/10434191" target="_blank" rel="noopener noreferrer">impacts of frequent exams</a> on student performance.
+                              </p>
+                            </Col>
+                          </Row>
+                        </Card.Body>
+                      </Card>
 
-                        {/* Research Area 4 
-                        <Card className="mb-4 research-card">
-                          <Card.Body>
-                            <Row className="align-items-center">
-                              <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
-                                <Image src="" alt="Teaching Software Testing in Introductory Computer Science" className="research-icon" />
-                              </Col>
-                              <Col xs={12} sm={9} md={9} lg={10}>
-                                <h5 className="research-title">Teaching Software Testing in Introductory Computer Science</h5>
-                                <p className="research-text">
-                                </p>
-                              </Col>
-                            </Row>
-                          </Card.Body>
-                        </Card>
+                      {/* Research Area 4 
+                      <Card className="mb-4 research-card">
+                        <Card.Body>
+                          <Row className="align-items-center">
+                            <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
+                              <Image src="" alt="Teaching Software Testing in Introductory Computer Science" className="research-icon" />
+                            </Col>
+                            <Col xs={12} sm={9} md={9} lg={10}>
+                              <h5 className="research-title">Teaching Software Testing in Introductory Computer Science</h5>
+                              <p className="research-text">
+                              </p>
+                            </Col>
+                          </Row>
+                        </Card.Body>
+                      </Card>
 
 
-                        Research Area 5 
-                        <Card className="mb-4 research-card">
-                          <Card.Body>
-                            <Row className="align-items-center">
-                              <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
-                                <Image src="" alt="Computing Educating for End-User Scientific Programmers" className="research-icon" />
-                              </Col>
-                              <Col xs={12} sm={9} md={9} lg={10}>
-                                <h5 className="research-title">Computing Educating for End-User Scientific Programmers</h5>
-                                <p className="research-text">
-                                </p>
-                              </Col>
-                            </Row>
-                          </Card.Body>
-                        </Card>
-                        */}
+                      Research Area 5 
+                      <Card className="mb-4 research-card">
+                        <Card.Body>
+                          <Row className="align-items-center">
+                            <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
+                              <Image src="" alt="Computing Educating for End-User Scientific Programmers" className="research-icon" />
+                            </Col>
+                            <Col xs={12} sm={9} md={9} lg={10}>
+                              <h5 className="research-title">Computing Educating for End-User Scientific Programmers</h5>
+                              <p className="research-text">
+                              </p>
+                            </Col>
+                          </Row>
+                        </Card.Body>
+                      </Card>
+                      */}
 
                       <div className="text-center text-md-start mt-4">
                         <p>
