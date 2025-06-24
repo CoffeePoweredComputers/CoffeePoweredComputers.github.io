@@ -328,21 +328,12 @@
 }
 
 .year-header:focus {
-  outline: 4px solid var(--link-color);
-  outline-offset: 2px;
-  background-color: #e3f2fd;
-  box-shadow: inset 0 0 0 3px rgba(0, 102, 204, 0.2), 0 0 0 8px rgba(0, 102, 204, 0.1);
-  border-radius: 8px;
-  transform: scale(1.02);
-  transition: all 0.2s ease;
+  outline: none;
 }
 
 .year-header:focus .chevron-icon {
-  background-color: var(--link-color);
-  color: white;
-  box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.4), 0 0 10px rgba(0, 102, 204, 0.6);
-  transform: scale(1.3);
-  border: 2px solid white;
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
 }
 
 .year-header:hover {
@@ -357,72 +348,52 @@
 
 /* Enhanced focus state for keyboard navigation */
 .year-header:focus-visible {
-  outline: 4px solid var(--link-color);
-  outline-offset: 2px;
-  background-color: #e3f2fd;
-  box-shadow: inset 0 0 0 3px rgba(0, 102, 204, 0.2), 0 0 0 8px rgba(0, 102, 204, 0.1);
-  border-radius: 8px;
-  transform: scale(1.02);
+  outline: none;
 }
 
 .year-header:focus-visible .chevron-icon {
-  background-color: var(--link-color);
-  color: white;
-  box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.4), 0 0 10px rgba(0, 102, 204, 0.6);
-  transform: scale(1.3);
-  border: 2px solid white;
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
 }
 
 /* Active state for better feedback */
 .year-header:active {
-  transform: scale(0.98);
-  background-color: #d6eaff;
+  background-color: #e9ecef;
 }
 
 .year-header:active .chevron-icon {
-  transform: scale(1.2);
-  background-color: #0056b3;
+  background-color: #d1d4d8;
 }
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
-  .year-header:focus,
-  .year-header:focus-visible {
-    outline: 5px solid #000;
-    outline-offset: 3px;
-    background-color: #fff;
-    border: 3px solid #000;
-  }
-  
   .year-header:focus .chevron-icon,
   .year-header:focus-visible .chevron-icon {
-    background-color: #000;
-    color: #fff;
-    border: 3px solid #fff;
-    box-shadow: 0 0 0 3px #000;
+    outline: 3px solid #000;
+    outline-offset: 2px;
   }
 }
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
-  .year-header:focus,
-  .year-header:focus-visible,
   .year-header:hover,
   .year-header:active {
     transform: none;
     transition: none;
   }
   
-  .year-header:focus .chevron-icon,
-  .year-header:focus-visible .chevron-icon,
   .year-header:hover .chevron-icon,
   .year-header:active .chevron-icon {
-    transform: none;
     transition: none;
   }
   
+  .year-header:hover .chevron-icon:not(.expanded),
+  .year-header:active .chevron-icon:not(.expanded) {
+    transform: none;
+  }
+  
   .chevron-icon.expanded {
-    transform: rotate(180deg);
+    transform: rotate(180deg) !important;
   }
 }
 
@@ -500,7 +471,7 @@
 }
 
 .chevron-icon.expanded {
-  transform: rotate(180deg);
+  transform: rotate(180deg) !important;
 }
 
 /* Enhanced expanded state styling */
@@ -516,16 +487,10 @@
 }
 
 /* Ensure expanded state maintains proper focus styling */
-.year-header[aria-expanded="true"]:focus,
-.year-header[aria-expanded="true"]:focus-visible {
-  background-color: #e3f2fd;
-  border-bottom: 3px solid var(--link-color);
-}
-
 .year-header[aria-expanded="true"]:focus .chevron-icon,
 .year-header[aria-expanded="true"]:focus-visible .chevron-icon {
-  box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.4), 0 0 10px rgba(0, 102, 204, 0.8);
-  transform: scale(1.3) rotate(180deg);
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
 }
 
 .year-content {
@@ -854,17 +819,10 @@
   }
   
   /* Enhanced mobile focus indicators */
-  .year-header:focus,
-  .year-header:focus-visible {
-    outline: 3px solid var(--link-color);
-    outline-offset: 1px;
-    transform: scale(1.01);
-  }
-  
   .year-header:focus .chevron-icon,
   .year-header:focus-visible .chevron-icon {
-    transform: scale(1.2);
-    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.3);
+    outline: 2px solid var(--link-color);
+    outline-offset: 2px;
   }
   
   .chevron-icon {
@@ -894,35 +852,19 @@
 /* Fallback styles for browsers that don't support :focus-visible */
 @supports not selector(:focus-visible) {
   .year-header:focus {
-    outline: 4px solid var(--link-color);
-    outline-offset: 2px;
-    background-color: #e3f2fd;
-    box-shadow: inset 0 0 0 3px rgba(0, 102, 204, 0.2), 0 0 0 8px rgba(0, 102, 204, 0.1);
-    border-radius: 8px;
-    transform: scale(1.02);
+    outline: none;
   }
   
   .year-header:focus .chevron-icon {
-    background-color: var(--link-color);
-    color: white;
-    box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.4), 0 0 10px rgba(0, 102, 204, 0.6);
-    transform: scale(1.3);
-    border: 2px solid white;
+    outline: 2px solid var(--link-color);
+    outline-offset: 2px;
   }
 }
 
 /* Ensure minimum contrast ratios for accessibility */
 @media (prefers-color-scheme: dark) {
-  .year-header:focus,
-  .year-header:focus-visible {
-    outline-color: #4dabf7;
-    background-color: #1a365d;
-    color: #fff;
-  }
-  
   .year-header:focus .chevron-icon,
   .year-header:focus-visible .chevron-icon {
-    background-color: #4dabf7;
-    box-shadow: 0 0 0 4px rgba(77, 171, 247, 0.4), 0 0 10px rgba(77, 171, 247, 0.6);
+    outline-color: #4dabf7;
   }
 }

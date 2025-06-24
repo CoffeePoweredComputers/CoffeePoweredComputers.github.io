@@ -916,7 +916,7 @@ export default function CV() {
                           <Badge className="publication-count journal">
                             {group.publications.filter(pub => pub.type === "Journal Article").length} Journal{group.publications.filter(pub => pub.type === "Journal Article").length !== 1 ? 's' : ''}
                           </Badge>
-                          <span className={`chevron-icon ${expandedYears[group.year] ? 'expanded' : ''}`}>
+                          <span className={`chevron-icon ${expandedYears[group.year + "-pub"] ? 'expanded' : ''}`}>
                             ▼
                           </span>
                         </div>
