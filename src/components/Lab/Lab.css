@@ -41,7 +41,7 @@
 
 .position-text {
   font-size: 0.85rem;
-  color: #e9ecef;
+  color: #f8f9fa;
   margin-bottom: 0;
 }
 
@@ -64,5 +64,45 @@
 .role-title {
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 2px solid #007bff;
+  border-bottom: 2px solid black;
 }
+
+.lab-banner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 1.5rem 3rem;
+  background-color: #212529 !important;
+}
+
+.lab-logo-image {
+  width: 150px;
+  height: auto;
+}
+
+.lab-name {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xxl);
+  line-height: 1.2;
+  color: var(--light-text);
+  max-width: 800px;
+  /* centering */
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* hide text on mobile and center logo */
+@media (max-width: 768px) {
+  .lab-name {
+    display: none;
+  }
+  .lab-banner {
+    justify-content: center;
+    padding: 1.5rem;
+  }
+  .lab-logo-image {
+    width: 100%;
+  }
+}
+

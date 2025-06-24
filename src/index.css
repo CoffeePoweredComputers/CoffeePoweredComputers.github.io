@@ -6,13 +6,13 @@
   /* Colors */
   --primary-bg: #ffffff;
   --secondary-bg: #f8f9fa;
-  --primary-text: #666;
-  --secondary-text: #666;
+  --primary-text: #2c2c2c;
+  --secondary-text: #333333;
   --accent-color: #404040;
   --border-color: #dee2e6;
   --border-light: rgba(192, 192, 192, 0.5);
-  --link-color: #007bff;
-  --link-hover: #0056b3;
+  --link-color: #0066cc;
+  --link-hover: #0052a3;
   --code-bg: #f6f8fa;
   --card-bg: rgba(33, 37, 41, 0.75);
   --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -20,7 +20,7 @@
   --highlight-bg: rgba(192, 192, 192, 0.2);
   --dark-bg: #212529;
   --dark-bg-hover: #343a40;
-  --light-text: #e6e6e6;
+  --light-text: #f0f0f0;
   --light-text-hover: #ffffff;
 
   /* Spacing */
@@ -36,6 +36,8 @@
   --font-size-md: 1rem;
   --font-size-lg: 1.25rem;
   --font-size-xl: 1.5rem;
+  --font-size-xxl: 2rem;
+  --font-size-xxxl: 3rem;
   
   /* Font Families */
   --font-family-base: 'Lexend Deca', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -105,13 +107,25 @@ a {
   color: var(--link-color);
   text-decoration: none;
   transition: var(--transition-standard);
-  outline: none !important;
+}
+
+/* Focus indicators for accessibility */
+a:focus {
+  outline: 3px solid var(--link-color);
+  outline-offset: 3px;
+  border-radius: 2px;
+  box-shadow: 0 0 0 6px rgba(0, 102, 204, 0.25);
 }
 
 a:hover {
   color: var(--link-hover);
-  outline: none !important;
   text-decoration: underline;
+}
+
+a:focus:hover {
+  outline: 3px solid var(--link-hover);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(0, 82, 163, 0.25);
 }
 
 /* Images */
@@ -142,8 +156,23 @@ img {
 
 .card-title a {
   text-decoration: none !important;
-  outline: none;
   color: var(--light-text);
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: var(--transition-standard);
+}
+
+.card-title a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.card-title a:focus {
+  outline: 3px solid #ffffff;
+  outline-offset: -6px;
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 6px rgba(255, 255, 255, 0.3);
 }
 
 /* Section Headers */
@@ -163,11 +192,21 @@ img {
   box-shadow: var(--card-shadow);
   transition: var(--transition-standard);
   overflow: hidden;
+  border: 2px solid transparent;
 }
 
 .custom-card:hover {
   text-decoration: none !important;
   box-shadow: var(--card-shadow-hover);
+  transform: var(--hover-lift-sm);
+  border-color: var(--border-color);
+}
+
+.custom-card:focus {
+  outline: 3px solid var(--link-color);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(0, 102, 204, 0.25);
+  border-color: var(--link-color);
 }
 
 /* List Styling */
@@ -182,10 +221,12 @@ img {
   transition: var(--transition-standard);
 }
 
-.styled-list li:hover {
-  border-left: 2px solid var(--primary-text);
+.styled-list li:hover,
+.styled-list li:focus-within {
+  border-left: 3px solid var(--primary-text);
   background-color: var(--highlight-bg);
   padding-left: var(--space-sm);
+  transition: var(--transition-standard);
 }
 
 /* Container adjustments */
@@ -209,11 +250,51 @@ img {
   }
 }
 
+/* Button and interactive element focus states */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--link-color);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(0, 102, 204, 0.25);
+}
+
 /* Touch device optimizations */
 @media (hover: none) {
   a, button {
     min-height: 44px;
     min-width: 44px;
   }
+}
+
+/* Skip Navigation Link */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.sr-only-focusable:focus {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0.5rem 1rem !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+  background-color: var(--primary-bg) !important;
+  border: 2px solid var(--link-color) !important;
+  color: var(--link-color) !important;
+  text-decoration: none !important;
+  font-weight: bold !important;
+  z-index: 9999 !important;
 }
 

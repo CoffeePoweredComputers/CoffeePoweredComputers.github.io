@@ -71,6 +71,37 @@
   gap: var(--space-sm);
 }
 
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: var(--space-sm);
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition-standard);
+  color: var(--primary-text);
+  border: 2px solid transparent;
+  background-color: transparent;
+}
+
+.social-icons a:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  border-color: var(--primary-text);
+  transform: var(--hover-lift-sm);
+  text-decoration: none;
+  color: var(--primary-text);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.social-icons a:focus {
+  outline: 3px solid var(--link-color);
+  outline-offset: 3px;
+  background-color: rgba(0, 102, 204, 0.1);
+  border-color: var(--link-color);
+  box-shadow: 0 0 0 6px rgba(0, 102, 204, 0.25);
+}
+
 /* Bio Section */
 .bio {
   font-size: var(--font-size-md);

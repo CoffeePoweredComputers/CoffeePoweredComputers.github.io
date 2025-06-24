@@ -57,13 +57,13 @@ export default class Travel extends Component {
           <Row>
             {directories.map((directory, index) => (
             <Col key={index} sm={6} md={4} lg={3} className="mb-4">
-              <a href={directory.link} target="_blank" rel="noopener noreferrer">
+              <a href={directory.link} target="_blank" rel="noopener noreferrer" aria-label={`View ${directory.title} travel gallery`}>
                 <div className="card-container">
                   <Card className="image-container">
                     {this.state.loading[index] && (
                     <div className="spinner-container">
-                      <Spinner animation="border" role="status">
-                        <span className="sr-only">Loading...</span>
+                      <Spinner animation="border" role="status" aria-label={`Loading ${directory.title} image`}>
+                        <span className="sr-only">Loading {directory.title} image...</span>
                       </Spinner>
                     </div>
                     )}

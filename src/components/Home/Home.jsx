@@ -10,7 +10,8 @@ export default function Home() {
 
   return (
     <Container fluid>
-      <div className="p-3 p-md-5 mb-4 bg-light rounded-3">
+      <section className="p-3 p-md-5 mb-4 bg-light rounded-3" aria-labelledby="profile-heading">
+        <h1 id="profile-heading" className="sr-only">David H Smith IV - Profile and Research</h1>
         <Row className="justify-content-center">
           {/* Profile section - Full width on mobile, 4 columns on larger screens */}
           <Col xs={12} md={4} className="text-center mb-4 mb-md-0">
@@ -36,6 +37,7 @@ export default function Home() {
                 fgColor='#c0c0c0'
                 rel="noopener noreferrer"
                 target="_blank"
+                aria-label="LinkedIn profile"
               />
                 <SocialIcon 
                 url="https://github.com/CoffeePoweredComputers" 
@@ -44,6 +46,7 @@ export default function Home() {
                 fgColor='#c0c0c0'
                 rel="noopener noreferrer"
                 target="_blank"
+                aria-label="GitHub profile"
               />
                 <SocialIcon 
                 url="https://x.com/David_H_SmithIV" 
@@ -52,6 +55,7 @@ export default function Home() {
                 fgColor='#c0c0c0'
                 rel="noopener noreferrer"
                 target="_blank"
+                aria-label="X (Twitter) profile"
               />
                 <SocialIcon 
                 url="https://medium.com/@davidhsmith4" 
@@ -60,6 +64,7 @@ export default function Home() {
                 fgColor='#c0c0c0'
                 rel="noopener noreferrer"
                 target="_blank"
+                aria-label="Medium profile"
               />
                 <SocialIcon 
                 url="https://www.threads.com/@david_h_smith_iv" 
@@ -68,6 +73,7 @@ export default function Home() {
                 fgColor='#c0c0c0'
                 rel="noopener noreferrer"
                 target="_blank"
+                aria-label="Threads profile"
               />
                 <SocialIcon 
                 url="https://www.instagram.com/david_h_smith_iv/" 
@@ -76,12 +82,13 @@ export default function Home() {
                 fgColor='#c0c0c0'
                 rel="noopener noreferrer"
                 target="_blank"
+                aria-label="Instagram profile"
               />
             </div>
 
             <Card className="mb-3 bio-card">
               <Card.Body className="text-start">
-                <Card.Title className="border-bottom pb-2 fw-bold bio-title">Bio</Card.Title>
+                <Card.Title as="h2" className="border-bottom pb-2 fw-bold bio-title">Bio</Card.Title>
                 <Card.Text className="small-text">
                   I am a PhD candidate at the University of Illinois Urbana-Champaign and wil be joining Virginia Tech as an Assistant Professor in the <a href="https://cs.vt.edu/" target="_blank" rel="noopener noreferrer">Department of Computer Science</a>. 
                   I will be completing my PhD in May of 2025 where I am a part of the <a href="https://siebelschool.illinois.edu/research/areas/computers-and-education" target="_blank" rel="noopener noreferrer">Computers and Education</a> research area and am advised by <a href="https://zilles.cs.illinois.edu/" target="_blank" rel="noopener noreferrer">Craig Zilles</a>. I completed Bachelor's of Science in Computer Science at Western Washington University where I was advised by <a href="https://qhao.info/" target="_blank" rel="noopener noreferrer">Qiang Hao</a>.
@@ -147,7 +154,7 @@ export default function Home() {
                   {/* Main content */}
                   <Col xs={12} md={8} className="bio bio-alignment">
                     <div className="research-intro mb-4">
-                      <h4> Research Vision </h4>
+                      <h4 id="research-vision"> Research Vision </h4>
                       <p style={{ fontSize: 'var(--font-size-md)' }}>
                         <strong>I develop and evaluate interactive and engaging tools that support novice programmers.</strong> My goal as a researcher working at the intersection of <a href="https://faculty.washington.edu/ajko/cer" target="_blank" rel="noopener noreferrer">Computing Education Research (CER)</a> and Human-Computer Interaction (HCI) is to draw on theories of learning to create effective and scalable approaches for educating the next generation of computing professionals. My work has included a wide range of topics within CER, and my current areas of focus are as follows.
                       </p>
@@ -246,7 +253,7 @@ export default function Home() {
                     </div>
                   </Col>
                 </Row>
-              </div>
+              </section>
             </Container>
             );
 }

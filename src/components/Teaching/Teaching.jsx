@@ -12,8 +12,9 @@ export default function Teaching() {
       <div className="p-3 p-md-5 mb-4 bg-light rounded-3">
         <Row className="justify-content-center">
           <Col xs={12} lg={10} className="teaching-content px-3 px-md-4">
-            <div className="teaching-intro mb-4">
-              <h4 className="section-title">Teaching Statement</h4>
+            <h1 className="sr-only">Teaching - David H Smith IV</h1>
+            <section className="teaching-intro mb-4" aria-labelledby="teaching-statement-heading">
+              <h2 id="teaching-statement-heading" className="section-title">Teaching Statement</h2>
               <p className="teaching-text">
                 A call to teaching first inspired me to pursue a Ph.D. in
                 Computer Science and shaped my focus on Computer Science
@@ -42,10 +43,10 @@ export default function Teaching() {
                 demonstrated through my experiences as a teaching assistant and
                 instructor.
               </p>
-            </div>
+            </section>
 
-            <div className="teaching-experience mb-4">
-              <h4 className="section-title">Teaching and Curriculum Design Experience</h4>
+            <section className="teaching-experience mb-4" aria-labelledby="teaching-experience-heading">
+              <h2 id="teaching-experience-heading" className="section-title">Teaching and Curriculum Design Experience</h2>
               <p className="teaching-text">
                 <strong>I have served in a variety of teaching roles including as
                 a teaching assistant, co-instructor, and instructor of
@@ -159,7 +160,7 @@ export default function Teaching() {
                 </Card>
               </div>
 
-            </div>
+            </section>
           </Col>
         </Row>
       </div>

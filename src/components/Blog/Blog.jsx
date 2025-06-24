@@ -28,6 +28,22 @@ export default function Blog() {
     setCurrentTopic(currentTopic === topic ? "" : topic);
   };
   
+  /* Handles keyboard events for topic badges */
+  const handleTopicKeyDown = (event, topic) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      handleTopicSelect(topic);
+    }
+  };
+  
+  /* Handles keyboard events for clear button */
+  const handleClearKeyDown = (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      clearFilters();
+    }
+  };
+  
   /* Handles search input changes */
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
@@ -70,6 +86,10 @@ export default function Blog() {
                   bg="dark" 
                   className="topic-badge" 
                   onClick={() => handleTopicSelect(keyword)}
+                  onKeyDown={(e) => handleTopicKeyDown(e, keyword)}
+                  tabIndex="0"
+                  role="button"
+                  aria-label={`Filter by topic: ${keyword}`}
                 >
                   {keyword}
                 </Badge>
@@ -90,7 +110,8 @@ export default function Blog() {
   /* Gets the goods on the screen */
   return (
     <Container fluid>
-      <div className='p-5 mb-4 bg-light rounded-3'>
+      <section className='p-5 mb-4 bg-light rounded-3' aria-labelledby="blog-filter-heading">
+        <h1 id="blog-filter-heading" className="sr-only">Blog Posts - Search and Filter</h1>
         <div className='topic-selection'> Search and filter blog posts </div>
         
         <InputGroup className="mb-3">
@@ -99,23 +120,29 @@ export default function Blog() {
             value={searchTerm}
             onChange={handleSearch}
             aria-label="Search blog posts"
+            aria-describedby="search-results-announcement"
           />
           {(searchTerm || currentTopic) && (
             <InputGroup.Text 
               className="clear-button" 
               onClick={clearFilters}
+              onKeyDown={handleClearKeyDown}
+              tabIndex="0"
+              role="button"
+              aria-label="Clear all filters"
             >
               Clear
             </InputGroup.Text>
           )}
         </InputGroup>
         
-        <div className='topic-selection'> Filter by topic </div>
-        <Nav variant="pills" className="topic-nav">
+        <div id="topic-filter-label" className='topic-selection'> Filter by topic </div>
+        <Nav variant="pills" className="topic-nav" aria-labelledby="topic-filter-label">
           <Nav.Item>
             <Nav.Link 
               className={currentTopic === "" ? "active-topic" : "nav-topic"}
               onClick={() => setCurrentTopic("")}
+              aria-pressed={currentTopic === ""}
             >
               All
             </Nav.Link>
@@ -125,20 +152,32 @@ export default function Blog() {
               <Nav.Link
                 className={currentTopic === topic ? "active-topic" : "nav-topic"}
                 onClick={() => handleTopicSelect(topic)}
+                aria-pressed={currentTopic === topic}
               >
                 {topic}
               </Nav.Link>
             </Nav.Item>
           ))}
         </Nav>
+      </section>
+      
+      {/* Screen reader announcement for search results */}
+      <div id="search-results-announcement" aria-live="polite" aria-atomic="true" className="sr-only">
+        {searchTerm || currentTopic ? (
+          postData.length > 0 
+            ? `Found ${postData.length} blog post${postData.length === 1 ? '' : 's'} matching your filters`
+            : 'No blog posts found matching your filters'
+        ) : ''}
       </div>
       
-      {postData.length > 0 ? postData : (
-        <div className="text-center p-5">
-          <h3>No posts found</h3>
-          <p>Try adjusting your search terms or filters</p>
-        </div>
-      )}
+      <section aria-label="Blog posts">
+        {postData.length > 0 ? postData : (
+          <div className="text-center p-5">
+            <h2>No posts found</h2>
+            <p>Try adjusting your search terms or filters</p>
+          </div>
+        )}
+      </section>
     </Container>
   );
 }

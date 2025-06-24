@@ -12,8 +12,9 @@ export default function Research() {
       <div className="p-3 p-md-5 mb-4 bg-light rounded-3">
         <Row className="justify-content-center">
           <Col xs={12} lg={10} className="research-content px-3 px-md-4">
-            <div className="research-intro mb-4">
-              <h4 className="section-title">Research Statement</h4>
+            <h1 className="sr-only">Research - David H Smith IV</h1>
+            <section className="research-intro mb-4" aria-labelledby="research-statement-heading">
+              <h2 id="research-statement-heading" className="section-title">Research Statement</h2>
               <p className="research-text">
                 <strong>I develop interactive and engaging tools that support novice
                 programmers.</strong> My goal as a researcher working at the
@@ -34,10 +35,10 @@ export default function Research() {
                 as natural language programming. My published and current work on
                 these topics are detailed further in the following sections.
               </p>
-            </div>
+            </section>
 
-            <div className="research-areas mb-4">
-              <h4 className="section-title">Research Areas</h4>
+            <section className="research-areas mb-4" aria-labelledby="research-areas-heading">
+              <h2 id="research-areas-heading" className="section-title">Research Areas</h2>
               
               {/* Research Area 1: Parsons Problems */}
               <div className="research-area">
@@ -257,7 +258,7 @@ export default function Research() {
                   </Card.Body>
                 </Card>
               </div>
-            </div>
+            </section>
           </Col>
         </Row>
       </div>
