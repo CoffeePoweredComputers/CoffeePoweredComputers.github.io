@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Container, Row, Col, Card, Image } from 'react-bootstrap';
+import { Container, Row, Col, Badge, Card } from 'react-bootstrap';
 import "./Teaching.css";
 
 export default function Teaching() {
@@ -7,163 +7,167 @@ export default function Teaching() {
     document.title = "David H Smith IV | Teaching";
   }, []);
 
+  const courses = [
+    {
+      institution: "Virginia Tech",
+      courses: [
+        {
+          title: "Computing Education Research Seminar",
+          code: "CS 6XXX",
+          level: "Graduate",
+          role: "Instructor",
+          semester: "Spring 2026",
+          description: "Graduate seminar exploring current research in computing education, emphasizing critical analysis of research papers and theoretical frameworks."
+        }
+      ]
+    },
+    {
+      institution: "University of Illinois Urbana-Champaign",
+      courses: [
+        {
+          title: "Introduction to Programming",
+          code: "CS 105",
+          level: "Undergraduate",
+          role: "Instructor",
+          semester: "Summer 2021",
+          enrollment: "400-700 students",
+          website: "https://hamiltonfour.tech/cs-105-summer-21/",
+          description: "Large-scale introductory Python course for non-technical majors."
+        },
+        {
+          title: "Introduction to Programming (High School)",
+          code: "University High School",
+          level: "High School",
+          role: "Lead Instructor",
+          semester: "Fall 2021",
+          enrollment: "15 students",
+          website: "https://hamiltonfour.tech/uni-high-fall-21/",
+          description: "Semester-long introductory programming course emphasizing hands-on projects and peer instruction."
+        },
+        {
+          title: "Data Structures for CS Teachers",
+          code: "CS 487",
+          level: "Graduate",
+          role: "Instructor",
+          semester: "Summer 2022",
+          enrollment: "14 students",
+          website: "https://hamiltonfour.tech/487-data-structures/",
+          description: "Specialized course for in-service K-12 teachers covering Java programming and data structures."
+        }
+      ]
+    }
+  ];
+
+  const getLevelBadgeColor = (level) => {
+    switch(level) {
+      case 'Graduate': return 'purple';
+      case 'Undergraduate': return 'primary';
+      case 'High School': return 'success';
+      default: return 'secondary';
+    }
+  };
+
+  const getRoleBadgeColor = (role) => {
+    switch(role) {
+      case 'Instructor': return 'danger';
+      case 'Lead Instructor': return 'danger';
+      case 'Co-instructor': return 'warning';
+      case 'Teaching Assistant': return 'info';
+      default: return 'secondary';
+    }
+  };
+
   return (
     <Container fluid>
-      <div className="p-3 p-md-5 mb-4 bg-light rounded-3">
+      <section className="p-3 p-md-5 mb-4 bg-light rounded-3">
         <Row className="justify-content-center">
-          <Col xs={12} lg={10} className="teaching-content px-3 px-md-4">
+          <Col xs={12} lg={10}>
             <h1 className="sr-only">Teaching - David H Smith IV</h1>
-            <section className="teaching-intro mb-4" aria-labelledby="teaching-statement-heading">
-              <h2 id="teaching-statement-heading" className="section-title">Teaching Statement</h2>
-              <p className="teaching-text">
-                A call to teaching first inspired me to pursue a Ph.D. in
-                Computer Science and shaped my focus on Computer Science
-                Education research. Much of my work stems from a desire to
-                systematically improve the practices in the classes I have
-                taught. However, there is a tension between science and practice
-                that exists in the realm of education. A tension noted by Josiah
-                Royce, a prominent philosopher from the latter half of the 19th
-                century.
+            
+            {/* Teaching Philosophy */}
+            <div className="teaching-intro mb-4">
+              <h2 className="teaching-title">Teaching Philosophy</h2>
+              <p style={{ fontSize: 'var(--font-size-md)', lineHeight: '1.6' }}>
+                A call to teaching first inspired me to pursue a Ph.D. in Computer Science and shaped my focus on Computer Science Education research. 
+                Much of my work stems from a desire to systematically improve the practices in the classes I have taught. 
+                However, there is a tension between science and practice that exists in the realm of education, 
+                a tension noted by Josiah Royce, a prominent philosopher from the latter half of the 19th century.
               </p>
               <blockquote className="blockquote-text">
-                <em>
-                  I have always felt unwilling to apply so pretentious and comforting a name as "Science" to any exposition of the laborious and problematic art of the educator. - Josiah Royce
-                </em>
+                I have always felt unwilling to apply so pretentious and comforting a name as 'Science' to any exposition of the laborious and problematic art of the educator.
+                <em>— Josiah Royce</em>
               </blockquote>
-              <p className="teaching-text">
-                This sentiment suggests to me that my endeavors as an educational
-                researcher serve only to suggest what <em>may</em> serve as best
-                practices. It is then upon me, as the instructor, to evaluate,
-                integrate, and adapt these practices to best suit their given
-                context. This makes effective pedagogy, in my estimation, 
-                <b> where the <em>science</em> of education meets <em>art and
-                engineering</em> that is teaching and curriculum design</b>. It
-                is under this broader philosophy that I frame my general approach
-                to teaching best practices and their implementation, as
-                demonstrated through my experiences as a teaching assistant and
-                instructor.
+              <p style={{ fontSize: 'var(--font-size-md)', lineHeight: '1.6' }}>
+                This sentiment suggests to me that my endeavors as an educational researcher serve only to suggest what <em>may</em> serve as best practices. 
+                It is then upon me, as the instructor, to evaluate, integrate, and adapt these practices to best suit their given context. 
+                This makes effective pedagogy, in my estimation, <strong>where the <em>science</em> of education meets the <em>art and engineering</em> that is teaching and curriculum design</strong>.
               </p>
-            </section>
+            </div>
 
-            <section className="teaching-experience mb-4" aria-labelledby="teaching-experience-heading">
-              <h2 id="teaching-experience-heading" className="section-title">Teaching and Curriculum Design Experience</h2>
-              <p className="teaching-text">
-                <strong>I have served in a variety of teaching roles including as
-                a teaching assistant, co-instructor, and instructor of
-                record.</strong> These include a large introductory Python course
-                for non-technical majors (400-700 students), a semester-long
-                high-school introductory programming course (15 students), and a
-                data structures course for in-service K-12 teachers (14
-                students). I had the opportunity to teach these courses as the
-                primary instructor and was given significant freedom in
-                designing, implementing, and teaching them.
-              </p>
-
-              <h5 className="university-header">Virginia Tech (Starting Fall 2025)</h5>
-              <div className="courses-container">
-                {/* VTech Course 1 */}
-                <Card className="mb-4 course-card">
-                  <Card.Body>
-                    <Row className="align-items-center">
-                      <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
-                        <Image src="assets/vtech.png" alt="CER Seminar" className="course-icon" />
-                      </Col>
-                      <Col xs={12} sm={9} md={9} lg={10}>
-                        <h5 className="course-title">Computing Education Research Seminar</h5>
-                        <p className="course-description">
-                          A graduate seminar exploring current research in
-                          computing education. Students will engage with recent
-                          literature, research methodologies, and emerging
-                          trends in the field of computing education. The
-                          course will emphasize critical analysis of research
-                          papers, development of research questions, and
-                          understanding of theoretical frameworks.
-                        </p>
-                      </Col>
-                    </Row>
-                  </Card.Body>
-                </Card>
-
+            {/* Courses */}
+            {courses.map((inst, instIndex) => (
+              <div key={instIndex} className="institution-section mb-5">
+                <h3 className="institution-header mb-4">{inst.institution}</h3>
+                
+                <Row className="g-4">
+                  {inst.courses.map((course, courseIndex) => (
+                    <Col key={courseIndex} xs={12} lg={6}>
+                      <Card className="course-card h-100">
+                        <Card.Body>
+                          <div className="course-card-header">
+                            <h5 className="course-title">
+                              {course.title}
+                            </h5>
+                            {course.code && (
+                              <span className="course-code">{course.code}</span>
+                            )}
+                          </div>
+                          
+                          <div className="course-meta mb-3">
+                            <Badge bg={getLevelBadgeColor(course.level)} className="me-2">
+                              {course.level}
+                            </Badge>
+                            <Badge bg={getRoleBadgeColor(course.role)} className="me-2">
+                              {course.role}
+                            </Badge>
+                            <Badge bg="secondary">
+                              {course.semester}
+                            </Badge>
+                          </div>
+                          
+                          <p className="course-description">
+                            {course.description}
+                          </p>
+                          
+                          <div className="course-footer">
+                            {course.enrollment && (
+                              <span className="course-enrollment">
+                                <i className="bi bi-people-fill"></i> {course.enrollment}
+                              </span>
+                            )}
+                            {course.website && (
+                              <a 
+                                href={course.website} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="course-link"
+                              >
+                                View Course <i className="bi bi-arrow-right"></i>
+                              </a>
+                            )}
+                          </div>
+                        </Card.Body>
+                      </Card>
+                    </Col>
+                  ))}
+                </Row>
               </div>
+            ))}
 
-              <h5 className="university-header">University of Illinois Urbana-Champaign</h5>
-              <div className="courses-container">
-                {/* UIUC Course 1 */}
-                <Card className="mb-4 course-card">
-                  <Card.Body>
-                    <Row className="align-items-center">
-                      <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
-                        <Image src="assets/illinois.png" alt="Intro to Programming" className="course-icon" />
-                      </Col>
-                      <Col xs={12} sm={9} md={9} lg={10}>
-                        <h5 className="course-title">Introduction to Programming (CS 105)</h5>
-                        <p className="course-description">
-                          A comprehensive course designed to introduce
-                          programming concepts to students without a technical
-                          background, focusing on Python programming
-                          fundamentals. The course covers basic syntax, control
-                          structures, functions, and data manipulation through
-                          practical exercises and projects.
-                          <a href="https://hamiltonfour.tech/cs-105-summer-21/" target="_blank" rel="noopener noreferrer" className="d-block mt-2">
-                            Course Website →
-                          </a>
-                        </p>
-                      </Col>
-                    </Row>
-                  </Card.Body>
-                </Card>
 
-                {/* UIUC Course 2 */}
-                <Card className="mb-4 course-card">
-                  <Card.Body>
-                    <Row className="align-items-center">
-                      <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
-                        <Image src="assets/uni.png" alt="High School Programming" className="course-icon" />
-                      </Col>
-                      <Col xs={12} sm={9} md={9} lg={10}>
-                        <h5 className="course-title">Introduction to Programming (High School)</h5>
-                        <p className="course-description">
-                          An introductory course for high school students,
-                          emphasizing hands-on projects and peer instruction to
-                          foster a collaborative learning environment. Students develop programming 
-                          skills through engaging activities and real-world problem-solving exercises.
-                          <a href="https://hamiltonfour.tech/uni-high-fall-21/" target="_blank" rel="noopener noreferrer" className="d-block mt-2">
-                            Course Website →
-                          </a>
-                        </p>
-                      </Col>
-                    </Row>
-                  </Card.Body>
-                </Card>
-
-                {/* UIUC Course 3 */}
-                <Card className="mb-4 course-card">
-                  <Card.Body>
-                    <Row className="align-items-center">
-                      <Col xs={12} sm={3} md={3} lg={2} className="text-center mb-3 mb-sm-0">
-                        <Image src="assets/illinois_education.png" alt="Data Structures" className="course-icon" />
-                      </Col>
-                      <Col xs={12} sm={9} md={9} lg={10}>
-                        <h5 className="course-title">Data Structures for CS Teachers</h5>
-                        <p className="course-description">
-                          A specialized course tailored for in-service
-                          K-12 teachers, focusing on Java programming fundamentals
-                          and the principles of data structures. The curriculum includes practical 
-                          implementations and pedagogical approaches for teaching these concepts.
-                          <a href="https://hamiltonfour.tech/487-data-structures/" target="_blank" rel="noopener noreferrer" className="d-block mt-2">
-                            Course Website →
-                          </a>
-                        </p>
-                      </Col>
-                    </Row>
-                  </Card.Body>
-                </Card>
-              </div>
-
-            </section>
           </Col>
         </Row>
-      </div>
+      </section>
     </Container>
   );
 }

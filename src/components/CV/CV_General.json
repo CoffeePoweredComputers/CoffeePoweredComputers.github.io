@@ -13,7 +13,7 @@
       "logo": "assets/wwu.png",
       "years": "2017-2019",
       "advisor": "Qiang Hao",
-      "degrees": [ "Bachelors of Science - Computer Science" ]
+      "degrees": [ "Bachelor of Science - Computer Science" ]
     },  
     {
       "school": "Skagit Valley College",
@@ -21,8 +21,8 @@
       "years": "2015-2017",
       "advisor": "",
       "degrees": [ 
-        "Associates of Science - Computer Science",
-        "Associates of Science - Physics/Engineering"
+        "Associate of Science - Computer Science",
+        "Associate of Science - Physics/Engineering"
       ]
     }
   ],
@@ -32,7 +32,7 @@
       "employer": "Virginia Tech",
       "logo": "assets/vtech.png",
       "position":  "Assistant Professor",
-      "duration": "Starting Fall 2025 - Present",
+      "duration": "August 2025 - Present",
       "accomplishments": [
       ]
     },

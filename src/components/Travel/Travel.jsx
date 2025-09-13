@@ -10,7 +10,7 @@ export default class Travel extends Component {
     };
   }
   componentDidMount() {
-    document.title = "David H Smith IV | Home";
+    document.title = "David H Smith IV | Travel";
   }
 
   handleTileClick = (directory) => {

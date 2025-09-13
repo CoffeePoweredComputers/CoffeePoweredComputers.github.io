@@ -24,7 +24,7 @@ export default function Home() {
             />
 
               <div className="profile-titles mb-3">
-                <div className="sub">Gradudate Research Assistant</div>
+                <div className="sub">Assistant Professor</div>
                 <div className="sub">Computing Education Researcher</div>
                 <div className="sub">Linux & Coffee Enthusiast</div>
               </div>
@@ -90,8 +90,8 @@ export default function Home() {
               <Card.Body className="text-start">
                 <Card.Title as="h2" className="border-bottom pb-2 fw-bold bio-title">Bio</Card.Title>
                 <Card.Text className="small-text">
-                  I am a PhD candidate at the University of Illinois Urbana-Champaign and wil be joining Virginia Tech as an Assistant Professor in the <a href="https://cs.vt.edu/" target="_blank" rel="noopener noreferrer">Department of Computer Science</a>. 
-                  I will be completing my PhD in May of 2025 where I am a part of the <a href="https://siebelschool.illinois.edu/research/areas/computers-and-education" target="_blank" rel="noopener noreferrer">Computers and Education</a> research area and am advised by <a href="https://zilles.cs.illinois.edu/" target="_blank" rel="noopener noreferrer">Craig Zilles</a>. I completed Bachelor's of Science in Computer Science at Western Washington University where I was advised by <a href="https://qhao.info/" target="_blank" rel="noopener noreferrer">Qiang Hao</a>.
+                  I am an Assistant Professor at Virginia Tech in the <a href="https://cs.vt.edu/" target="_blank" rel="noopener noreferrer">Department of Computer Science</a> and an affiliate faculty with the <a href="https://hci.icat.vt.edu/" target="_blank" rel="noopener noreferrer">Center for Human-Computer Interaction (CHCI)</a>. 
+                  I completed my PhD in May 2025 at the University of Illinois Urbana-Champaign where I was part of the <a href="https://siebelschool.illinois.edu/research/areas/computers-and-education" target="_blank" rel="noopener noreferrer">Computers and Education</a> research area and was advised by <a href="https://zilles.cs.illinois.edu/" target="_blank" rel="noopener noreferrer">Craig Zilles</a>. I completed my Bachelor's of Science in Computer Science at Western Washington University where I was advised by <a href="https://qhao.info/" target="_blank" rel="noopener noreferrer">Qiang Hao</a>.
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -100,6 +100,22 @@ export default function Home() {
                         <Card.Body className="text-start">
                           <Card.Title className="border-bottom pb-2 fw-bold news-title">Latest News</Card.Title>
                           <ul className="news-list">
+                            <li className="news-li news-li-border" date-data="09/12/2025">
+                              <span className="news-tag general">General</span>
+                              I am honored to have been appointed as an affiliate faculty member of the <a href="https://hci.icat.vt.edu/" target="_blank" rel="noopener noreferrer">Center for Human-Computer Interaction (CHCI)</a> at Virginia Tech!
+                            </li>
+                            <li className="news-li news-li-border" date-data="08/01/2025">
+                              <span className="news-tag general">General</span>
+                              I have officially started my position as Assistant Professor in the Department of Computer Science at Virginia Tech!
+                            </li>
+                            <li className="news-li news-li-border" date-data="06/30/2025">
+                              <span className="news-tag paper">Paper</span>
+                              Presented two papers at ITiCSE 2025 in the Netherlands. One of our papers was nominated for the conference's Best Paper Award! The papers are:
+                              <ul style={{marginTop: 0, marginBottom: 0}}>
+                                <li><a href="https://arxiv.org/pdf/2503.12207" target="_blank" rel="noopener noreferrer">ReDefining Code Comprehension: Function Naming as a Mechanism for Evaluating Code Comprehension</a></li>
+                                <li><a href="https://arxiv.org/pdf/2503.12216" target="_blank" rel="noopener noreferrer">Counting the Trees in the Forest: Evaluating Prompt Segmentation for Classifying Code Comprehension Level</a></li>
+                              </ul>
+                            </li>
                             <li className="news-li news-li-border" date-data="04/30/2025">
                               <p>
                                 <span className="news-tag grant">Grant</span>
@@ -113,7 +129,7 @@ export default function Home() {
                             </li>
                             <li className="news-li news-li-border" date-data="04/09/2025">
                               <span className="news-tag general">General</span>
-                              I have successfully defended my dissertation "Discovering, Auto-generating, and Evaluating Distractors in Parsons Problems in CS1". many thanks to my advisor Craig Zilles as well as my committee members Katie Cunningham, Barbara Ericson, and Colleen Lewis.
+                              I have successfully defended my dissertation "Discovering, Auto-generating, and Evaluating Distractors in Parsons Problems in CS1". Many thanks to my advisor Craig Zilles as well as my committee members Katie Cunningham, Barbara Ericson, and Colleen Lewis.
 
                             </li>
                             <li className="news-li news-li-border" date-data="03/13/2025">
@@ -122,7 +138,7 @@ export default function Home() {
                             </li>
                             <li className="news-li news-li-border" date-data="03/01/2025">
                               <span className="news-tag paper">Paper</span>
-                              Two papers related to ongoing work on EiPL questions were accepted to ITiCSE 2025 the pre-print of which are no avaliable on arXiv:
+                              Two papers related to ongoing work on EiPL questions were accepted to ITiCSE 2025, the pre-prints of which are now available on arXiv:
                               <ul style={{marginTop: 0, marginBottom: 0}}>
                                 <li><a href="https://arxiv.org/pdf/2503.12207">ReDefining Code Comprehension: Function Naming as a Mechanism for Evaluating Code Comprehension</a></li>
                                 <li><a href="https://arxiv.org/pdf/2503.12216">Counting the Trees in the Forest: Evaluating Prompt Segmentation for Classifying Code Comprehension Level</a></li>

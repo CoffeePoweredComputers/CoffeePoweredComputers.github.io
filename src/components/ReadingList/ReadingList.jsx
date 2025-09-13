@@ -30,7 +30,7 @@ export default class ReadingList extends Component {
 
             return(
                 <React.Fragment>
-                    <Accordion defaultActivityKey="0">
+                    <Accordion defaultActiveKey="0">
                         <Card.Header>
                             <Accordion.Toggle as={Card.Header} className="title-header" variant='link' eventKey={id}>
                                 {topic.title}

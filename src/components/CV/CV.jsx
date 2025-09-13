@@ -11,6 +11,7 @@ export default function CV() {
   const [publications, setPublications] = useState([]);
   const [posters, setPosters] = useState([]);
   const [expandedYears, setExpandedYears] = useState({});
+  const [activeSection, setActiveSection] = useState('');
   const [publicationStats, setPublicationStats] = useState({
     total: 0,
     byYear: {},
@@ -22,6 +23,56 @@ export default function CV() {
   
   const yearChartRef = useRef(null);
   const venueChartRef = useRef(null);
+
+  // Handle smooth scrolling for navigation links
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      const offset = 120; // Increased offset to account for navbar height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  // Track active section on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['experience-heading', 'education-heading', 'publications-heading', 
+                       'projects-heading', 'course-websites-heading', 'achievements-heading'];
+      
+      const scrollPosition = window.scrollY + 150; // Account for navbar offset
+      
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sectionId = sections[i];
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          if (scrollPosition >= offsetTop) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+      
+      // If we're at the top of the page, highlight the first section
+      if (window.scrollY < 100) {
+        setActiveSection('experience-heading');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const formatAuthors = (authorString) => {
     if (!authorString) return "";
@@ -337,10 +388,10 @@ export default function CV() {
     
     const series = stack(stackedData);
     
-    const margin = { top: 20, right: 100, bottom: 40, left: 40 };
+    const margin = { top: 15, right: 80, bottom: 30, left: 35 };
     const containerWidth = yearChartRef.current.clientWidth || 600; // Fallback width
     const width = Math.max(containerWidth - margin.left - margin.right, 200); // Minimum width
-    const height = 230 - margin.top - margin.bottom;
+    const height = 160 - margin.top - margin.bottom;
     
     // Create SVG with accessibility attributes
     const svgElement = d3.select(yearChartRef.current)
@@ -443,6 +494,7 @@ export default function CV() {
       .text(d => d.total);
     
     // Add legend with accessibility
+    const legendSpacing = 20;
     const legend = svg.append("g")
       .attr("font-family", "sans-serif")
       .attr("font-size", 10)
@@ -453,7 +505,7 @@ export default function CV() {
       .data(types)
       .enter()
       .append("g")
-      .attr("transform", (d, i) => `translate(${width + 10},${i * 20})`);
+      .attr("transform", (d, i) => `translate(${width + 10},${i * legendSpacing})`);
     
     legend.append("rect")
       .attr("x", 0)
@@ -489,10 +541,10 @@ export default function CV() {
       };
     });
     
-    const margin = { top: 20, right: 100, bottom: 20, left: 150 };
+    const margin = { top: 15, right: 80, bottom: 15, left: 120 };
     const containerWidth = venueChartRef.current.clientWidth || 600; // Fallback width
     const width = Math.max(containerWidth - margin.left - margin.right, 200); // Minimum width
-    const height = 230 - margin.top - margin.bottom;
+    const height = 160 - margin.top - margin.bottom;
     
     // Create SVG with accessibility attributes
     const svgElement = d3.select(venueChartRef.current)
@@ -551,7 +603,8 @@ export default function CV() {
       .style("text-anchor", "end")
       .text(d => {
         // Truncate venue names if too long
-        return d.length > 20 ? d.substring(0, 20) + "..." : d;
+        const maxLength = 20;
+        return d.length > maxLength ? d.substring(0, maxLength) + "..." : d;
       });
     
     // Add bars
@@ -586,6 +639,7 @@ export default function CV() {
       .text(d => d.count);
     
     // Add legend for venue types with accessibility
+    const legendSpacing = 20;
     const legend = svg.append("g")
       .attr("font-family", "sans-serif")
       .attr("font-size", 10)
@@ -596,7 +650,7 @@ export default function CV() {
       .data(["Conference", "Journal"])
       .enter()
       .append("g")
-      .attr("transform", (d, i) => `translate(${width + 10},${i * 20})`);
+      .attr("transform", (d, i) => `translate(${width + 10},${i * legendSpacing})`);
     
     legend.append("rect")
       .attr("x", 0)
@@ -647,7 +701,32 @@ export default function CV() {
       <div className="p-3 p-md-5 mb-4 bg-light rounded-3">
         <h1 className="sr-only">Curriculum Vitae - David H Smith IV</h1>
         <Row className="justify-content-center">
-          <Col xs={12} lg={10} className="cv-content px-3 px-md-4">
+          <Col xs={12} lg={2} xl={1} className="d-none d-lg-block">
+            <div className="cv-nav-sidebar">
+              <h6 className="nav-sidebar-title">Quick Nav</h6>
+              <nav className="nav flex-column">
+                <a className={`nav-link nav-sidebar-link ${activeSection === 'experience-heading' ? 'active' : ''}`} 
+                   href="#experience-heading" 
+                   onClick={(e) => handleNavClick(e, 'experience-heading')}>Experience</a>
+                <a className={`nav-link nav-sidebar-link ${activeSection === 'education-heading' ? 'active' : ''}`} 
+                   href="#education-heading" 
+                   onClick={(e) => handleNavClick(e, 'education-heading')}>Education</a>
+                <a className={`nav-link nav-sidebar-link ${activeSection === 'publications-heading' ? 'active' : ''}`} 
+                   href="#publications-heading" 
+                   onClick={(e) => handleNavClick(e, 'publications-heading')}>Publications</a>
+                <a className={`nav-link nav-sidebar-link ${activeSection === 'projects-heading' ? 'active' : ''}`} 
+                   href="#projects-heading" 
+                   onClick={(e) => handleNavClick(e, 'projects-heading')}>Projects</a>
+                <a className={`nav-link nav-sidebar-link ${activeSection === 'course-websites-heading' ? 'active' : ''}`} 
+                   href="#course-websites-heading" 
+                   onClick={(e) => handleNavClick(e, 'course-websites-heading')}>Courses</a>
+                <a className={`nav-link nav-sidebar-link ${activeSection === 'achievements-heading' ? 'active' : ''}`} 
+                   href="#achievements-heading" 
+                   onClick={(e) => handleNavClick(e, 'achievements-heading')}>Achievements</a>
+              </nav>
+            </div>
+          </Col>
+          <Col xs={12} lg={10} xl={11} className="cv-content px-3 px-md-4">
 
             {/* Experience Section */}
             <section className="cv-section mb-4" aria-labelledby="experience-heading">
@@ -660,10 +739,10 @@ export default function CV() {
                 <Card key={idx} className="mb-3 simplified-experience-card">
                   <Card.Body>
                     <Row className="align-items-center">
-                      <Col xs={3} sm={2} md={2} lg={1} className="text-center">
+                      <Col xs={2} sm={2} md={1} lg={1} className="logo-column pe-2">
                         <Image src={exp.logo} alt={exp.employer} className="employer-logo" />
                       </Col>
-                      <Col xs={9} sm={10} md={10} lg={11}>
+                      <Col xs={10} sm={10} md={11} lg={11} className="ps-2">
                         <div className="experience-header">
                           <h5 className="employer-name">{exp.employer}</h5>
                           <span className="year-badge">{exp.duration}</span>
@@ -693,10 +772,10 @@ export default function CV() {
                 <Card key={idx} className="mb-3 education-card">
                   <Card.Body>
                     <Row className="align-items-center">
-                      <Col xs={3} sm={2} md={2} lg={1} className="text-center">
+                      <Col xs={2} sm={2} md={1} lg={1} className="logo-column pe-2">
                         <Image src={edu.logo} alt={edu.school} className="institution-logo" />
                       </Col>
-                      <Col xs={9} sm={10} md={10} lg={11}>
+                      <Col xs={10} sm={10} md={11} lg={11} className="ps-2">
                         <div className="d-flex justify-content-between align-items-start">
                           <h5 className="institution-name">{edu.school}</h5>
                           <span className="year-badge">{edu.years}</span>
@@ -1040,10 +1119,10 @@ export default function CV() {
                           <div className="project-client mb-2">{project.client}</div>
                           )}
                           <Row className="flex-grow-1">
-                            <Col xs={12} md={3} className="text-center mb-3 mb-md-0">
+                            <Col xs={12} sm={4} md={3} className="text-center mb-3 mb-md-0">
                               <Image src={project.image_path} alt={project.title} className="project-image" />
                             </Col>
-                            <Col xs={12} md={9}>
+                            <Col xs={12} sm={8} md={9}>
                               <ul className="project-details">
                                 {project.work.map((w, i) => (
                                 <li key={i}>{w}</li>

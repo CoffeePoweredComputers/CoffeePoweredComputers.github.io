@@ -18,13 +18,36 @@ const Lab = () => {
     Masters: [
     ],
     Undergrads: [
+    ],
+    Collaborators: [
+      {
+        name: 'Paul Denny',
+        position: 'Professor',
+        image: 'https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=KS4THtEAAAAJ&citpid=2',
+        bio: 'Professor at University of Auckland, New Zealand. Co-recipient of the Llama Impact Grant. Research focuses on computing education and AI in education.',
+        email: 'paul@cs.auckland.ac.nz'
+      },
+      {
+        name: 'Kaitlin Riegel',
+        position: 'Postdoctoral Fellow',
+        image: 'https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=j0DgjIkAAAAJ&citpid=2',
+        bio: 'Postdoctoral Fellow at University of Auckland. Co-supervising research on computing education assessment and pedagogical approaches.',
+        email: ''
+      },
+      {
+        name: 'Zihan Wu',
+        position: 'Assistant Professor',
+        image: 'https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=dbLIyawAAAAJ&citpid=2',
+        bio: 'Assistant Professor at University of Maine. Research at the intersection of HCI and Computing Education, creating engaging and effective educational tools for computing.',
+        email: ''
+      }
     ]
   };
 
   // Function to render member cards for each category
   const renderMemberCards = (members) => {
     return members.map((member, index) => (
-      <Col key={index} xs={12} md={6} lg={4}>
+      <Col key={index} xs={12} md={6} lg={3}>
         <Card className="member-card">
           <Card.Img variant="top" src={member.image} alt={member.name} className="member-image" />
           <div className="name-badge">
@@ -32,8 +55,7 @@ const Lab = () => {
             {member.position && <p className="position-text">{member.position}</p>}
           </div>
           <Card.Body>
-            <Card.Text>{member.bio}</Card.Text>
-            <Card.Link href={`mailto:${member.email}`}>{member.email}</Card.Link>
+            <Card.Text className="small">{member.bio}</Card.Text>
           </Card.Body>
         </Card>
       </Col>
@@ -88,6 +110,13 @@ const Lab = () => {
         <h3 id="undergrad-heading" className="role-title">Undergraduate Researchers</h3>
         <Row>
           {renderMemberCards(labMembers.Undergrads)}
+        </Row>
+      </section>
+
+      <section className="role-section" aria-labelledby="collaborators-heading">
+        <h3 id="collaborators-heading" className="role-title">Frequent Collaborators</h3>
+        <Row>
+          {renderMemberCards(labMembers.Collaborators)}
         </Row>
       </section>
     </Container>

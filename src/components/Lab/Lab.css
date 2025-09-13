@@ -9,17 +9,19 @@
 
 .announcement-header {
   background-color: #343a40;
-  padding: 15px;
+  padding: 12px 20px;
   color: white;
 }
 
-.announcement-header h2 {
+.announcement-header h3 {
   margin-bottom: 0;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .announcement-content {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
   background-color: #f8f9fa;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-top: none;
@@ -35,12 +37,12 @@
 .name-badge h5 {
   margin-bottom: 2px;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: white;
 }
 
 .position-text {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #f8f9fa;
   margin-bottom: 0;
 }
@@ -48,11 +50,26 @@
 .member-card {
   margin-bottom: 20px;
   transition: transform 0.3s;
+  transform: scale(0.95);
+}
+
+.member-card:hover {
+  transform: scale(0.98);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.member-card .card-body {
+  padding: 0.75rem;
+}
+
+.member-card .card-text {
+  font-size: 0.85rem;
+  line-height: 1.4;
 }
 
 .member-image {
   object-fit: cover;
-  height: 250px;
+  height: 180px;
   width: 100%;
   border-radius: 0;
 }
@@ -72,37 +89,47 @@
   align-items: center;
   gap: 1.5rem;
   width: 100%;
-  padding: 1.5rem 3rem;
+  padding: 1.2rem 2rem;
   background-color: #212529 !important;
 }
 
 .lab-logo-image {
-  width: 150px;
+  width: 100px;
   height: auto;
+  flex-shrink: 0;
 }
 
 .lab-name {
-  font-family: var(--font-family-base);
-  font-size: var(--font-size-xxl);
-  line-height: 1.2;
-  color: var(--light-text);
+  font-family: var(--font-family-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: white;
   max-width: 800px;
-  /* centering */
-  margin: 0 auto;
-  text-align: center;
+  margin: 0;
+  text-align: left;
+  flex-grow: 1;
 }
 
-/* hide text on mobile and center logo */
+/* Mobile responsive styles */
 @media (max-width: 768px) {
   .lab-name {
-    display: none;
+    font-size: 1rem;
+    text-align: center;
   }
   .lab-banner {
-    justify-content: center;
-    padding: 1.5rem;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    gap: 0.75rem;
   }
   .lab-logo-image {
-    width: 100%;
+    width: 80px;
+  }
+  
+  /* Reset scale on mobile for better fit */
+  .member-card {
+    transform: scale(1);
   }
 }
 
